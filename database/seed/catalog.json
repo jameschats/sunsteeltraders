@@ -1,0 +1,6213 @@
+{
+ "silos": [
+  {
+   "key": "mild-steel-structural",
+   "name": "Mild Steel & Structural",
+   "short": "Mild & structural",
+   "glyph": "beam",
+   "intro": "IS 2062 bars, plates, angles, channels, beams, pipes and hollow sections from SAIL, Tata Steel, JSW, Vizag Steel and APL Apollo, crane-loaded straight onto your truck.",
+   "top": "IS 2062 plates, ISMB, ISMC, ERW pipes",
+   "sort": 1
+  },
+  {
+   "key": "alloy-engineering-steels",
+   "name": "Alloy & Engineering Steels",
+   "short": "Alloy & engineering",
+   "glyph": "round",
+   "intro": "EN-series, SAE, DIN and tool steels in ready stock: EN8 to EN353, 42CrMo4, D2, D3, H13, DB6 and HSS, band-saw cut to your lengths with mill test certificates.",
+   "top": "EN8, EN19, EN24, EN31, D2",
+   "sort": 2
+  },
+  {
+   "key": "stainless-steel",
+   "name": "Stainless Steel",
+   "short": "Stainless",
+   "glyph": "tube",
+   "intro": "Austenitic, martensitic and precipitation-hardening grades in bars, sheets, plates, pipes, hex and angles, from food-grade 304 to marine 316L and 17-4PH.",
+   "top": "SS 304, 316L, 410, 17-4PH",
+   "sort": 3
+  },
+  {
+   "key": "non-ferrous-metals",
+   "name": "Non-Ferrous Metals",
+   "short": "Non-ferrous",
+   "glyph": "hex",
+   "intro": "Brass, electrolytic copper, gunmetal, phosphor bronze, aluminium bronze and aircraft-grade aluminium for bushes, busbars, valves and precision turned parts.",
+   "top": "Brass, copper busbar, LG2, PB1, 6061",
+   "sort": 4
+  },
+  {
+   "key": "cast-iron",
+   "name": "Cast Iron",
+   "short": "Cast iron",
+   "glyph": "square",
+   "intro": "Continuous-cast grey and SG iron bars, solid and hollow, dense and free of blow holes, for hydraulic blocks, gears, pulleys and machine beds.",
+   "top": "FG 250, FG 300, GGG40",
+   "sort": 5
+  },
+  {
+   "key": "engineering-plastics",
+   "name": "Engineering Plastics",
+   "short": "Plastics",
+   "glyph": "plastic",
+   "intro": "Nylon, cast nylon, Delrin, PTFE, UHMWPE, PP, Bakelite and acrylic in rods, sheets and blocks for wear pads, bushes, gaskets and insulation.",
+   "top": "Nylon 6, PTFE, Delrin",
+   "sort": 6
+  },
+  {
+   "key": "cutting-workshop-tools",
+   "name": "Cutting & Workshop Tools",
+   "short": "Tools",
+   "glyph": "tool",
+   "intro": "The consumables that keep a machine shop running: HSS and cobalt tool bits, bi-metal bandsaw blades, carbide inserts, end mills, taps, dies and chuck accessories.",
+   "top": "M42 bandsaw blades, HSS bits",
+   "sort": 7
+  }
+ ],
+ "materials": [
+  {
+   "key": "ms",
+   "name": "Mild / structural steel",
+   "density": 7.85
+  },
+  {
+   "key": "alloy",
+   "name": "Alloy & tool steel",
+   "density": 7.85
+  },
+  {
+   "key": "hss",
+   "name": "High speed steel M2",
+   "density": 8.16
+  },
+  {
+   "key": "ss300",
+   "name": "Stainless 304 / 316",
+   "density": 8
+  },
+  {
+   "key": "ss202",
+   "name": "Stainless 202",
+   "density": 7.8
+  },
+  {
+   "key": "ss400",
+   "name": "Stainless 410 / 420",
+   "density": 7.75
+  },
+  {
+   "key": "ss431",
+   "name": "Stainless 431",
+   "density": 7.7
+  },
+  {
+   "key": "ph",
+   "name": "Stainless 17-4PH",
+   "density": 7.8
+  },
+  {
+   "key": "brass",
+   "name": "Brass",
+   "density": 8.5
+  },
+  {
+   "key": "cu",
+   "name": "Electrolytic copper",
+   "density": 8.96
+  },
+  {
+   "key": "gm",
+   "name": "Gunmetal LG2",
+   "density": 8.83
+  },
+  {
+   "key": "pb",
+   "name": "Phosphor bronze PB1",
+   "density": 8.8
+  },
+  {
+   "key": "ab",
+   "name": "Aluminium bronze AB2",
+   "density": 7.6
+  },
+  {
+   "key": "mnb",
+   "name": "Manganese bronze",
+   "density": 8.3
+  },
+  {
+   "key": "al",
+   "name": "Aluminium 6061 / 6063",
+   "density": 2.7
+  },
+  {
+   "key": "al7",
+   "name": "Aluminium 7075",
+   "density": 2.81
+  },
+  {
+   "key": "al5",
+   "name": "Aluminium 5083",
+   "density": 2.66
+  },
+  {
+   "key": "ci",
+   "name": "Grey cast iron",
+   "density": 7.2
+  },
+  {
+   "key": "sg",
+   "name": "SG / ductile iron",
+   "density": 7.1
+  },
+  {
+   "key": "ny",
+   "name": "Nylon 6",
+   "density": 1.14
+  },
+  {
+   "key": "cny",
+   "name": "Cast nylon (oil filled)",
+   "density": 1.15
+  },
+  {
+   "key": "pom",
+   "name": "Delrin / acetal",
+   "density": 1.41
+  },
+  {
+   "key": "ptfe",
+   "name": "PTFE (Teflon)",
+   "density": 2.2
+  },
+  {
+   "key": "pp",
+   "name": "Polypropylene",
+   "density": 0.9
+  },
+  {
+   "key": "uhmw",
+   "name": "UHMWPE",
+   "density": 0.93
+  },
+  {
+   "key": "bake",
+   "name": "Bakelite (phenolic)",
+   "density": 1.36
+  },
+  {
+   "key": "acr",
+   "name": "Acrylic (PMMA)",
+   "density": 1.19
+  }
+ ],
+ "products": [
+  {
+   "slug": "ms-bright-bars",
+   "silo": "mild-steel-structural",
+   "sort": 1,
+   "name": "Mild Steel Bright Bars",
+   "grade": "EN3B",
+   "material": "ms",
+   "forms": [
+    "round",
+    "square",
+    "hex",
+    "flat"
+   ],
+   "sizeRange": "Ø 6–150 mm, h9/h11 bright drawn",
+   "applications": "Shafts, pins, studs, fasteners, machined parts",
+   "sku": "SST-MSS-01",
+   "chemistry": [
+    {
+     "el": "C",
+     "min": "–",
+     "max": "0.25"
+    },
+    {
+     "el": "Mn",
+     "min": "–",
+     "max": "1.00"
+    },
+    {
+     "el": "Si",
+     "min": "0.05",
+     "max": "0.35"
+    },
+    {
+     "el": "S",
+     "min": "–",
+     "max": "0.05"
+    },
+    {
+     "el": "P",
+     "min": "–",
+     "max": "0.05"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "400–560 MPa"
+    },
+    {
+     "k": "Yield",
+     "v": "235 MPa min"
+    },
+    {
+     "k": "Hardness",
+     "v": "152–207 HB"
+    },
+    {
+     "k": "Elongation",
+     "v": "18% min"
+    }
+   ],
+   "equivalents": [
+    "BS 070M20 / EN3B",
+    "AISI 1020",
+    "DIN C22",
+    "IS 20C8"
+   ],
+   "condition": "Bright drawn / hot rolled",
+   "machinability": "Good",
+   "stock": "In stock"
+  },
+  {
+   "slug": "ms-black-rounds",
+   "silo": "mild-steel-structural",
+   "sort": 2,
+   "name": "Mild Steel Black Rounds",
+   "grade": "IS 2062",
+   "material": "ms",
+   "forms": [
+    "round"
+   ],
+   "sizeRange": "Ø 12–300 mm hot rolled",
+   "applications": "Forging stock, flanges, base plates, fabrication",
+   "sku": "SST-MSS-02",
+   "chemistry": [
+    {
+     "el": "C",
+     "min": "–",
+     "max": "0.23"
+    },
+    {
+     "el": "Mn",
+     "min": "–",
+     "max": "1.50"
+    },
+    {
+     "el": "Si",
+     "min": "–",
+     "max": "0.40"
+    },
+    {
+     "el": "S",
+     "min": "–",
+     "max": "0.045"
+    },
+    {
+     "el": "P",
+     "min": "–",
+     "max": "0.045"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "410 MPa min"
+    },
+    {
+     "k": "Yield",
+     "v": "250 MPa min"
+    },
+    {
+     "k": "Elongation",
+     "v": "23% min"
+    },
+    {
+     "k": "Bend",
+     "v": "Passes 180°"
+    }
+   ],
+   "equivalents": [
+    "IS 2062 E250",
+    "EN S275JR",
+    "ASTM A36",
+    "JIS SS400"
+   ],
+   "condition": "Hot rolled",
+   "machinability": "Good",
+   "stock": "In stock"
+  },
+  {
+   "slug": "ms-square-bars",
+   "silo": "mild-steel-structural",
+   "sort": 3,
+   "name": "Mild Steel Square Bars",
+   "grade": "IS 2062",
+   "material": "ms",
+   "forms": [
+    "square"
+   ],
+   "sizeRange": "10–100 mm square",
+   "applications": "Gates, grills, machine frames, keys",
+   "sku": "SST-MSS-03",
+   "chemistry": [
+    {
+     "el": "C",
+     "min": "–",
+     "max": "0.23"
+    },
+    {
+     "el": "Mn",
+     "min": "–",
+     "max": "1.50"
+    },
+    {
+     "el": "Si",
+     "min": "–",
+     "max": "0.40"
+    },
+    {
+     "el": "S",
+     "min": "–",
+     "max": "0.045"
+    },
+    {
+     "el": "P",
+     "min": "–",
+     "max": "0.045"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "410 MPa min"
+    },
+    {
+     "k": "Yield",
+     "v": "250 MPa min"
+    },
+    {
+     "k": "Elongation",
+     "v": "23% min"
+    },
+    {
+     "k": "Bend",
+     "v": "Passes 180°"
+    }
+   ],
+   "equivalents": [
+    "IS 2062 E250",
+    "EN S275JR",
+    "ASTM A36",
+    "JIS SS400"
+   ],
+   "condition": "Hot rolled",
+   "machinability": "Good",
+   "stock": "In stock"
+  },
+  {
+   "slug": "ms-flat-bars",
+   "silo": "mild-steel-structural",
+   "sort": 4,
+   "name": "Mild Steel Flat Bars",
+   "grade": "IS 2062",
+   "material": "ms",
+   "forms": [
+    "flat"
+   ],
+   "sizeRange": "20×3 to 200×40 mm",
+   "applications": "Brackets, frames, base strips, conveyors",
+   "sku": "SST-MSS-04",
+   "chemistry": [
+    {
+     "el": "C",
+     "min": "–",
+     "max": "0.23"
+    },
+    {
+     "el": "Mn",
+     "min": "–",
+     "max": "1.50"
+    },
+    {
+     "el": "Si",
+     "min": "–",
+     "max": "0.40"
+    },
+    {
+     "el": "S",
+     "min": "–",
+     "max": "0.045"
+    },
+    {
+     "el": "P",
+     "min": "–",
+     "max": "0.045"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "410 MPa min"
+    },
+    {
+     "k": "Yield",
+     "v": "250 MPa min"
+    },
+    {
+     "k": "Elongation",
+     "v": "23% min"
+    },
+    {
+     "k": "Bend",
+     "v": "Passes 180°"
+    }
+   ],
+   "equivalents": [
+    "IS 2062 E250",
+    "EN S275JR",
+    "ASTM A36",
+    "JIS SS400"
+   ],
+   "condition": "Hot rolled",
+   "machinability": "Good",
+   "stock": "In stock"
+  },
+  {
+   "slug": "ms-hexagonal-bars",
+   "silo": "mild-steel-structural",
+   "sort": 5,
+   "name": "Mild Steel Hexagonal Bars",
+   "grade": "EN3B",
+   "material": "ms",
+   "forms": [
+    "hex"
+   ],
+   "sizeRange": "A/F 8–75 mm",
+   "applications": "Nuts, bolts, unions and fittings",
+   "sku": "SST-MSS-05",
+   "chemistry": [
+    {
+     "el": "C",
+     "min": "–",
+     "max": "0.25"
+    },
+    {
+     "el": "Mn",
+     "min": "–",
+     "max": "1.00"
+    },
+    {
+     "el": "Si",
+     "min": "0.05",
+     "max": "0.35"
+    },
+    {
+     "el": "S",
+     "min": "–",
+     "max": "0.05"
+    },
+    {
+     "el": "P",
+     "min": "–",
+     "max": "0.05"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "400–560 MPa"
+    },
+    {
+     "k": "Yield",
+     "v": "235 MPa min"
+    },
+    {
+     "k": "Hardness",
+     "v": "152–207 HB"
+    },
+    {
+     "k": "Elongation",
+     "v": "18% min"
+    }
+   ],
+   "equivalents": [
+    "BS 070M20 / EN3B",
+    "AISI 1020",
+    "DIN C22",
+    "IS 20C8"
+   ],
+   "condition": "Bright drawn / hot rolled",
+   "machinability": "Good",
+   "stock": "Limited"
+  },
+  {
+   "slug": "ms-plates-sheets",
+   "silo": "mild-steel-structural",
+   "sort": 6,
+   "name": "Mild Steel Plates & Sheets",
+   "grade": "E250",
+   "material": "ms",
+   "forms": [
+    "plate"
+   ],
+   "sizeRange": "0.8–100 mm thick · 1250 / 1500 / 2000 mm wide",
+   "applications": "Fabrication, tanks, base plates, gussets",
+   "sku": "SST-MSS-06",
+   "chemistry": [
+    {
+     "el": "C",
+     "min": "–",
+     "max": "0.23"
+    },
+    {
+     "el": "Mn",
+     "min": "–",
+     "max": "1.50"
+    },
+    {
+     "el": "Si",
+     "min": "–",
+     "max": "0.40"
+    },
+    {
+     "el": "S",
+     "min": "–",
+     "max": "0.045"
+    },
+    {
+     "el": "P",
+     "min": "–",
+     "max": "0.045"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "410 MPa min"
+    },
+    {
+     "k": "Yield",
+     "v": "250 MPa min"
+    },
+    {
+     "k": "Elongation",
+     "v": "23% min"
+    },
+    {
+     "k": "Bend",
+     "v": "Passes 180°"
+    }
+   ],
+   "equivalents": [
+    "IS 2062 E250",
+    "EN S275JR",
+    "ASTM A36",
+    "JIS SS400"
+   ],
+   "condition": "Hot rolled",
+   "machinability": "Good",
+   "stock": "In stock"
+  },
+  {
+   "slug": "chequered-plates",
+   "silo": "mild-steel-structural",
+   "sort": 7,
+   "name": "Chequered Plates",
+   "grade": "IS 3502",
+   "material": "ms",
+   "forms": [
+    "plate"
+   ],
+   "sizeRange": "2.5–10 mm thick · 1250 / 1500 mm wide",
+   "applications": "Floors, stair treads, platforms, trailers",
+   "sku": "SST-MSS-07",
+   "chemistry": [
+    {
+     "el": "C",
+     "min": "–",
+     "max": "0.23"
+    },
+    {
+     "el": "Mn",
+     "min": "–",
+     "max": "1.50"
+    },
+    {
+     "el": "S",
+     "min": "–",
+     "max": "0.045"
+    },
+    {
+     "el": "P",
+     "min": "–",
+     "max": "0.045"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "410 MPa min"
+    },
+    {
+     "k": "Yield",
+     "v": "250 MPa min"
+    },
+    {
+     "k": "Pattern",
+     "v": "Diamond / 4-bar"
+    },
+    {
+     "k": "Elongation",
+     "v": "20% min"
+    }
+   ],
+   "equivalents": [
+    "IS 3502",
+    "EN S235 tread",
+    "ASTM A786"
+   ],
+   "condition": "Hot rolled, raised pattern",
+   "machinability": "Good",
+   "stock": "In stock"
+  },
+  {
+   "slug": "ms-equal-angles",
+   "silo": "mild-steel-structural",
+   "sort": 8,
+   "name": "MS Equal Angles",
+   "grade": "ISA",
+   "material": "ms",
+   "forms": [
+    "angle"
+   ],
+   "sizeRange": "25×25×3 to 200×200×20 mm",
+   "applications": "Frames, trusses, towers, supports",
+   "sku": "SST-MSS-08",
+   "chemistry": [
+    {
+     "el": "C",
+     "min": "–",
+     "max": "0.23"
+    },
+    {
+     "el": "Mn",
+     "min": "–",
+     "max": "1.50"
+    },
+    {
+     "el": "Si",
+     "min": "–",
+     "max": "0.40"
+    },
+    {
+     "el": "S",
+     "min": "–",
+     "max": "0.045"
+    },
+    {
+     "el": "P",
+     "min": "–",
+     "max": "0.045"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "410 MPa min"
+    },
+    {
+     "k": "Yield",
+     "v": "250 MPa min"
+    },
+    {
+     "k": "Elongation",
+     "v": "23% min"
+    },
+    {
+     "k": "Bend",
+     "v": "Passes 180°"
+    }
+   ],
+   "equivalents": [
+    "IS 2062 E250",
+    "EN S275JR",
+    "ASTM A36",
+    "JIS SS400"
+   ],
+   "condition": "Hot rolled",
+   "machinability": "Good",
+   "stock": "In stock"
+  },
+  {
+   "slug": "ms-unequal-angles",
+   "silo": "mild-steel-structural",
+   "sort": 9,
+   "name": "MS Unequal Angles",
+   "grade": "ISA",
+   "material": "ms",
+   "forms": [
+    "angle"
+   ],
+   "sizeRange": "40×25×3 to 150×115×16 mm",
+   "applications": "Lintels, frames, brackets",
+   "sku": "SST-MSS-09",
+   "chemistry": [
+    {
+     "el": "C",
+     "min": "–",
+     "max": "0.23"
+    },
+    {
+     "el": "Mn",
+     "min": "–",
+     "max": "1.50"
+    },
+    {
+     "el": "Si",
+     "min": "–",
+     "max": "0.40"
+    },
+    {
+     "el": "S",
+     "min": "–",
+     "max": "0.045"
+    },
+    {
+     "el": "P",
+     "min": "–",
+     "max": "0.045"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "410 MPa min"
+    },
+    {
+     "k": "Yield",
+     "v": "250 MPa min"
+    },
+    {
+     "k": "Elongation",
+     "v": "23% min"
+    },
+    {
+     "k": "Bend",
+     "v": "Passes 180°"
+    }
+   ],
+   "equivalents": [
+    "IS 2062 E250",
+    "EN S275JR",
+    "ASTM A36",
+    "JIS SS400"
+   ],
+   "condition": "Hot rolled",
+   "machinability": "Good",
+   "stock": "Limited"
+  },
+  {
+   "slug": "ms-channels-ismc",
+   "silo": "mild-steel-structural",
+   "sort": 10,
+   "name": "MS Channels (ISMC)",
+   "grade": "ISMC",
+   "material": "ms",
+   "forms": [
+    "channel"
+   ],
+   "sizeRange": "ISMC 75 to ISMC 400",
+   "applications": "Purlins, frames, trailer chassis, staircases",
+   "sku": "SST-MSS-10",
+   "chemistry": [
+    {
+     "el": "C",
+     "min": "–",
+     "max": "0.23"
+    },
+    {
+     "el": "Mn",
+     "min": "–",
+     "max": "1.50"
+    },
+    {
+     "el": "Si",
+     "min": "–",
+     "max": "0.40"
+    },
+    {
+     "el": "S",
+     "min": "–",
+     "max": "0.045"
+    },
+    {
+     "el": "P",
+     "min": "–",
+     "max": "0.045"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "410 MPa min"
+    },
+    {
+     "k": "Yield",
+     "v": "250 MPa min"
+    },
+    {
+     "k": "Elongation",
+     "v": "23% min"
+    },
+    {
+     "k": "Bend",
+     "v": "Passes 180°"
+    }
+   ],
+   "equivalents": [
+    "IS 2062 E250",
+    "EN S275JR",
+    "ASTM A36",
+    "JIS SS400"
+   ],
+   "condition": "Hot rolled",
+   "machinability": "Good",
+   "stock": "In stock"
+  },
+  {
+   "slug": "ms-beams-ismb",
+   "silo": "mild-steel-structural",
+   "sort": 11,
+   "name": "MS Beams & Joists (ISMB)",
+   "grade": "ISMB",
+   "material": "ms",
+   "forms": [
+    "beam"
+   ],
+   "sizeRange": "ISMB 100 to ISMB 600",
+   "applications": "Columns, crane girders, sheds, mezzanines",
+   "sku": "SST-MSS-11",
+   "chemistry": [
+    {
+     "el": "C",
+     "min": "–",
+     "max": "0.23"
+    },
+    {
+     "el": "Mn",
+     "min": "–",
+     "max": "1.50"
+    },
+    {
+     "el": "Si",
+     "min": "–",
+     "max": "0.40"
+    },
+    {
+     "el": "S",
+     "min": "–",
+     "max": "0.045"
+    },
+    {
+     "el": "P",
+     "min": "–",
+     "max": "0.045"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "410 MPa min"
+    },
+    {
+     "k": "Yield",
+     "v": "250 MPa min"
+    },
+    {
+     "k": "Elongation",
+     "v": "23% min"
+    },
+    {
+     "k": "Bend",
+     "v": "Passes 180°"
+    }
+   ],
+   "equivalents": [
+    "IS 2062 E250",
+    "EN S275JR",
+    "ASTM A36",
+    "JIS SS400"
+   ],
+   "condition": "Hot rolled",
+   "machinability": "Good",
+   "stock": "In stock"
+  },
+  {
+   "slug": "ms-seamless-pipes",
+   "silo": "mild-steel-structural",
+   "sort": 12,
+   "name": "Mild Steel Seamless Pipes",
+   "grade": "A106 B",
+   "material": "ms",
+   "forms": [
+    "tube"
+   ],
+   "sizeRange": "½″ to 12″ NB · Sch 40 / 80 / 160",
+   "applications": "Boiler, hydraulic and process lines",
+   "sku": "SST-MSS-12",
+   "chemistry": [
+    {
+     "el": "C",
+     "min": "–",
+     "max": "0.30"
+    },
+    {
+     "el": "Mn",
+     "min": "0.29",
+     "max": "1.06"
+    },
+    {
+     "el": "Si",
+     "min": "0.10",
+     "max": "–"
+    },
+    {
+     "el": "S",
+     "min": "–",
+     "max": "0.035"
+    },
+    {
+     "el": "P",
+     "min": "–",
+     "max": "0.035"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "415 MPa min"
+    },
+    {
+     "k": "Yield",
+     "v": "240 MPa min"
+    },
+    {
+     "k": "Elongation",
+     "v": "22% min"
+    },
+    {
+     "k": "Test",
+     "v": "Hydro tested"
+    }
+   ],
+   "equivalents": [
+    "ASTM A106 Gr B",
+    "ASTM A53 Gr B",
+    "API 5L Gr B",
+    "DIN St 45.8"
+   ],
+   "condition": "Hot finished seamless",
+   "machinability": "Good",
+   "stock": "Limited"
+  },
+  {
+   "slug": "ms-erw-black-pipes",
+   "silo": "mild-steel-structural",
+   "sort": 13,
+   "name": "MS ERW Black Pipes",
+   "grade": "IS 1239",
+   "material": "ms",
+   "forms": [
+    "tube"
+   ],
+   "sizeRange": "15–300 mm NB · light / medium / heavy",
+   "applications": "Water lines, structures, scaffolding, fencing",
+   "sku": "SST-MSS-13",
+   "chemistry": [
+    {
+     "el": "C",
+     "min": "–",
+     "max": "0.20"
+    },
+    {
+     "el": "Mn",
+     "min": "–",
+     "max": "1.30"
+    },
+    {
+     "el": "S",
+     "min": "–",
+     "max": "0.040"
+    },
+    {
+     "el": "P",
+     "min": "–",
+     "max": "0.040"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "330–450 MPa"
+    },
+    {
+     "k": "Yield",
+     "v": "195 MPa min"
+    },
+    {
+     "k": "Elongation",
+     "v": "20% min"
+    },
+    {
+     "k": "Test",
+     "v": "Hydro tested"
+    }
+   ],
+   "equivalents": [
+    "IS 1239 Part 1",
+    "IS 3589",
+    "ASTM A53 Type E",
+    "BS 1387"
+   ],
+   "condition": "Electric resistance welded, black",
+   "machinability": "Good",
+   "stock": "In stock"
+  },
+  {
+   "slug": "ms-hollow-sections",
+   "silo": "mild-steel-structural",
+   "sort": 14,
+   "name": "MS Square & Rectangular Hollow Sections",
+   "grade": "YSt 310",
+   "material": "ms",
+   "forms": [
+    "rect"
+   ],
+   "sizeRange": "20×20 to 300×300 mm · 1.6–10 mm wall",
+   "applications": "Structures, gates, furniture, roofing",
+   "sku": "SST-MSS-14",
+   "chemistry": [
+    {
+     "el": "C",
+     "min": "–",
+     "max": "0.25"
+    },
+    {
+     "el": "Mn",
+     "min": "–",
+     "max": "1.50"
+    },
+    {
+     "el": "S",
+     "min": "–",
+     "max": "0.045"
+    },
+    {
+     "el": "P",
+     "min": "–",
+     "max": "0.045"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "450 MPa min"
+    },
+    {
+     "k": "Yield",
+     "v": "310 MPa min"
+    },
+    {
+     "k": "Elongation",
+     "v": "15% min"
+    }
+   ],
+   "equivalents": [
+    "IS 4923 YSt 310",
+    "EN 10219 S355",
+    "ASTM A500 Gr B"
+   ],
+   "condition": "Cold formed, welded",
+   "machinability": "Good",
+   "stock": "In stock"
+  },
+  {
+   "slug": "en8-steel-round-bars",
+   "silo": "alloy-engineering-steels",
+   "sort": 1,
+   "name": "EN8 Steel Round Bars (080M40)",
+   "grade": "EN8",
+   "material": "alloy",
+   "forms": [
+    "round",
+    "flat"
+   ],
+   "sizeRange": "Ø 10–400 mm",
+   "applications": "Shafts, axles, studs, bolts, gears",
+   "sku": "SST-AES-01",
+   "chemistry": [
+    {
+     "el": "C",
+     "min": "0.36",
+     "max": "0.44"
+    },
+    {
+     "el": "Si",
+     "min": "0.10",
+     "max": "0.40"
+    },
+    {
+     "el": "Mn",
+     "min": "0.60",
+     "max": "1.00"
+    },
+    {
+     "el": "S",
+     "min": "–",
+     "max": "0.050"
+    },
+    {
+     "el": "P",
+     "min": "–",
+     "max": "0.050"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "700–850 MPa"
+    },
+    {
+     "k": "Yield",
+     "v": "465 MPa min"
+    },
+    {
+     "k": "Hardness",
+     "v": "201–255 HB"
+    },
+    {
+     "k": "Elongation",
+     "v": "16% min"
+    }
+   ],
+   "equivalents": [
+    "BS 080M40",
+    "AISI 1040",
+    "DIN C40 (1.0511)",
+    "JIS S40C",
+    "IS 40C8"
+   ],
+   "condition": "Normalised / R condition",
+   "machinability": "Good",
+   "stock": "In stock"
+  },
+  {
+   "slug": "en8d-carbon-steel-bars",
+   "silo": "alloy-engineering-steels",
+   "sort": 2,
+   "name": "EN8D Carbon Steel Bars",
+   "grade": "EN8D",
+   "material": "alloy",
+   "forms": [
+    "round"
+   ],
+   "sizeRange": "Ø 12–300 mm",
+   "applications": "Induction-hardened shafts, spindles",
+   "sku": "SST-AES-02",
+   "chemistry": [
+    {
+     "el": "C",
+     "min": "0.40",
+     "max": "0.45"
+    },
+    {
+     "el": "Si",
+     "min": "0.10",
+     "max": "0.40"
+    },
+    {
+     "el": "Mn",
+     "min": "0.70",
+     "max": "0.90"
+    },
+    {
+     "el": "S",
+     "min": "–",
+     "max": "0.050"
+    },
+    {
+     "el": "P",
+     "min": "–",
+     "max": "0.050"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "700–850 MPa"
+    },
+    {
+     "k": "Yield",
+     "v": "465 MPa min"
+    },
+    {
+     "k": "Hardness",
+     "v": "201–255 HB"
+    },
+    {
+     "k": "Elongation",
+     "v": "16% min"
+    }
+   ],
+   "equivalents": [
+    "BS 080A42",
+    "AISI 1042",
+    "DIN C45 (approx.)",
+    "IS 40C8"
+   ],
+   "condition": "Normalised",
+   "machinability": "Good",
+   "stock": "In stock"
+  },
+  {
+   "slug": "en9-carbon-steel-bars",
+   "silo": "alloy-engineering-steels",
+   "sort": 3,
+   "name": "EN9 Carbon Steel Bars (070M55)",
+   "grade": "EN9",
+   "material": "alloy",
+   "forms": [
+    "round",
+    "flat"
+   ],
+   "sizeRange": "Ø 16–250 mm",
+   "applications": "Sprockets, cams, rolls, wear plates",
+   "sku": "SST-AES-03",
+   "chemistry": [
+    {
+     "el": "C",
+     "min": "0.50",
+     "max": "0.60"
+    },
+    {
+     "el": "Si",
+     "min": "0.05",
+     "max": "0.35"
+    },
+    {
+     "el": "Mn",
+     "min": "0.50",
+     "max": "0.90"
+    },
+    {
+     "el": "S",
+     "min": "–",
+     "max": "0.050"
+    },
+    {
+     "el": "P",
+     "min": "–",
+     "max": "0.050"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "700–850 MPa"
+    },
+    {
+     "k": "Yield",
+     "v": "430 MPa min"
+    },
+    {
+     "k": "Hardness",
+     "v": "201–255 HB"
+    },
+    {
+     "k": "Elongation",
+     "v": "14% min"
+    }
+   ],
+   "equivalents": [
+    "BS 070M55",
+    "AISI 1055",
+    "DIN C55 (1.0535)",
+    "JIS S55C",
+    "IS 55C8"
+   ],
+   "condition": "Normalised / hardened & tempered",
+   "machinability": "Fair",
+   "stock": "Limited"
+  },
+  {
+   "slug": "en19-alloy-steel-rounds",
+   "silo": "alloy-engineering-steels",
+   "sort": 4,
+   "name": "EN19 Alloy Steel Rounds (708M40)",
+   "grade": "EN19",
+   "material": "alloy",
+   "forms": [
+    "round"
+   ],
+   "sizeRange": "Ø 16–350 mm",
+   "applications": "Crankshafts, high-tensile bolts, gears",
+   "sku": "SST-AES-04",
+   "chemistry": [
+    {
+     "el": "C",
+     "min": "0.36",
+     "max": "0.44"
+    },
+    {
+     "el": "Si",
+     "min": "0.10",
+     "max": "0.40"
+    },
+    {
+     "el": "Mn",
+     "min": "0.70",
+     "max": "1.00"
+    },
+    {
+     "el": "Cr",
+     "min": "0.90",
+     "max": "1.20"
+    },
+    {
+     "el": "Mo",
+     "min": "0.25",
+     "max": "0.35"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "850–1000 MPa"
+    },
+    {
+     "k": "Yield",
+     "v": "680 MPa min"
+    },
+    {
+     "k": "Hardness",
+     "v": "248–302 HB"
+    },
+    {
+     "k": "Elongation",
+     "v": "13% min"
+    }
+   ],
+   "equivalents": [
+    "BS 708M40 / 709M40",
+    "AISI 4140",
+    "DIN 42CrMo4 (1.7225)",
+    "JIS SCM440",
+    "IS 40Cr1Mo28"
+   ],
+   "condition": "Hardened & tempered (T)",
+   "machinability": "Fair",
+   "stock": "In stock"
+  },
+  {
+   "slug": "en24-chrome-moly-steel-bars",
+   "silo": "alloy-engineering-steels",
+   "sort": 5,
+   "name": "EN24 Chrome Moly Steel Bars (817M40)",
+   "grade": "EN24",
+   "material": "alloy",
+   "forms": [
+    "round",
+    "flat"
+   ],
+   "sizeRange": "Ø 16–350 mm",
+   "applications": "Heavy-duty shafts, gears, axles, connecting rods",
+   "sku": "SST-AES-05",
+   "chemistry": [
+    {
+     "el": "C",
+     "min": "0.36",
+     "max": "0.44"
+    },
+    {
+     "el": "Si",
+     "min": "0.10",
+     "max": "0.40"
+    },
+    {
+     "el": "Mn",
+     "min": "0.45",
+     "max": "0.70"
+    },
+    {
+     "el": "Cr",
+     "min": "1.00",
+     "max": "1.40"
+    },
+    {
+     "el": "Ni",
+     "min": "1.30",
+     "max": "1.70"
+    },
+    {
+     "el": "Mo",
+     "min": "0.20",
+     "max": "0.35"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "850–1000 MPa"
+    },
+    {
+     "k": "Yield",
+     "v": "650 MPa min"
+    },
+    {
+     "k": "Hardness",
+     "v": "248–302 HB"
+    },
+    {
+     "k": "Elongation",
+     "v": "13% min"
+    }
+   ],
+   "equivalents": [
+    "BS 817M40",
+    "AISI 4340",
+    "DIN 34CrNiMo6 (1.6582)",
+    "JIS SNCM439",
+    "IS 40Ni2Cr1Mo28"
+   ],
+   "condition": "Hardened & tempered (T)",
+   "machinability": "Fair",
+   "stock": "In stock"
+  },
+  {
+   "slug": "en31-bearing-steel-rounds",
+   "silo": "alloy-engineering-steels",
+   "sort": 6,
+   "name": "EN31 Bearing Steel Rounds",
+   "grade": "EN31",
+   "material": "alloy",
+   "forms": [
+    "round"
+   ],
+   "sizeRange": "Ø 10–250 mm",
+   "applications": "Bearings, rollers, punches, gauges",
+   "sku": "SST-AES-06",
+   "chemistry": [
+    {
+     "el": "C",
+     "min": "0.90",
+     "max": "1.20"
+    },
+    {
+     "el": "Si",
+     "min": "0.10",
+     "max": "0.35"
+    },
+    {
+     "el": "Mn",
+     "min": "0.30",
+     "max": "0.75"
+    },
+    {
+     "el": "Cr",
+     "min": "1.00",
+     "max": "1.60"
+    },
+    {
+     "el": "S",
+     "min": "–",
+     "max": "0.040"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Annealed",
+     "v": "229 HB max"
+    },
+    {
+     "k": "Hardened",
+     "v": "60–63 HRC"
+    },
+    {
+     "k": "Tensile (ann.)",
+     "v": "750 MPa"
+    },
+    {
+     "k": "Use",
+     "v": "Through-hardening"
+    }
+   ],
+   "equivalents": [
+    "BS 535A99",
+    "AISI 52100",
+    "DIN 100Cr6 (1.3505)",
+    "JIS SUJ2",
+    "IS 103Cr1"
+   ],
+   "condition": "Annealed",
+   "machinability": "Fair (annealed)",
+   "stock": "In stock"
+  },
+  {
+   "slug": "en353-case-hardening-steel",
+   "silo": "alloy-engineering-steels",
+   "sort": 7,
+   "name": "EN353 Alloy Case Hardening Steel",
+   "grade": "EN353",
+   "material": "alloy",
+   "forms": [
+    "round"
+   ],
+   "sizeRange": "Ø 16–250 mm",
+   "applications": "Gears, pinions, camshafts",
+   "sku": "SST-AES-07",
+   "chemistry": [
+    {
+     "el": "C",
+     "min": "0.10",
+     "max": "0.20"
+    },
+    {
+     "el": "Si",
+     "min": "0.10",
+     "max": "0.35"
+    },
+    {
+     "el": "Mn",
+     "min": "0.60",
+     "max": "1.00"
+    },
+    {
+     "el": "Cr",
+     "min": "0.75",
+     "max": "1.25"
+    },
+    {
+     "el": "Ni",
+     "min": "1.00",
+     "max": "1.50"
+    },
+    {
+     "el": "Mo",
+     "min": "0.08",
+     "max": "0.15"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Case hardness",
+     "v": "58–62 HRC"
+    },
+    {
+     "k": "Core tensile",
+     "v": "980 MPa min"
+    },
+    {
+     "k": "Annealed",
+     "v": "207 HB max"
+    },
+    {
+     "k": "Elongation",
+     "v": "10% min"
+    }
+   ],
+   "equivalents": [
+    "BS 815M17",
+    "IS 15Ni4Cr1 (approx.)"
+   ],
+   "condition": "Annealed, for case carburising",
+   "machinability": "Good",
+   "stock": "In stock"
+  },
+  {
+   "slug": "en1a-free-cutting-steel",
+   "silo": "alloy-engineering-steels",
+   "sort": 8,
+   "name": "EN1A Free Cutting Steel Bars",
+   "grade": "EN1A",
+   "material": "alloy",
+   "forms": [
+    "round",
+    "hex"
+   ],
+   "sizeRange": "Ø 3–100 mm · hex 6–50 A/F",
+   "applications": "CNC turned parts, nipples, inserts",
+   "sku": "SST-AES-08",
+   "chemistry": [
+    {
+     "el": "C",
+     "min": "0.07",
+     "max": "0.15"
+    },
+    {
+     "el": "Mn",
+     "min": "0.80",
+     "max": "1.20"
+    },
+    {
+     "el": "S",
+     "min": "0.20",
+     "max": "0.30"
+    },
+    {
+     "el": "P",
+     "min": "–",
+     "max": "0.070"
+    },
+    {
+     "el": "Si",
+     "min": "–",
+     "max": "0.10"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "360–520 MPa"
+    },
+    {
+     "k": "Yield",
+     "v": "215 MPa min"
+    },
+    {
+     "k": "Hardness",
+     "v": "110–150 HB"
+    },
+    {
+     "k": "Elongation",
+     "v": "22% min"
+    }
+   ],
+   "equivalents": [
+    "BS 230M07",
+    "AISI 1215",
+    "DIN 9SMn28 (1.0715)",
+    "JIS SUM22"
+   ],
+   "condition": "Bright drawn",
+   "machinability": "Excellent",
+   "stock": "In stock"
+  },
+  {
+   "slug": "en1a-leadened-steel",
+   "silo": "alloy-engineering-steels",
+   "sort": 9,
+   "name": "EN1A Leadened Free Cutting Steel",
+   "grade": "EN1A Pb",
+   "material": "alloy",
+   "forms": [
+    "round",
+    "hex"
+   ],
+   "sizeRange": "Ø 3–80 mm",
+   "applications": "High-speed autolathe components",
+   "sku": "SST-AES-09",
+   "chemistry": [
+    {
+     "el": "C",
+     "min": "0.07",
+     "max": "0.15"
+    },
+    {
+     "el": "Mn",
+     "min": "0.80",
+     "max": "1.20"
+    },
+    {
+     "el": "S",
+     "min": "0.20",
+     "max": "0.30"
+    },
+    {
+     "el": "Pb",
+     "min": "0.15",
+     "max": "0.35"
+    },
+    {
+     "el": "P",
+     "min": "–",
+     "max": "0.070"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "360–520 MPa"
+    },
+    {
+     "k": "Yield",
+     "v": "215 MPa min"
+    },
+    {
+     "k": "Hardness",
+     "v": "110–150 HB"
+    },
+    {
+     "k": "Machinability",
+     "v": "170% of B1112"
+    }
+   ],
+   "equivalents": [
+    "BS 230M07Pb",
+    "AISI 12L14",
+    "DIN 11SMnPb30 (1.0718)",
+    "JIS SUM24L"
+   ],
+   "condition": "Bright drawn, leaded",
+   "machinability": "Excellent",
+   "stock": "Limited"
+  },
+  {
+   "slug": "sae-1018-carbon-steel",
+   "silo": "alloy-engineering-steels",
+   "sort": 10,
+   "name": "SAE 1018 Carbon Steel Bars",
+   "grade": "1018",
+   "material": "alloy",
+   "forms": [
+    "round",
+    "flat"
+   ],
+   "sizeRange": "Ø 6–150 mm",
+   "applications": "Pins, bushes, carburised parts",
+   "sku": "SST-AES-10",
+   "chemistry": [
+    {
+     "el": "C",
+     "min": "0.15",
+     "max": "0.20"
+    },
+    {
+     "el": "Mn",
+     "min": "0.60",
+     "max": "0.90"
+    },
+    {
+     "el": "S",
+     "min": "–",
+     "max": "0.050"
+    },
+    {
+     "el": "P",
+     "min": "–",
+     "max": "0.040"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "440 MPa (cold drawn)"
+    },
+    {
+     "k": "Yield",
+     "v": "370 MPa"
+    },
+    {
+     "k": "Hardness",
+     "v": "126 HB"
+    },
+    {
+     "k": "Elongation",
+     "v": "15%"
+    }
+   ],
+   "equivalents": [
+    "AISI/SAE 1018",
+    "BS 080A15",
+    "DIN C15 (approx.)"
+   ],
+   "condition": "Cold drawn",
+   "machinability": "Good",
+   "stock": "In stock"
+  },
+  {
+   "slug": "sae-1045-steel-bars",
+   "silo": "alloy-engineering-steels",
+   "sort": 11,
+   "name": "SAE 1045 Forged & Rolled Bars",
+   "grade": "1045",
+   "material": "alloy",
+   "forms": [
+    "round",
+    "flat"
+   ],
+   "sizeRange": "Ø 20–400 mm",
+   "applications": "Shafts, bolts, gears, couplings",
+   "sku": "SST-AES-11",
+   "chemistry": [
+    {
+     "el": "C",
+     "min": "0.43",
+     "max": "0.50"
+    },
+    {
+     "el": "Mn",
+     "min": "0.60",
+     "max": "0.90"
+    },
+    {
+     "el": "S",
+     "min": "–",
+     "max": "0.050"
+    },
+    {
+     "el": "P",
+     "min": "–",
+     "max": "0.040"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "565 MPa (hot rolled)"
+    },
+    {
+     "k": "Yield",
+     "v": "310 MPa"
+    },
+    {
+     "k": "Hardness",
+     "v": "163 HB"
+    },
+    {
+     "k": "Elongation",
+     "v": "16%"
+    }
+   ],
+   "equivalents": [
+    "AISI/SAE 1045",
+    "BS 080M46",
+    "DIN C45 (1.0503)",
+    "JIS S45C",
+    "IS 45C8"
+   ],
+   "condition": "Forged / hot rolled",
+   "machinability": "Good",
+   "stock": "In stock"
+  },
+  {
+   "slug": "8620-alloy-steel",
+   "silo": "alloy-engineering-steels",
+   "sort": 12,
+   "name": "20NiCrMo2 / SAE 8620 Alloy Steel",
+   "grade": "8620",
+   "material": "alloy",
+   "forms": [
+    "round"
+   ],
+   "sizeRange": "Ø 20–250 mm",
+   "applications": "Gears, pinions, ring gears",
+   "sku": "SST-AES-12",
+   "chemistry": [
+    {
+     "el": "C",
+     "min": "0.18",
+     "max": "0.23"
+    },
+    {
+     "el": "Si",
+     "min": "0.15",
+     "max": "0.35"
+    },
+    {
+     "el": "Mn",
+     "min": "0.70",
+     "max": "0.90"
+    },
+    {
+     "el": "Ni",
+     "min": "0.40",
+     "max": "0.70"
+    },
+    {
+     "el": "Cr",
+     "min": "0.40",
+     "max": "0.60"
+    },
+    {
+     "el": "Mo",
+     "min": "0.15",
+     "max": "0.25"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Annealed tensile",
+     "v": "530 MPa"
+    },
+    {
+     "k": "Annealed hardness",
+     "v": "149 HB"
+    },
+    {
+     "k": "Case hardness",
+     "v": "58–62 HRC"
+    },
+    {
+     "k": "Elongation",
+     "v": "31%"
+    }
+   ],
+   "equivalents": [
+    "AISI/SAE 8620",
+    "DIN 21NiCrMo2 (1.6523)",
+    "BS 805M20",
+    "JIS SNCM220",
+    "IS 20NiCrMo2"
+   ],
+   "condition": "Annealed, for carburising",
+   "machinability": "Good",
+   "stock": "Limited"
+  },
+  {
+   "slug": "42crmo4-high-tensile-steel",
+   "silo": "alloy-engineering-steels",
+   "sort": 13,
+   "name": "42CrMo4 High Tensile Steel Bars",
+   "grade": "42CrMo4",
+   "material": "alloy",
+   "forms": [
+    "round"
+   ],
+   "sizeRange": "Ø 20–400 mm",
+   "applications": "Hydraulic rods, spindles, heavy bolts",
+   "sku": "SST-AES-13",
+   "chemistry": [
+    {
+     "el": "C",
+     "min": "0.38",
+     "max": "0.45"
+    },
+    {
+     "el": "Si",
+     "min": "–",
+     "max": "0.40"
+    },
+    {
+     "el": "Mn",
+     "min": "0.60",
+     "max": "0.90"
+    },
+    {
+     "el": "Cr",
+     "min": "0.90",
+     "max": "1.20"
+    },
+    {
+     "el": "Mo",
+     "min": "0.15",
+     "max": "0.30"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "900–1100 MPa (QT)"
+    },
+    {
+     "k": "Yield",
+     "v": "650 MPa min"
+    },
+    {
+     "k": "Hardness",
+     "v": "265–325 HB"
+    },
+    {
+     "k": "Elongation",
+     "v": "12% min"
+    }
+   ],
+   "equivalents": [
+    "DIN 42CrMo4 (1.7225)",
+    "AISI 4140",
+    "BS 708M40 (EN19)",
+    "JIS SCM440",
+    "IS 40Cr4Mo3"
+   ],
+   "condition": "Quenched & tempered",
+   "machinability": "Fair",
+   "stock": "In stock"
+  },
+  {
+   "slug": "c45-carbon-steel-rounds",
+   "silo": "alloy-engineering-steels",
+   "sort": 14,
+   "name": "C45 Carbon Steel Round Bars",
+   "grade": "C45",
+   "material": "alloy",
+   "forms": [
+    "round",
+    "flat"
+   ],
+   "sizeRange": "Ø 12–400 mm",
+   "applications": "Machine parts, axles, pins",
+   "sku": "SST-AES-14",
+   "chemistry": [
+    {
+     "el": "C",
+     "min": "0.42",
+     "max": "0.50"
+    },
+    {
+     "el": "Si",
+     "min": "–",
+     "max": "0.40"
+    },
+    {
+     "el": "Mn",
+     "min": "0.50",
+     "max": "0.80"
+    },
+    {
+     "el": "S",
+     "min": "–",
+     "max": "0.045"
+    },
+    {
+     "el": "P",
+     "min": "–",
+     "max": "0.045"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "630–780 MPa"
+    },
+    {
+     "k": "Yield",
+     "v": "340 MPa min"
+    },
+    {
+     "k": "Hardness",
+     "v": "180–229 HB"
+    },
+    {
+     "k": "Elongation",
+     "v": "14% min"
+    }
+   ],
+   "equivalents": [
+    "DIN C45 (1.0503)",
+    "AISI 1045",
+    "JIS S45C",
+    "BS 080M46",
+    "IS 45C8"
+   ],
+   "condition": "Normalised",
+   "machinability": "Good",
+   "stock": "In stock"
+  },
+  {
+   "slug": "hchcr-d2-tool-steel",
+   "silo": "alloy-engineering-steels",
+   "sort": 15,
+   "name": "HCHCR D2 Cold Work Tool Steel",
+   "grade": "D2",
+   "material": "alloy",
+   "forms": [
+    "round",
+    "flat"
+   ],
+   "sizeRange": "Ø 10–300 mm · flats to 500 mm",
+   "applications": "Blanking dies, shear blades, punches",
+   "sku": "SST-AES-15",
+   "chemistry": [
+    {
+     "el": "C",
+     "min": "1.40",
+     "max": "1.60"
+    },
+    {
+     "el": "Si",
+     "min": "–",
+     "max": "0.60"
+    },
+    {
+     "el": "Mn",
+     "min": "–",
+     "max": "0.60"
+    },
+    {
+     "el": "Cr",
+     "min": "11.0",
+     "max": "13.0"
+    },
+    {
+     "el": "Mo",
+     "min": "0.70",
+     "max": "1.20"
+    },
+    {
+     "el": "V",
+     "min": "0.80",
+     "max": "1.10"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Annealed",
+     "v": "255 HB max"
+    },
+    {
+     "k": "Hardened",
+     "v": "58–62 HRC"
+    },
+    {
+     "k": "Use",
+     "v": "Blanking dies, shear blades"
+    },
+    {
+     "k": "Wear resistance",
+     "v": "Very high"
+    }
+   ],
+   "equivalents": [
+    "AISI D2",
+    "DIN 1.2379 (X153CrMoV12)",
+    "JIS SKD11",
+    "IS T160Cr12"
+   ],
+   "condition": "Annealed",
+   "machinability": "Difficult",
+   "stock": "In stock"
+  },
+  {
+   "slug": "hchcr-d3-tool-steel",
+   "silo": "alloy-engineering-steels",
+   "sort": 16,
+   "name": "HCHCR D3 Tool Steel Bars",
+   "grade": "D3",
+   "material": "alloy",
+   "forms": [
+    "round",
+    "flat"
+   ],
+   "sizeRange": "Ø 10–250 mm",
+   "applications": "Drawing dies, forming tools",
+   "sku": "SST-AES-16",
+   "chemistry": [
+    {
+     "el": "C",
+     "min": "1.90",
+     "max": "2.20"
+    },
+    {
+     "el": "Si",
+     "min": "–",
+     "max": "0.60"
+    },
+    {
+     "el": "Mn",
+     "min": "–",
+     "max": "0.60"
+    },
+    {
+     "el": "Cr",
+     "min": "11.0",
+     "max": "13.5"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Annealed",
+     "v": "255 HB max"
+    },
+    {
+     "k": "Hardened",
+     "v": "58–64 HRC"
+    },
+    {
+     "k": "Use",
+     "v": "Drawing and forming dies"
+    },
+    {
+     "k": "Wear resistance",
+     "v": "Very high"
+    }
+   ],
+   "equivalents": [
+    "AISI D3",
+    "DIN 1.2080 (X210Cr12)",
+    "JIS SKD1",
+    "BS BD3"
+   ],
+   "condition": "Annealed",
+   "machinability": "Difficult",
+   "stock": "Limited"
+  },
+  {
+   "slug": "h13-hot-work-tool-steel",
+   "silo": "alloy-engineering-steels",
+   "sort": 17,
+   "name": "H13 Hot Work Tool Steel Bars",
+   "grade": "H13",
+   "material": "alloy",
+   "forms": [
+    "round",
+    "flat"
+   ],
+   "sizeRange": "Ø 20–400 mm",
+   "applications": "Die casting dies, extrusion tooling",
+   "sku": "SST-AES-17",
+   "chemistry": [
+    {
+     "el": "C",
+     "min": "0.32",
+     "max": "0.45"
+    },
+    {
+     "el": "Si",
+     "min": "0.80",
+     "max": "1.20"
+    },
+    {
+     "el": "Cr",
+     "min": "4.75",
+     "max": "5.50"
+    },
+    {
+     "el": "Mo",
+     "min": "1.10",
+     "max": "1.75"
+    },
+    {
+     "el": "V",
+     "min": "0.80",
+     "max": "1.20"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Annealed",
+     "v": "235 HB max"
+    },
+    {
+     "k": "Hardened",
+     "v": "44–52 HRC"
+    },
+    {
+     "k": "Use",
+     "v": "Die casting, extrusion, forging dies"
+    },
+    {
+     "k": "Max service",
+     "v": "540 °C"
+    }
+   ],
+   "equivalents": [
+    "AISI H13",
+    "DIN 1.2344 (X40CrMoV5-1)",
+    "JIS SKD61",
+    "BS BH13"
+   ],
+   "condition": "Annealed",
+   "machinability": "Fair",
+   "stock": "In stock"
+  },
+  {
+   "slug": "db6-2714-die-blocks",
+   "silo": "alloy-engineering-steels",
+   "sort": 18,
+   "name": "DB6 / 2714 Die Blocks",
+   "grade": "DB6",
+   "material": "alloy",
+   "forms": [
+    "flat"
+   ],
+   "sizeRange": "Blocks to 600×400 mm",
+   "applications": "Hammer and press forging dies",
+   "sku": "SST-AES-18",
+   "chemistry": [
+    {
+     "el": "C",
+     "min": "0.50",
+     "max": "0.60"
+    },
+    {
+     "el": "Mn",
+     "min": "0.65",
+     "max": "0.95"
+    },
+    {
+     "el": "Cr",
+     "min": "1.00",
+     "max": "1.20"
+    },
+    {
+     "el": "Ni",
+     "min": "1.50",
+     "max": "1.80"
+    },
+    {
+     "el": "Mo",
+     "min": "0.45",
+     "max": "0.55"
+    },
+    {
+     "el": "V",
+     "min": "0.07",
+     "max": "0.12"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Supplied",
+     "v": "370–410 HB pre-hardened"
+    },
+    {
+     "k": "Hardened",
+     "v": "34–42 HRC"
+    },
+    {
+     "k": "Use",
+     "v": "Hammer and press forging dies"
+    },
+    {
+     "k": "Toughness",
+     "v": "High"
+    }
+   ],
+   "equivalents": [
+    "DIN 1.2714 (55NiCrMoV7)",
+    "AISI L6 (approx.)",
+    "JIS SKT4"
+   ],
+   "condition": "Pre-hardened blocks",
+   "machinability": "Fair",
+   "stock": "On order"
+  },
+  {
+   "slug": "hss-m2-rods",
+   "silo": "alloy-engineering-steels",
+   "sort": 19,
+   "name": "High Speed Steel (HSS) M2 Rods",
+   "grade": "M2",
+   "material": "hss",
+   "forms": [
+    "round",
+    "square"
+   ],
+   "sizeRange": "Ø 3–100 mm ground",
+   "applications": "Form tools, punches, cutters",
+   "sku": "SST-AES-19",
+   "chemistry": [
+    {
+     "el": "C",
+     "min": "0.78",
+     "max": "1.05"
+    },
+    {
+     "el": "Cr",
+     "min": "3.75",
+     "max": "4.50"
+    },
+    {
+     "el": "Mo",
+     "min": "4.50",
+     "max": "5.50"
+    },
+    {
+     "el": "W",
+     "min": "5.50",
+     "max": "6.75"
+    },
+    {
+     "el": "V",
+     "min": "1.75",
+     "max": "2.20"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Annealed",
+     "v": "255 HB max"
+    },
+    {
+     "k": "Hardened",
+     "v": "62–65 HRC"
+    },
+    {
+     "k": "Red hardness",
+     "v": "High"
+    },
+    {
+     "k": "Use",
+     "v": "Drills, taps, form tools"
+    }
+   ],
+   "equivalents": [
+    "AISI M2",
+    "DIN 1.3343 (HS6-5-2)",
+    "JIS SKH51",
+    "BS BM2"
+   ],
+   "condition": "Annealed, ground",
+   "machinability": "Difficult",
+   "stock": "In stock"
+  },
+  {
+   "slug": "silver-steel-st52-bars",
+   "silo": "alloy-engineering-steels",
+   "sort": 20,
+   "name": "Silver Steel / ST52 Shafting Bars",
+   "grade": "ST52",
+   "material": "alloy",
+   "forms": [
+    "round"
+   ],
+   "sizeRange": "Ø 3–100 mm · h9 ground",
+   "applications": "Guide shafts, pins, precision spindles",
+   "sku": "SST-AES-20",
+   "chemistry": [
+    {
+     "el": "C",
+     "min": "–",
+     "max": "0.22"
+    },
+    {
+     "el": "Si",
+     "min": "–",
+     "max": "0.55"
+    },
+    {
+     "el": "Mn",
+     "min": "–",
+     "max": "1.60"
+    },
+    {
+     "el": "S",
+     "min": "–",
+     "max": "0.035"
+    },
+    {
+     "el": "P",
+     "min": "–",
+     "max": "0.035"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "490–630 MPa"
+    },
+    {
+     "k": "Yield",
+     "v": "355 MPa min"
+    },
+    {
+     "k": "Elongation",
+     "v": "22% min"
+    },
+    {
+     "k": "Tolerance",
+     "v": "h9 ground (silver steel)"
+    }
+   ],
+   "equivalents": [
+    "DIN St52-3 (1.0570)",
+    "EN S355J2",
+    "IS 2062 E350",
+    "BS 1407 silver steel"
+   ],
+   "condition": "Bright / ground",
+   "machinability": "Good",
+   "stock": "In stock"
+  },
+  {
+   "slug": "ss-304-round-bars",
+   "silo": "stainless-steel",
+   "sort": 1,
+   "name": "SS 304 Round Bars",
+   "grade": "SS 304",
+   "material": "ss300",
+   "forms": [
+    "round"
+   ],
+   "sizeRange": "Ø 3–300 mm bright / black",
+   "applications": "Food, pharma and dairy equipment",
+   "sku": "SST-SS-01",
+   "chemistry": [
+    {
+     "el": "C",
+     "min": "–",
+     "max": "0.08"
+    },
+    {
+     "el": "Mn",
+     "min": "–",
+     "max": "2.00"
+    },
+    {
+     "el": "Si",
+     "min": "–",
+     "max": "0.75"
+    },
+    {
+     "el": "Cr",
+     "min": "18.0",
+     "max": "20.0"
+    },
+    {
+     "el": "Ni",
+     "min": "8.0",
+     "max": "10.5"
+    },
+    {
+     "el": "S",
+     "min": "–",
+     "max": "0.030"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "515 MPa min"
+    },
+    {
+     "k": "Yield",
+     "v": "205 MPa min"
+    },
+    {
+     "k": "Hardness",
+     "v": "201 HB max"
+    },
+    {
+     "k": "Elongation",
+     "v": "40% min"
+    }
+   ],
+   "equivalents": [
+    "AISI 304 (UNS S30400)",
+    "DIN 1.4301",
+    "JIS SUS304",
+    "IS X04Cr19Ni9"
+   ],
+   "condition": "Solution annealed",
+   "machinability": "Fair",
+   "stock": "In stock"
+  },
+  {
+   "slug": "ss-304-flat-square-bars",
+   "silo": "stainless-steel",
+   "sort": 2,
+   "name": "SS 304 Flat & Square Bars",
+   "grade": "SS 304",
+   "material": "ss300",
+   "forms": [
+    "flat",
+    "square"
+   ],
+   "sizeRange": "Flats 12×3 to 150×25 · squares 6–75 mm",
+   "applications": "Frames, trims, fasteners",
+   "sku": "SST-SS-02",
+   "chemistry": [
+    {
+     "el": "C",
+     "min": "–",
+     "max": "0.08"
+    },
+    {
+     "el": "Mn",
+     "min": "–",
+     "max": "2.00"
+    },
+    {
+     "el": "Si",
+     "min": "–",
+     "max": "0.75"
+    },
+    {
+     "el": "Cr",
+     "min": "18.0",
+     "max": "20.0"
+    },
+    {
+     "el": "Ni",
+     "min": "8.0",
+     "max": "10.5"
+    },
+    {
+     "el": "S",
+     "min": "–",
+     "max": "0.030"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "515 MPa min"
+    },
+    {
+     "k": "Yield",
+     "v": "205 MPa min"
+    },
+    {
+     "k": "Hardness",
+     "v": "201 HB max"
+    },
+    {
+     "k": "Elongation",
+     "v": "40% min"
+    }
+   ],
+   "equivalents": [
+    "AISI 304 (UNS S30400)",
+    "DIN 1.4301",
+    "JIS SUS304",
+    "IS X04Cr19Ni9"
+   ],
+   "condition": "Solution annealed",
+   "machinability": "Fair",
+   "stock": "In stock"
+  },
+  {
+   "slug": "ss-304-sheets-plates",
+   "silo": "stainless-steel",
+   "sort": 3,
+   "name": "SS 304 Sheets & Plates",
+   "grade": "SS 304",
+   "material": "ss300",
+   "forms": [
+    "plate"
+   ],
+   "sizeRange": "0.5–50 mm thick · 2B / BA / No.4 / HR",
+   "applications": "Tanks, hoppers, kitchen equipment",
+   "sku": "SST-SS-03",
+   "chemistry": [
+    {
+     "el": "C",
+     "min": "–",
+     "max": "0.08"
+    },
+    {
+     "el": "Mn",
+     "min": "–",
+     "max": "2.00"
+    },
+    {
+     "el": "Si",
+     "min": "–",
+     "max": "0.75"
+    },
+    {
+     "el": "Cr",
+     "min": "18.0",
+     "max": "20.0"
+    },
+    {
+     "el": "Ni",
+     "min": "8.0",
+     "max": "10.5"
+    },
+    {
+     "el": "S",
+     "min": "–",
+     "max": "0.030"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "515 MPa min"
+    },
+    {
+     "k": "Yield",
+     "v": "205 MPa min"
+    },
+    {
+     "k": "Hardness",
+     "v": "201 HB max"
+    },
+    {
+     "k": "Elongation",
+     "v": "40% min"
+    }
+   ],
+   "equivalents": [
+    "AISI 304 (UNS S30400)",
+    "DIN 1.4301",
+    "JIS SUS304",
+    "IS X04Cr19Ni9"
+   ],
+   "condition": "Solution annealed",
+   "machinability": "Fair",
+   "stock": "In stock"
+  },
+  {
+   "slug": "ss-304-pipes",
+   "silo": "stainless-steel",
+   "sort": 4,
+   "name": "SS 304 Seamless & Welded Pipes",
+   "grade": "SS 304",
+   "material": "ss300",
+   "forms": [
+    "tube",
+    "rect"
+   ],
+   "sizeRange": "½″ to 8″ NB · Sch 10 / 40 / 80",
+   "applications": "Process lines, railings, dairy",
+   "sku": "SST-SS-04",
+   "chemistry": [
+    {
+     "el": "C",
+     "min": "–",
+     "max": "0.08"
+    },
+    {
+     "el": "Mn",
+     "min": "–",
+     "max": "2.00"
+    },
+    {
+     "el": "Si",
+     "min": "–",
+     "max": "0.75"
+    },
+    {
+     "el": "Cr",
+     "min": "18.0",
+     "max": "20.0"
+    },
+    {
+     "el": "Ni",
+     "min": "8.0",
+     "max": "10.5"
+    },
+    {
+     "el": "S",
+     "min": "–",
+     "max": "0.030"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "515 MPa min"
+    },
+    {
+     "k": "Yield",
+     "v": "205 MPa min"
+    },
+    {
+     "k": "Hardness",
+     "v": "201 HB max"
+    },
+    {
+     "k": "Elongation",
+     "v": "40% min"
+    }
+   ],
+   "equivalents": [
+    "AISI 304 (UNS S30400)",
+    "DIN 1.4301",
+    "JIS SUS304",
+    "IS X04Cr19Ni9"
+   ],
+   "condition": "Solution annealed",
+   "machinability": "Fair",
+   "stock": "In stock"
+  },
+  {
+   "slug": "ss-316-round-bars",
+   "silo": "stainless-steel",
+   "sort": 5,
+   "name": "SS 316 / 316L Round Bars",
+   "grade": "SS 316",
+   "material": "ss300",
+   "forms": [
+    "round"
+   ],
+   "sizeRange": "Ø 4–250 mm",
+   "applications": "Marine, pump shafts, chemical plant",
+   "sku": "SST-SS-05",
+   "chemistry": [
+    {
+     "el": "C",
+     "min": "–",
+     "max": "0.08 (L: 0.03)"
+    },
+    {
+     "el": "Mn",
+     "min": "–",
+     "max": "2.00"
+    },
+    {
+     "el": "Si",
+     "min": "–",
+     "max": "0.75"
+    },
+    {
+     "el": "Cr",
+     "min": "16.0",
+     "max": "18.0"
+    },
+    {
+     "el": "Ni",
+     "min": "10.0",
+     "max": "14.0"
+    },
+    {
+     "el": "Mo",
+     "min": "2.0",
+     "max": "3.0"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "515 MPa min"
+    },
+    {
+     "k": "Yield",
+     "v": "205 MPa min"
+    },
+    {
+     "k": "Hardness",
+     "v": "217 HB max"
+    },
+    {
+     "k": "Elongation",
+     "v": "40% min"
+    }
+   ],
+   "equivalents": [
+    "AISI 316 / 316L (S31600 / S31603)",
+    "DIN 1.4401 / 1.4404",
+    "JIS SUS316 / SUS316L"
+   ],
+   "condition": "Solution annealed",
+   "machinability": "Fair",
+   "stock": "Limited"
+  },
+  {
+   "slug": "ss-316-plates-sheets",
+   "silo": "stainless-steel",
+   "sort": 6,
+   "name": "SS 316 Plates & Sheets",
+   "grade": "SS 316",
+   "material": "ss300",
+   "forms": [
+    "plate"
+   ],
+   "sizeRange": "0.5–40 mm thick",
+   "applications": "Chemical tanks, marine fittings",
+   "sku": "SST-SS-06",
+   "chemistry": [
+    {
+     "el": "C",
+     "min": "–",
+     "max": "0.08 (L: 0.03)"
+    },
+    {
+     "el": "Mn",
+     "min": "–",
+     "max": "2.00"
+    },
+    {
+     "el": "Si",
+     "min": "–",
+     "max": "0.75"
+    },
+    {
+     "el": "Cr",
+     "min": "16.0",
+     "max": "18.0"
+    },
+    {
+     "el": "Ni",
+     "min": "10.0",
+     "max": "14.0"
+    },
+    {
+     "el": "Mo",
+     "min": "2.0",
+     "max": "3.0"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "515 MPa min"
+    },
+    {
+     "k": "Yield",
+     "v": "205 MPa min"
+    },
+    {
+     "k": "Hardness",
+     "v": "217 HB max"
+    },
+    {
+     "k": "Elongation",
+     "v": "40% min"
+    }
+   ],
+   "equivalents": [
+    "AISI 316 / 316L (S31600 / S31603)",
+    "DIN 1.4401 / 1.4404",
+    "JIS SUS316 / SUS316L"
+   ],
+   "condition": "Solution annealed",
+   "machinability": "Fair",
+   "stock": "In stock"
+  },
+  {
+   "slug": "ss-316-seamless-pipes",
+   "silo": "stainless-steel",
+   "sort": 7,
+   "name": "SS 316 Seamless Pipes",
+   "grade": "SS 316",
+   "material": "ss300",
+   "forms": [
+    "tube"
+   ],
+   "sizeRange": "¼″ to 6″ NB · Sch 10–160",
+   "applications": "Pharma, chemical and offshore lines",
+   "sku": "SST-SS-07",
+   "chemistry": [
+    {
+     "el": "C",
+     "min": "–",
+     "max": "0.08 (L: 0.03)"
+    },
+    {
+     "el": "Mn",
+     "min": "–",
+     "max": "2.00"
+    },
+    {
+     "el": "Si",
+     "min": "–",
+     "max": "0.75"
+    },
+    {
+     "el": "Cr",
+     "min": "16.0",
+     "max": "18.0"
+    },
+    {
+     "el": "Ni",
+     "min": "10.0",
+     "max": "14.0"
+    },
+    {
+     "el": "Mo",
+     "min": "2.0",
+     "max": "3.0"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "515 MPa min"
+    },
+    {
+     "k": "Yield",
+     "v": "205 MPa min"
+    },
+    {
+     "k": "Hardness",
+     "v": "217 HB max"
+    },
+    {
+     "k": "Elongation",
+     "v": "40% min"
+    }
+   ],
+   "equivalents": [
+    "AISI 316 / 316L (S31600 / S31603)",
+    "DIN 1.4401 / 1.4404",
+    "JIS SUS316 / SUS316L"
+   ],
+   "condition": "Solution annealed",
+   "machinability": "Fair",
+   "stock": "Limited"
+  },
+  {
+   "slug": "ss-202-round-hex-bars",
+   "silo": "stainless-steel",
+   "sort": 8,
+   "name": "SS 202 Round Bars & Hex Bars",
+   "grade": "SS 202",
+   "material": "ss202",
+   "forms": [
+    "round",
+    "hex"
+   ],
+   "sizeRange": "Ø 3–150 mm · hex 6–50 A/F",
+   "applications": "Fasteners, hardware, architectural",
+   "sku": "SST-SS-08",
+   "chemistry": [
+    {
+     "el": "C",
+     "min": "–",
+     "max": "0.15"
+    },
+    {
+     "el": "Mn",
+     "min": "7.5",
+     "max": "10.0"
+    },
+    {
+     "el": "Si",
+     "min": "–",
+     "max": "1.00"
+    },
+    {
+     "el": "Cr",
+     "min": "17.0",
+     "max": "19.0"
+    },
+    {
+     "el": "Ni",
+     "min": "4.0",
+     "max": "6.0"
+    },
+    {
+     "el": "N",
+     "min": "–",
+     "max": "0.25"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "620 MPa min"
+    },
+    {
+     "k": "Yield",
+     "v": "260 MPa min"
+    },
+    {
+     "k": "Hardness",
+     "v": "241 HB max"
+    },
+    {
+     "k": "Elongation",
+     "v": "40% min"
+    }
+   ],
+   "equivalents": [
+    "AISI 202 (UNS S20200)",
+    "DIN 1.4373",
+    "JIS SUS202"
+   ],
+   "condition": "Annealed",
+   "machinability": "Fair",
+   "stock": "In stock"
+  },
+  {
+   "slug": "ss-202-sheets-plates",
+   "silo": "stainless-steel",
+   "sort": 9,
+   "name": "SS 202 Sheets & Plates",
+   "grade": "SS 202",
+   "material": "ss202",
+   "forms": [
+    "plate"
+   ],
+   "sizeRange": "0.4–6 mm thick",
+   "applications": "Utensils, cladding, furniture",
+   "sku": "SST-SS-09",
+   "chemistry": [
+    {
+     "el": "C",
+     "min": "–",
+     "max": "0.15"
+    },
+    {
+     "el": "Mn",
+     "min": "7.5",
+     "max": "10.0"
+    },
+    {
+     "el": "Si",
+     "min": "–",
+     "max": "1.00"
+    },
+    {
+     "el": "Cr",
+     "min": "17.0",
+     "max": "19.0"
+    },
+    {
+     "el": "Ni",
+     "min": "4.0",
+     "max": "6.0"
+    },
+    {
+     "el": "N",
+     "min": "–",
+     "max": "0.25"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "620 MPa min"
+    },
+    {
+     "k": "Yield",
+     "v": "260 MPa min"
+    },
+    {
+     "k": "Hardness",
+     "v": "241 HB max"
+    },
+    {
+     "k": "Elongation",
+     "v": "40% min"
+    }
+   ],
+   "equivalents": [
+    "AISI 202 (UNS S20200)",
+    "DIN 1.4373",
+    "JIS SUS202"
+   ],
+   "condition": "Annealed",
+   "machinability": "Fair",
+   "stock": "In stock"
+  },
+  {
+   "slug": "ss-410-martensitic-bars",
+   "silo": "stainless-steel",
+   "sort": 10,
+   "name": "SS 410 Martensitic Stainless Bars",
+   "grade": "SS 410",
+   "material": "ss400",
+   "forms": [
+    "round"
+   ],
+   "sizeRange": "Ø 10–150 mm",
+   "applications": "Valve parts, pump shafts, cutlery",
+   "sku": "SST-SS-10",
+   "chemistry": [
+    {
+     "el": "C",
+     "min": "0.08",
+     "max": "0.15"
+    },
+    {
+     "el": "Mn",
+     "min": "–",
+     "max": "1.00"
+    },
+    {
+     "el": "Si",
+     "min": "–",
+     "max": "1.00"
+    },
+    {
+     "el": "Cr",
+     "min": "11.5",
+     "max": "13.5"
+    },
+    {
+     "el": "Ni",
+     "min": "–",
+     "max": "0.75"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "485 MPa min (ann.)"
+    },
+    {
+     "k": "Yield",
+     "v": "275 MPa min"
+    },
+    {
+     "k": "Hardness",
+     "v": "217 HB max (ann.)"
+    },
+    {
+     "k": "Hardened",
+     "v": "35–45 HRC"
+    }
+   ],
+   "equivalents": [
+    "AISI 410 (UNS S41000)",
+    "DIN 1.4006",
+    "JIS SUS410"
+   ],
+   "condition": "Annealed / hardened & tempered",
+   "machinability": "Good",
+   "stock": "In stock"
+  },
+  {
+   "slug": "ss-420-high-carbon-bars",
+   "silo": "stainless-steel",
+   "sort": 11,
+   "name": "SS 420 High Carbon Stainless Steel",
+   "grade": "SS 420",
+   "material": "ss400",
+   "forms": [
+    "round",
+    "flat"
+   ],
+   "sizeRange": "Ø 10–150 mm",
+   "applications": "Moulds, surgical tools, blades",
+   "sku": "SST-SS-11",
+   "chemistry": [
+    {
+     "el": "C",
+     "min": "0.15",
+     "max": "0.40"
+    },
+    {
+     "el": "Mn",
+     "min": "–",
+     "max": "1.00"
+    },
+    {
+     "el": "Si",
+     "min": "–",
+     "max": "1.00"
+    },
+    {
+     "el": "Cr",
+     "min": "12.0",
+     "max": "14.0"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "655 MPa (ann.)"
+    },
+    {
+     "k": "Yield",
+     "v": "345 MPa"
+    },
+    {
+     "k": "Hardness",
+     "v": "241 HB max (ann.)"
+    },
+    {
+     "k": "Hardened",
+     "v": "50–54 HRC"
+    }
+   ],
+   "equivalents": [
+    "AISI 420 (UNS S42000)",
+    "DIN 1.4021 / 1.4028",
+    "JIS SUS420J1 / J2"
+   ],
+   "condition": "Annealed",
+   "machinability": "Fair",
+   "stock": "Limited"
+  },
+  {
+   "slug": "ss-431-round-bars",
+   "silo": "stainless-steel",
+   "sort": 12,
+   "name": "SS 431 Stainless Steel Round Bars",
+   "grade": "SS 431",
+   "material": "ss431",
+   "forms": [
+    "round"
+   ],
+   "sizeRange": "Ø 12–200 mm",
+   "applications": "Propeller shafts, pump shafts, bolts",
+   "sku": "SST-SS-12",
+   "chemistry": [
+    {
+     "el": "C",
+     "min": "0.12",
+     "max": "0.20"
+    },
+    {
+     "el": "Mn",
+     "min": "–",
+     "max": "1.00"
+    },
+    {
+     "el": "Si",
+     "min": "–",
+     "max": "1.00"
+    },
+    {
+     "el": "Cr",
+     "min": "15.0",
+     "max": "17.0"
+    },
+    {
+     "el": "Ni",
+     "min": "1.25",
+     "max": "2.50"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "860 MPa (H&T)"
+    },
+    {
+     "k": "Yield",
+     "v": "655 MPa"
+    },
+    {
+     "k": "Hardness",
+     "v": "277 HB max"
+    },
+    {
+     "k": "Elongation",
+     "v": "10% min"
+    }
+   ],
+   "equivalents": [
+    "AISI 431 (UNS S43100)",
+    "DIN 1.4057",
+    "JIS SUS431"
+   ],
+   "condition": "Hardened & tempered",
+   "machinability": "Fair",
+   "stock": "Limited"
+  },
+  {
+   "slug": "ss-17-4ph-bars",
+   "silo": "stainless-steel",
+   "sort": 13,
+   "name": "SS 17-4PH Precipitation Hardening Bars",
+   "grade": "17-4PH",
+   "material": "ph",
+   "forms": [
+    "round"
+   ],
+   "sizeRange": "Ø 10–200 mm",
+   "applications": "Aerospace fittings, valve stems",
+   "sku": "SST-SS-13",
+   "chemistry": [
+    {
+     "el": "C",
+     "min": "–",
+     "max": "0.07"
+    },
+    {
+     "el": "Cr",
+     "min": "15.0",
+     "max": "17.5"
+    },
+    {
+     "el": "Ni",
+     "min": "3.0",
+     "max": "5.0"
+    },
+    {
+     "el": "Cu",
+     "min": "3.0",
+     "max": "5.0"
+    },
+    {
+     "el": "Nb",
+     "min": "0.15",
+     "max": "0.45"
+    },
+    {
+     "el": "Mn",
+     "min": "–",
+     "max": "1.00"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "H1150 tensile",
+     "v": "930 MPa"
+    },
+    {
+     "k": "H1150 yield",
+     "v": "725 MPa"
+    },
+    {
+     "k": "H900 tensile",
+     "v": "1310 MPa"
+    },
+    {
+     "k": "H900 hardness",
+     "v": "40 HRC min"
+    }
+   ],
+   "equivalents": [
+    "AISI 630 / 17-4PH (UNS S17400)",
+    "DIN 1.4542",
+    "JIS SUS630"
+   ],
+   "condition": "Condition A / H1150",
+   "machinability": "Fair",
+   "stock": "On order"
+  },
+  {
+   "slug": "ss-hexagonal-angle-bars",
+   "silo": "stainless-steel",
+   "sort": 14,
+   "name": "SS Hexagonal & Angle Bars",
+   "grade": "SS 304",
+   "material": "ss300",
+   "forms": [
+    "hex",
+    "angle"
+   ],
+   "sizeRange": "Hex 6–75 A/F · angles 20×20 to 75×75",
+   "applications": "Fittings, frames, supports",
+   "sku": "SST-SS-14",
+   "chemistry": [
+    {
+     "el": "C",
+     "min": "–",
+     "max": "0.08"
+    },
+    {
+     "el": "Mn",
+     "min": "–",
+     "max": "2.00"
+    },
+    {
+     "el": "Si",
+     "min": "–",
+     "max": "0.75"
+    },
+    {
+     "el": "Cr",
+     "min": "18.0",
+     "max": "20.0"
+    },
+    {
+     "el": "Ni",
+     "min": "8.0",
+     "max": "10.5"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "515 MPa min"
+    },
+    {
+     "k": "Yield",
+     "v": "205 MPa min"
+    },
+    {
+     "k": "Elongation",
+     "v": "40% min"
+    },
+    {
+     "k": "Grades",
+     "v": "304 / 316 / 202"
+    }
+   ],
+   "equivalents": [
+    "AISI 304 / 316 / 202",
+    "DIN 1.4301 / 1.4401",
+    "JIS SUS304 / SUS316"
+   ],
+   "condition": "Hot rolled, pickled / bright",
+   "machinability": "Fair",
+   "stock": "In stock"
+  },
+  {
+   "slug": "brass-round-bars",
+   "silo": "non-ferrous-metals",
+   "sort": 1,
+   "name": "Commercial Brass Round Bars",
+   "grade": "CZ108",
+   "material": "brass",
+   "forms": [
+    "round"
+   ],
+   "sizeRange": "Ø 6–150 mm",
+   "applications": "Fittings, electrical parts, decor",
+   "sku": "SST-NFM-01",
+   "chemistry": [
+    {
+     "el": "Cu",
+     "min": "62.0",
+     "max": "65.0"
+    },
+    {
+     "el": "Pb",
+     "min": "–",
+     "max": "0.10"
+    },
+    {
+     "el": "Fe",
+     "min": "–",
+     "max": "0.10"
+    },
+    {
+     "el": "Zn",
+     "min": "rem.",
+     "max": "–"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "340–480 MPa"
+    },
+    {
+     "k": "Hardness",
+     "v": "90–140 HV"
+    },
+    {
+     "k": "Elongation",
+     "v": "15–40%"
+    },
+    {
+     "k": "Conductivity",
+     "v": "27% IACS"
+    }
+   ],
+   "equivalents": [
+    "BS CZ108",
+    "UNS C27200",
+    "EN CuZn37 (CW508L)",
+    "IS 4170"
+   ],
+   "condition": "Half hard / annealed",
+   "machinability": "Fair",
+   "stock": "In stock"
+  },
+  {
+   "slug": "free-cutting-brass-rods",
+   "silo": "non-ferrous-metals",
+   "sort": 2,
+   "name": "Free Cutting Brass Rods (IS 319)",
+   "grade": "IS 319",
+   "material": "brass",
+   "forms": [
+    "round"
+   ],
+   "sizeRange": "Ø 3–100 mm",
+   "applications": "CNC turned parts, valves, inserts",
+   "sku": "SST-NFM-02",
+   "chemistry": [
+    {
+     "el": "Cu",
+     "min": "56.0",
+     "max": "59.0"
+    },
+    {
+     "el": "Pb",
+     "min": "2.0",
+     "max": "3.5"
+    },
+    {
+     "el": "Fe",
+     "min": "–",
+     "max": "0.30"
+    },
+    {
+     "el": "Sn",
+     "min": "–",
+     "max": "0.40"
+    },
+    {
+     "el": "Zn",
+     "min": "rem.",
+     "max": "–"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "400–500 MPa"
+    },
+    {
+     "k": "Hardness",
+     "v": "100–160 HV"
+    },
+    {
+     "k": "Elongation",
+     "v": "10–20%"
+    },
+    {
+     "k": "Machinability",
+     "v": "100% (benchmark)"
+    }
+   ],
+   "equivalents": [
+    "IS 319 Type I",
+    "BS CZ121",
+    "UNS C38500 (approx.)",
+    "EN CuZn39Pb3 (CW614N)"
+   ],
+   "condition": "Extruded / drawn",
+   "machinability": "Excellent",
+   "stock": "In stock"
+  },
+  {
+   "slug": "brass-hex-flat-bars",
+   "silo": "non-ferrous-metals",
+   "sort": 3,
+   "name": "Brass Hexagonal & Flat Bars",
+   "grade": "CZ121",
+   "material": "brass",
+   "forms": [
+    "hex",
+    "flat"
+   ],
+   "sizeRange": "Hex 6–60 A/F · flats to 100×25",
+   "applications": "Nuts, unions, terminals",
+   "sku": "SST-NFM-03",
+   "chemistry": [
+    {
+     "el": "Cu",
+     "min": "56.0",
+     "max": "59.0"
+    },
+    {
+     "el": "Pb",
+     "min": "2.0",
+     "max": "3.5"
+    },
+    {
+     "el": "Fe",
+     "min": "–",
+     "max": "0.30"
+    },
+    {
+     "el": "Sn",
+     "min": "–",
+     "max": "0.40"
+    },
+    {
+     "el": "Zn",
+     "min": "rem.",
+     "max": "–"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "400–500 MPa"
+    },
+    {
+     "k": "Hardness",
+     "v": "100–160 HV"
+    },
+    {
+     "k": "Elongation",
+     "v": "10–20%"
+    },
+    {
+     "k": "Machinability",
+     "v": "100% (benchmark)"
+    }
+   ],
+   "equivalents": [
+    "IS 319 Type I",
+    "BS CZ121",
+    "UNS C38500 (approx.)",
+    "EN CuZn39Pb3 (CW614N)"
+   ],
+   "condition": "Extruded / drawn",
+   "machinability": "Excellent",
+   "stock": "In stock"
+  },
+  {
+   "slug": "brass-sheets-coils",
+   "silo": "non-ferrous-metals",
+   "sort": 4,
+   "name": "Brass Sheets & Coils",
+   "grade": "CZ108",
+   "material": "brass",
+   "forms": [
+    "plate"
+   ],
+   "sizeRange": "0.3–6 mm thick",
+   "applications": "Pressings, nameplates, decor",
+   "sku": "SST-NFM-04",
+   "chemistry": [
+    {
+     "el": "Cu",
+     "min": "62.0",
+     "max": "65.0"
+    },
+    {
+     "el": "Pb",
+     "min": "–",
+     "max": "0.10"
+    },
+    {
+     "el": "Fe",
+     "min": "–",
+     "max": "0.10"
+    },
+    {
+     "el": "Zn",
+     "min": "rem.",
+     "max": "–"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "340–480 MPa"
+    },
+    {
+     "k": "Hardness",
+     "v": "90–140 HV"
+    },
+    {
+     "k": "Elongation",
+     "v": "15–40%"
+    },
+    {
+     "k": "Conductivity",
+     "v": "27% IACS"
+    }
+   ],
+   "equivalents": [
+    "BS CZ108",
+    "UNS C27200",
+    "EN CuZn37 (CW508L)",
+    "IS 4170"
+   ],
+   "condition": "Half hard / annealed",
+   "machinability": "Fair",
+   "stock": "Limited"
+  },
+  {
+   "slug": "copper-round-bars",
+   "silo": "non-ferrous-metals",
+   "sort": 5,
+   "name": "Electrolytic Copper Round Bars",
+   "grade": "Cu ETP",
+   "material": "cu",
+   "forms": [
+    "round"
+   ],
+   "sizeRange": "Ø 6–150 mm",
+   "applications": "Electrodes, earthing, contacts",
+   "sku": "SST-NFM-05",
+   "chemistry": [
+    {
+     "el": "Cu",
+     "min": "99.90",
+     "max": "–"
+    },
+    {
+     "el": "O",
+     "min": "0.02",
+     "max": "0.04"
+    },
+    {
+     "el": "Pb",
+     "min": "–",
+     "max": "0.005"
+    },
+    {
+     "el": "Fe",
+     "min": "–",
+     "max": "0.005"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "220–385 MPa (temper)"
+    },
+    {
+     "k": "Conductivity",
+     "v": "100% IACS min"
+    },
+    {
+     "k": "Hardness",
+     "v": "40–110 HV"
+    },
+    {
+     "k": "Elongation",
+     "v": "6–45%"
+    }
+   ],
+   "equivalents": [
+    "UNS C11000 (ETP)",
+    "EN Cu-ETP (CW004A)",
+    "IS 191 ETP",
+    "BS C101"
+   ],
+   "condition": "Half hard / hard drawn",
+   "machinability": "Fair",
+   "stock": "In stock"
+  },
+  {
+   "slug": "copper-busbars-flats",
+   "silo": "non-ferrous-metals",
+   "sort": 6,
+   "name": "Copper Busbars & Flat Strip",
+   "grade": "Cu ETP",
+   "material": "cu",
+   "forms": [
+    "flat"
+   ],
+   "sizeRange": "12×3 to 150×12 mm",
+   "applications": "Panels, switchgear, transformers",
+   "sku": "SST-NFM-06",
+   "chemistry": [
+    {
+     "el": "Cu",
+     "min": "99.90",
+     "max": "–"
+    },
+    {
+     "el": "O",
+     "min": "0.02",
+     "max": "0.04"
+    },
+    {
+     "el": "Pb",
+     "min": "–",
+     "max": "0.005"
+    },
+    {
+     "el": "Fe",
+     "min": "–",
+     "max": "0.005"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "220–385 MPa (temper)"
+    },
+    {
+     "k": "Conductivity",
+     "v": "100% IACS min"
+    },
+    {
+     "k": "Hardness",
+     "v": "40–110 HV"
+    },
+    {
+     "k": "Elongation",
+     "v": "6–45%"
+    }
+   ],
+   "equivalents": [
+    "UNS C11000 (ETP)",
+    "EN Cu-ETP (CW004A)",
+    "IS 191 ETP",
+    "BS C101"
+   ],
+   "condition": "Half hard / hard drawn",
+   "machinability": "Fair",
+   "stock": "In stock"
+  },
+  {
+   "slug": "copper-plates-sheets",
+   "silo": "non-ferrous-metals",
+   "sort": 7,
+   "name": "Copper Plates & Sheets",
+   "grade": "Cu ETP",
+   "material": "cu",
+   "forms": [
+    "plate"
+   ],
+   "sizeRange": "0.5–25 mm thick",
+   "applications": "Heat exchangers, earthing plates",
+   "sku": "SST-NFM-07",
+   "chemistry": [
+    {
+     "el": "Cu",
+     "min": "99.90",
+     "max": "–"
+    },
+    {
+     "el": "O",
+     "min": "0.02",
+     "max": "0.04"
+    },
+    {
+     "el": "Pb",
+     "min": "–",
+     "max": "0.005"
+    },
+    {
+     "el": "Fe",
+     "min": "–",
+     "max": "0.005"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "220–385 MPa (temper)"
+    },
+    {
+     "k": "Conductivity",
+     "v": "100% IACS min"
+    },
+    {
+     "k": "Hardness",
+     "v": "40–110 HV"
+    },
+    {
+     "k": "Elongation",
+     "v": "6–45%"
+    }
+   ],
+   "equivalents": [
+    "UNS C11000 (ETP)",
+    "EN Cu-ETP (CW004A)",
+    "IS 191 ETP",
+    "BS C101"
+   ],
+   "condition": "Half hard / hard drawn",
+   "machinability": "Fair",
+   "stock": "Limited"
+  },
+  {
+   "slug": "copper-hollow-tubes",
+   "silo": "non-ferrous-metals",
+   "sort": 8,
+   "name": "Copper Hollow Tubes",
+   "grade": "Cu DHP",
+   "material": "cu",
+   "forms": [
+    "tube"
+   ],
+   "sizeRange": "OD 6–108 mm",
+   "applications": "Refrigeration, heat exchangers",
+   "sku": "SST-NFM-08",
+   "chemistry": [
+    {
+     "el": "Cu",
+     "min": "99.90",
+     "max": "–"
+    },
+    {
+     "el": "O",
+     "min": "0.02",
+     "max": "0.04"
+    },
+    {
+     "el": "Pb",
+     "min": "–",
+     "max": "0.005"
+    },
+    {
+     "el": "Fe",
+     "min": "–",
+     "max": "0.005"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "220–385 MPa (temper)"
+    },
+    {
+     "k": "Conductivity",
+     "v": "100% IACS min"
+    },
+    {
+     "k": "Hardness",
+     "v": "40–110 HV"
+    },
+    {
+     "k": "Elongation",
+     "v": "6–45%"
+    }
+   ],
+   "equivalents": [
+    "UNS C11000 (ETP)",
+    "EN Cu-ETP (CW004A)",
+    "IS 191 ETP",
+    "BS C101"
+   ],
+   "condition": "Half hard / hard drawn",
+   "machinability": "Fair",
+   "stock": "In stock"
+  },
+  {
+   "slug": "gunmetal-lg2-rods",
+   "silo": "non-ferrous-metals",
+   "sort": 9,
+   "name": "Gunmetal LG2 / C83600 Round Rods",
+   "grade": "LG2",
+   "material": "gm",
+   "forms": [
+    "round"
+   ],
+   "sizeRange": "Ø 20–300 mm continuous cast",
+   "applications": "Valves, pump bodies, bushes",
+   "sku": "SST-NFM-09",
+   "chemistry": [
+    {
+     "el": "Cu",
+     "min": "84.0",
+     "max": "86.0"
+    },
+    {
+     "el": "Sn",
+     "min": "4.0",
+     "max": "6.0"
+    },
+    {
+     "el": "Zn",
+     "min": "4.0",
+     "max": "6.0"
+    },
+    {
+     "el": "Pb",
+     "min": "4.0",
+     "max": "6.0"
+    },
+    {
+     "el": "Ni",
+     "min": "–",
+     "max": "1.0"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "200 MPa min (sand)"
+    },
+    {
+     "k": "Elongation",
+     "v": "13% min"
+    },
+    {
+     "k": "Hardness",
+     "v": "60–65 HB"
+    },
+    {
+     "k": "Pressure tight",
+     "v": "Yes"
+    }
+   ],
+   "equivalents": [
+    "BS 1400 LG2",
+    "UNS C83600",
+    "EN CuSn5Zn5Pb5 (CC491K)",
+    "IS 318 LTB2"
+   ],
+   "condition": "Continuous / centrifugal cast",
+   "machinability": "Very good",
+   "stock": "In stock"
+  },
+  {
+   "slug": "gunmetal-hollow-bushes",
+   "silo": "non-ferrous-metals",
+   "sort": 10,
+   "name": "Gunmetal Hollow Bushing Bars",
+   "grade": "LG2",
+   "material": "gm",
+   "forms": [
+    "tube"
+   ],
+   "sizeRange": "OD 30–400 mm · bores to suit",
+   "applications": "Bearing bushes, sleeves",
+   "sku": "SST-NFM-10",
+   "chemistry": [
+    {
+     "el": "Cu",
+     "min": "84.0",
+     "max": "86.0"
+    },
+    {
+     "el": "Sn",
+     "min": "4.0",
+     "max": "6.0"
+    },
+    {
+     "el": "Zn",
+     "min": "4.0",
+     "max": "6.0"
+    },
+    {
+     "el": "Pb",
+     "min": "4.0",
+     "max": "6.0"
+    },
+    {
+     "el": "Ni",
+     "min": "–",
+     "max": "1.0"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "200 MPa min (sand)"
+    },
+    {
+     "k": "Elongation",
+     "v": "13% min"
+    },
+    {
+     "k": "Hardness",
+     "v": "60–65 HB"
+    },
+    {
+     "k": "Pressure tight",
+     "v": "Yes"
+    }
+   ],
+   "equivalents": [
+    "BS 1400 LG2",
+    "UNS C83600",
+    "EN CuSn5Zn5Pb5 (CC491K)",
+    "IS 318 LTB2"
+   ],
+   "condition": "Continuous / centrifugal cast",
+   "machinability": "Very good",
+   "stock": "In stock"
+  },
+  {
+   "slug": "phosphor-bronze-pb1-rods",
+   "silo": "non-ferrous-metals",
+   "sort": 11,
+   "name": "Phosphor Bronze PB1 Rods & Bushes",
+   "grade": "PB1",
+   "material": "pb",
+   "forms": [
+    "round",
+    "tube"
+   ],
+   "sizeRange": "Ø 20–300 mm · hollows to 400 OD",
+   "applications": "Worm wheels, bearings, bushes",
+   "sku": "SST-NFM-11",
+   "chemistry": [
+    {
+     "el": "Sn",
+     "min": "10.0",
+     "max": "11.5"
+    },
+    {
+     "el": "P",
+     "min": "0.50",
+     "max": "1.00"
+    },
+    {
+     "el": "Pb",
+     "min": "–",
+     "max": "0.25"
+    },
+    {
+     "el": "Zn",
+     "min": "–",
+     "max": "0.05"
+    },
+    {
+     "el": "Cu",
+     "min": "rem.",
+     "max": "–"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "220–310 MPa"
+    },
+    {
+     "k": "Hardness",
+     "v": "70–90 HB"
+    },
+    {
+     "k": "Elongation",
+     "v": "3–12%"
+    },
+    {
+     "k": "Use",
+     "v": "Bearings, worm wheels"
+    }
+   ],
+   "equivalents": [
+    "BS 1400 PB1",
+    "EN CuSn10P (CC481K)",
+    "UNS C90700 (approx.)"
+   ],
+   "condition": "Continuous / centrifugal cast",
+   "machinability": "Good",
+   "stock": "In stock"
+  },
+  {
+   "slug": "aluminium-bronze-ab2-rods",
+   "silo": "non-ferrous-metals",
+   "sort": 12,
+   "name": "Aluminium Bronze AB2 Rods",
+   "grade": "AB2",
+   "material": "ab",
+   "forms": [
+    "round",
+    "tube"
+   ],
+   "sizeRange": "Ø 20–250 mm",
+   "applications": "Marine, pump impellers, heavy bushes",
+   "sku": "SST-NFM-12",
+   "chemistry": [
+    {
+     "el": "Al",
+     "min": "8.5",
+     "max": "10.5"
+    },
+    {
+     "el": "Fe",
+     "min": "4.0",
+     "max": "5.5"
+    },
+    {
+     "el": "Ni",
+     "min": "4.0",
+     "max": "6.0"
+    },
+    {
+     "el": "Mn",
+     "min": "–",
+     "max": "3.0"
+    },
+    {
+     "el": "Cu",
+     "min": "rem.",
+     "max": "–"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "640 MPa min"
+    },
+    {
+     "k": "Yield",
+     "v": "250 MPa min"
+    },
+    {
+     "k": "Hardness",
+     "v": "140–180 HB"
+    },
+    {
+     "k": "Elongation",
+     "v": "13% min"
+    }
+   ],
+   "equivalents": [
+    "BS 1400 AB2",
+    "EN CuAl10Fe5Ni5 (CC333G)",
+    "UNS C95800 (approx.)"
+   ],
+   "condition": "Cast / extruded",
+   "machinability": "Fair",
+   "stock": "Limited"
+  },
+  {
+   "slug": "manganese-bronze-rods",
+   "silo": "non-ferrous-metals",
+   "sort": 13,
+   "name": "Manganese Bronze Rods",
+   "grade": "HTB1",
+   "material": "mnb",
+   "forms": [
+    "round"
+   ],
+   "sizeRange": "Ø 20–200 mm",
+   "applications": "Marine shafts, gears, valve stems",
+   "sku": "SST-NFM-13",
+   "chemistry": [
+    {
+     "el": "Cu",
+     "min": "55.0",
+     "max": "60.0"
+    },
+    {
+     "el": "Al",
+     "min": "0.5",
+     "max": "2.5"
+    },
+    {
+     "el": "Fe",
+     "min": "0.5",
+     "max": "1.5"
+    },
+    {
+     "el": "Mn",
+     "min": "0.5",
+     "max": "3.0"
+    },
+    {
+     "el": "Zn",
+     "min": "rem.",
+     "max": "–"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "470 MPa min"
+    },
+    {
+     "k": "Yield",
+     "v": "170 MPa min"
+    },
+    {
+     "k": "Hardness",
+     "v": "100–150 HB"
+    },
+    {
+     "k": "Elongation",
+     "v": "18% min"
+    }
+   ],
+   "equivalents": [
+    "BS 1400 HTB1",
+    "UNS C86500 (approx.)",
+    "EN CuZn35AlFeMn"
+   ],
+   "condition": "Cast / extruded",
+   "machinability": "Good",
+   "stock": "On order"
+  },
+  {
+   "slug": "aluminium-6061-t6-bars",
+   "silo": "non-ferrous-metals",
+   "sort": 14,
+   "name": "Aluminium 6061 T6 Round Bars",
+   "grade": "6061",
+   "material": "al",
+   "forms": [
+    "round",
+    "flat",
+    "plate"
+   ],
+   "sizeRange": "Ø 6–300 mm · plates 6–150 mm",
+   "applications": "Jigs, fixtures, automotive parts",
+   "sku": "SST-NFM-14",
+   "chemistry": [
+    {
+     "el": "Mg",
+     "min": "0.80",
+     "max": "1.20"
+    },
+    {
+     "el": "Si",
+     "min": "0.40",
+     "max": "0.80"
+    },
+    {
+     "el": "Cu",
+     "min": "0.15",
+     "max": "0.40"
+    },
+    {
+     "el": "Cr",
+     "min": "0.04",
+     "max": "0.35"
+    },
+    {
+     "el": "Fe",
+     "min": "–",
+     "max": "0.70"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "310 MPa (T6)"
+    },
+    {
+     "k": "Yield",
+     "v": "276 MPa"
+    },
+    {
+     "k": "Hardness",
+     "v": "95 HB"
+    },
+    {
+     "k": "Elongation",
+     "v": "12%"
+    }
+   ],
+   "equivalents": [
+    "AA 6061",
+    "EN AW-6061 (AlMg1SiCu)",
+    "IS 64430 (HE20)",
+    "DIN 3.3211"
+   ],
+   "condition": "T6 / T651",
+   "machinability": "Good",
+   "stock": "In stock"
+  },
+  {
+   "slug": "aluminium-6063-shapes",
+   "silo": "non-ferrous-metals",
+   "sort": 15,
+   "name": "Aluminium 6063 Architectural Shapes",
+   "grade": "6063",
+   "material": "al",
+   "forms": [
+    "rect",
+    "angle",
+    "tube",
+    "flat"
+   ],
+   "sizeRange": "Angles, channels, tubes, flats",
+   "applications": "Windows, partitions, frames",
+   "sku": "SST-NFM-15",
+   "chemistry": [
+    {
+     "el": "Mg",
+     "min": "0.45",
+     "max": "0.90"
+    },
+    {
+     "el": "Si",
+     "min": "0.20",
+     "max": "0.60"
+    },
+    {
+     "el": "Fe",
+     "min": "–",
+     "max": "0.35"
+    },
+    {
+     "el": "Cu",
+     "min": "–",
+     "max": "0.10"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "241 MPa (T6)"
+    },
+    {
+     "k": "Yield",
+     "v": "214 MPa"
+    },
+    {
+     "k": "Hardness",
+     "v": "73 HB"
+    },
+    {
+     "k": "Finish",
+     "v": "Anodising quality"
+    }
+   ],
+   "equivalents": [
+    "AA 6063",
+    "EN AW-6063 (AlMg0.7Si)",
+    "IS 63400 (HE9)",
+    "DIN 3.3206"
+   ],
+   "condition": "T5 / T6 extruded",
+   "machinability": "Good",
+   "stock": "In stock"
+  },
+  {
+   "slug": "aluminium-7075-bars",
+   "silo": "non-ferrous-metals",
+   "sort": 16,
+   "name": "Aluminium 7075 Aircraft Grade Bars",
+   "grade": "7075",
+   "material": "al7",
+   "forms": [
+    "round",
+    "plate"
+   ],
+   "sizeRange": "Ø 10–200 mm · plates 6–100 mm",
+   "applications": "Moulds, aerospace, high-stress parts",
+   "sku": "SST-NFM-16",
+   "chemistry": [
+    {
+     "el": "Zn",
+     "min": "5.1",
+     "max": "6.1"
+    },
+    {
+     "el": "Mg",
+     "min": "2.1",
+     "max": "2.9"
+    },
+    {
+     "el": "Cu",
+     "min": "1.2",
+     "max": "2.0"
+    },
+    {
+     "el": "Cr",
+     "min": "0.18",
+     "max": "0.28"
+    },
+    {
+     "el": "Fe",
+     "min": "–",
+     "max": "0.50"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "572 MPa (T6)"
+    },
+    {
+     "k": "Yield",
+     "v": "503 MPa"
+    },
+    {
+     "k": "Hardness",
+     "v": "150 HB"
+    },
+    {
+     "k": "Elongation",
+     "v": "11%"
+    }
+   ],
+   "equivalents": [
+    "AA 7075",
+    "EN AW-7075 (AlZn5.5MgCu)",
+    "DIN 3.4365"
+   ],
+   "condition": "T6 / T651",
+   "machinability": "Good",
+   "stock": "Limited"
+  },
+  {
+   "slug": "aluminium-5083-plates",
+   "silo": "non-ferrous-metals",
+   "sort": 17,
+   "name": "Aluminium 5083 Marine Grade Plates",
+   "grade": "5083",
+   "material": "al5",
+   "forms": [
+    "plate"
+   ],
+   "sizeRange": "3–100 mm thick",
+   "applications": "Boat building, tankers, cryogenics",
+   "sku": "SST-NFM-17",
+   "chemistry": [
+    {
+     "el": "Mg",
+     "min": "4.0",
+     "max": "4.9"
+    },
+    {
+     "el": "Mn",
+     "min": "0.40",
+     "max": "1.00"
+    },
+    {
+     "el": "Cr",
+     "min": "0.05",
+     "max": "0.25"
+    },
+    {
+     "el": "Fe",
+     "min": "–",
+     "max": "0.40"
+    },
+    {
+     "el": "Si",
+     "min": "–",
+     "max": "0.40"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "275–350 MPa"
+    },
+    {
+     "k": "Yield",
+     "v": "125 MPa min"
+    },
+    {
+     "k": "Elongation",
+     "v": "16%"
+    },
+    {
+     "k": "Marine",
+     "v": "Excellent corrosion resistance"
+    }
+   ],
+   "equivalents": [
+    "AA 5083",
+    "EN AW-5083 (AlMg4.5Mn0.7)",
+    "IS 54300",
+    "DIN 3.3547"
+   ],
+   "condition": "H111 / H321",
+   "machinability": "Fair",
+   "stock": "Limited"
+  },
+  {
+   "slug": "aluminium-chequered-sheets",
+   "silo": "non-ferrous-metals",
+   "sort": 18,
+   "name": "Aluminium Chequered Sheets",
+   "grade": "3003",
+   "material": "al",
+   "forms": [
+    "plate"
+   ],
+   "sizeRange": "1.5–6 mm thick",
+   "applications": "Vehicle floors, ramps, stairs",
+   "sku": "SST-NFM-18",
+   "chemistry": [
+    {
+     "el": "Mn",
+     "min": "1.0",
+     "max": "1.5"
+    },
+    {
+     "el": "Fe",
+     "min": "–",
+     "max": "0.70"
+    },
+    {
+     "el": "Si",
+     "min": "–",
+     "max": "0.60"
+    },
+    {
+     "el": "Cu",
+     "min": "0.05",
+     "max": "0.20"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "130–180 MPa"
+    },
+    {
+     "k": "Pattern",
+     "v": "5-bar / diamond"
+    },
+    {
+     "k": "Thickness",
+     "v": "1.5–6 mm"
+    },
+    {
+     "k": "Slip resistance",
+     "v": "Good"
+    }
+   ],
+   "equivalents": [
+    "AA 3003 / 1100",
+    "EN AW-3003",
+    "IS 31000"
+   ],
+   "condition": "H14 / H22",
+   "machinability": "Good",
+   "stock": "In stock"
+  },
+  {
+   "slug": "fg-200-cast-iron-rounds",
+   "silo": "cast-iron",
+   "sort": 1,
+   "name": "Grey Cast Iron FG 200 Round Bars",
+   "grade": "FG 200",
+   "material": "ci",
+   "forms": [
+    "round"
+   ],
+   "sizeRange": "Ø 25–300 mm",
+   "applications": "Pulleys, flywheels, bushes",
+   "sku": "SST-CI-01",
+   "chemistry": [
+    {
+     "el": "C",
+     "min": "3.20",
+     "max": "3.50"
+    },
+    {
+     "el": "Si",
+     "min": "1.80",
+     "max": "2.40"
+    },
+    {
+     "el": "Mn",
+     "min": "0.50",
+     "max": "0.80"
+    },
+    {
+     "el": "S",
+     "min": "–",
+     "max": "0.12"
+    },
+    {
+     "el": "P",
+     "min": "–",
+     "max": "0.20"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "200 MPa min"
+    },
+    {
+     "k": "Hardness",
+     "v": "160–220 HB"
+    },
+    {
+     "k": "Damping",
+     "v": "Excellent"
+    },
+    {
+     "k": "Graphite",
+     "v": "Flake"
+    }
+   ],
+   "equivalents": [
+    "IS 210 FG 200",
+    "EN-GJL-200 (GG20)",
+    "ASTM A48 Class 30"
+   ],
+   "condition": "As cast",
+   "machinability": "Excellent",
+   "stock": "In stock"
+  },
+  {
+   "slug": "fg-250-continuous-cast-bars",
+   "silo": "cast-iron",
+   "sort": 2,
+   "name": "Grey Cast Iron FG 250 Continuous Cast",
+   "grade": "FG 250",
+   "material": "ci",
+   "forms": [
+    "round",
+    "square",
+    "flat"
+   ],
+   "sizeRange": "Ø 20–400 mm · squares, flats",
+   "applications": "Hydraulic blocks, gears, machine parts",
+   "sku": "SST-CI-02",
+   "chemistry": [
+    {
+     "el": "C",
+     "min": "3.10",
+     "max": "3.40"
+    },
+    {
+     "el": "Si",
+     "min": "1.70",
+     "max": "2.20"
+    },
+    {
+     "el": "Mn",
+     "min": "0.60",
+     "max": "0.90"
+    },
+    {
+     "el": "S",
+     "min": "–",
+     "max": "0.12"
+    },
+    {
+     "el": "P",
+     "min": "–",
+     "max": "0.15"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "250 MPa min"
+    },
+    {
+     "k": "Hardness",
+     "v": "180–240 HB"
+    },
+    {
+     "k": "Damping",
+     "v": "Excellent"
+    },
+    {
+     "k": "Graphite",
+     "v": "Flake"
+    }
+   ],
+   "equivalents": [
+    "IS 210 FG 260",
+    "EN-GJL-250 (GG25)",
+    "ASTM A48 Class 35/40"
+   ],
+   "condition": "Continuous cast",
+   "machinability": "Excellent",
+   "stock": "In stock"
+  },
+  {
+   "slug": "fg-300-cast-iron-bars",
+   "silo": "cast-iron",
+   "sort": 3,
+   "name": "Grey Cast Iron FG 300 Machinable Bars",
+   "grade": "FG 300",
+   "material": "ci",
+   "forms": [
+    "round",
+    "flat"
+   ],
+   "sizeRange": "Ø 25–300 mm",
+   "applications": "Cylinder liners, valve bodies",
+   "sku": "SST-CI-03",
+   "chemistry": [
+    {
+     "el": "C",
+     "min": "3.00",
+     "max": "3.30"
+    },
+    {
+     "el": "Si",
+     "min": "1.50",
+     "max": "2.00"
+    },
+    {
+     "el": "Mn",
+     "min": "0.60",
+     "max": "0.90"
+    },
+    {
+     "el": "S",
+     "min": "–",
+     "max": "0.12"
+    },
+    {
+     "el": "P",
+     "min": "–",
+     "max": "0.15"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "300 MPa min"
+    },
+    {
+     "k": "Hardness",
+     "v": "200–260 HB"
+    },
+    {
+     "k": "Damping",
+     "v": "Good"
+    },
+    {
+     "k": "Graphite",
+     "v": "Flake"
+    }
+   ],
+   "equivalents": [
+    "IS 210 FG 300",
+    "EN-GJL-300 (GG30)",
+    "ASTM A48 Class 45"
+   ],
+   "condition": "Continuous cast",
+   "machinability": "Very good",
+   "stock": "Limited"
+  },
+  {
+   "slug": "sg-iron-ggg40-rods",
+   "silo": "cast-iron",
+   "sort": 4,
+   "name": "SG Iron / Ductile Iron GGG40 Rods",
+   "grade": "GGG40",
+   "material": "sg",
+   "forms": [
+    "round",
+    "square"
+   ],
+   "sizeRange": "Ø 25–300 mm",
+   "applications": "Hydraulic manifolds, gears, rollers",
+   "sku": "SST-CI-04",
+   "chemistry": [
+    {
+     "el": "C",
+     "min": "3.40",
+     "max": "3.80"
+    },
+    {
+     "el": "Si",
+     "min": "2.30",
+     "max": "2.80"
+    },
+    {
+     "el": "Mn",
+     "min": "–",
+     "max": "0.40"
+    },
+    {
+     "el": "Mg",
+     "min": "0.03",
+     "max": "0.06"
+    },
+    {
+     "el": "P",
+     "min": "–",
+     "max": "0.05"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "400 MPa min"
+    },
+    {
+     "k": "Yield",
+     "v": "250 MPa min"
+    },
+    {
+     "k": "Elongation",
+     "v": "15% min"
+    },
+    {
+     "k": "Hardness",
+     "v": "135–180 HB"
+    }
+   ],
+   "equivalents": [
+    "EN-GJS-400-15 (GGG40)",
+    "IS 1865 SG 400/15",
+    "ASTM A536 60-40-18"
+   ],
+   "condition": "Ferritic, as cast",
+   "machinability": "Very good",
+   "stock": "In stock"
+  },
+  {
+   "slug": "sg-iron-ggg50-bars",
+   "silo": "cast-iron",
+   "sort": 5,
+   "name": "SG Iron GGG50 Ductile Iron Bars",
+   "grade": "GGG50",
+   "material": "sg",
+   "forms": [
+    "round",
+    "flat"
+   ],
+   "sizeRange": "Ø 25–300 mm",
+   "applications": "Heavy gears, sprockets, dies",
+   "sku": "SST-CI-05",
+   "chemistry": [
+    {
+     "el": "C",
+     "min": "3.40",
+     "max": "3.80"
+    },
+    {
+     "el": "Si",
+     "min": "2.20",
+     "max": "2.70"
+    },
+    {
+     "el": "Mn",
+     "min": "0.20",
+     "max": "0.50"
+    },
+    {
+     "el": "Mg",
+     "min": "0.03",
+     "max": "0.06"
+    },
+    {
+     "el": "P",
+     "min": "–",
+     "max": "0.05"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "500 MPa min"
+    },
+    {
+     "k": "Yield",
+     "v": "320 MPa min"
+    },
+    {
+     "k": "Elongation",
+     "v": "7% min"
+    },
+    {
+     "k": "Hardness",
+     "v": "170–230 HB"
+    }
+   ],
+   "equivalents": [
+    "EN-GJS-500-7 (GGG50)",
+    "IS 1865 SG 500/7",
+    "ASTM A536 80-55-06"
+   ],
+   "condition": "Ferritic-pearlitic",
+   "machinability": "Good",
+   "stock": "Limited"
+  },
+  {
+   "slug": "continuous-cast-ci-bars",
+   "silo": "cast-iron",
+   "sort": 6,
+   "name": "Continuous Cast CI Solid & Hollow Bars",
+   "grade": "CI",
+   "material": "ci",
+   "forms": [
+    "round",
+    "tube",
+    "square"
+   ],
+   "sizeRange": "Solid Ø 20–400 · hollow to 500 OD",
+   "applications": "Bushes, sleeves, rings, pistons",
+   "sku": "SST-CI-06",
+   "chemistry": [
+    {
+     "el": "C",
+     "min": "3.10",
+     "max": "3.40"
+    },
+    {
+     "el": "Si",
+     "min": "1.70",
+     "max": "2.20"
+    },
+    {
+     "el": "Mn",
+     "min": "0.60",
+     "max": "0.90"
+    },
+    {
+     "el": "S",
+     "min": "–",
+     "max": "0.12"
+    },
+    {
+     "el": "P",
+     "min": "–",
+     "max": "0.15"
+    }
+   ],
+   "mechanical": [
+    {
+     "k": "Tensile",
+     "v": "250 MPa min"
+    },
+    {
+     "k": "Hardness",
+     "v": "180–240 HB"
+    },
+    {
+     "k": "Damping",
+     "v": "Excellent"
+    },
+    {
+     "k": "Graphite",
+     "v": "Flake"
+    }
+   ],
+   "equivalents": [
+    "IS 210 FG 260",
+    "EN-GJL-250 (GG25)",
+    "ASTM A48 Class 35/40"
+   ],
+   "condition": "Continuous cast",
+   "machinability": "Excellent",
+   "stock": "In stock"
+  },
+  {
+   "slug": "nylon-6-rods",
+   "silo": "engineering-plastics",
+   "sort": 1,
+   "name": "Nylon 6 Natural White Rods",
+   "grade": "PA6",
+   "material": "ny",
+   "forms": [
+    "round"
+   ],
+   "sizeRange": "Ø 8–300 mm",
+   "applications": "Bushes, rollers, gears, wear pads",
+   "sku": "SST-EP-01",
+   "chemistry": [],
+   "mechanical": [
+    {
+     "k": "Density",
+     "v": "1.14 g/cm³"
+    },
+    {
+     "k": "Tensile",
+     "v": "75–85 MPa"
+    },
+    {
+     "k": "Max service",
+     "v": "100 °C"
+    },
+    {
+     "k": "Water absorption",
+     "v": "High"
+    }
+   ],
+   "equivalents": [
+    "PA6 extruded",
+    "Nylon 6 natural"
+   ],
+   "condition": "Extruded, natural white",
+   "machinability": "Excellent",
+   "stock": "In stock"
+  },
+  {
+   "slug": "nylon-6-sheets",
+   "silo": "engineering-plastics",
+   "sort": 2,
+   "name": "Nylon 6 Sheets & Blocks",
+   "grade": "PA6",
+   "material": "ny",
+   "forms": [
+    "plate"
+   ],
+   "sizeRange": "3–100 mm thick",
+   "applications": "Wear strips, guides, chopping boards",
+   "sku": "SST-EP-02",
+   "chemistry": [],
+   "mechanical": [
+    {
+     "k": "Density",
+     "v": "1.14 g/cm³"
+    },
+    {
+     "k": "Tensile",
+     "v": "75–85 MPa"
+    },
+    {
+     "k": "Max service",
+     "v": "100 °C"
+    },
+    {
+     "k": "Water absorption",
+     "v": "High"
+    }
+   ],
+   "equivalents": [
+    "PA6 extruded",
+    "Nylon 6 natural"
+   ],
+   "condition": "Extruded, natural white",
+   "machinability": "Excellent",
+   "stock": "In stock"
+  },
+  {
+   "slug": "cast-nylon-oil-filled-rods",
+   "silo": "engineering-plastics",
+   "sort": 3,
+   "name": "Cast Nylon Oil-Filled Rods",
+   "grade": "PA6G",
+   "material": "cny",
+   "forms": [
+    "round",
+    "tube"
+   ],
+   "sizeRange": "Ø 50–500 mm",
+   "applications": "Sheaves, heavy bushes, crane pads",
+   "sku": "SST-EP-03",
+   "chemistry": [],
+   "mechanical": [
+    {
+     "k": "Density",
+     "v": "1.15 g/cm³"
+    },
+    {
+     "k": "Tensile",
+     "v": "80 MPa"
+    },
+    {
+     "k": "Max service",
+     "v": "105 °C"
+    },
+    {
+     "k": "Friction",
+     "v": "Low, self-lubricating"
+    }
+   ],
+   "equivalents": [
+    "PA6G oil-filled",
+    "Cast nylon MC901 (approx.)"
+   ],
+   "condition": "Cast, oil filled (green / yellow)",
+   "machinability": "Excellent",
+   "stock": "Limited"
+  },
+  {
+   "slug": "delrin-acetal-white-rods",
+   "silo": "engineering-plastics",
+   "sort": 4,
+   "name": "POM Delrin / Acetal White Rods",
+   "grade": "POM",
+   "material": "pom",
+   "forms": [
+    "round"
+   ],
+   "sizeRange": "Ø 6–200 mm",
+   "applications": "Precision gears, cams, food parts",
+   "sku": "SST-EP-04",
+   "chemistry": [],
+   "mechanical": [
+    {
+     "k": "Density",
+     "v": "1.41 g/cm³"
+    },
+    {
+     "k": "Tensile",
+     "v": "65–70 MPa"
+    },
+    {
+     "k": "Max service",
+     "v": "100 °C"
+    },
+    {
+     "k": "Moisture",
+     "v": "Very low"
+    }
+   ],
+   "equivalents": [
+    "POM-C / POM-H",
+    "Delrin 150 (DuPont) type"
+   ],
+   "condition": "Extruded, natural white",
+   "machinability": "Excellent",
+   "stock": "In stock"
+  },
+  {
+   "slug": "delrin-black-sheets-rods",
+   "silo": "engineering-plastics",
+   "sort": 5,
+   "name": "POM Delrin Black Sheets & Rods",
+   "grade": "POM",
+   "material": "pom",
+   "forms": [
+    "round",
+    "plate"
+   ],
+   "sizeRange": "Ø 6–150 mm · sheets 3–80 mm",
+   "applications": "Fixtures, insulators, clips",
+   "sku": "SST-EP-05",
+   "chemistry": [],
+   "mechanical": [
+    {
+     "k": "Density",
+     "v": "1.41 g/cm³"
+    },
+    {
+     "k": "Tensile",
+     "v": "65–70 MPa"
+    },
+    {
+     "k": "Max service",
+     "v": "100 °C"
+    },
+    {
+     "k": "UV",
+     "v": "Better (black)"
+    }
+   ],
+   "equivalents": [
+    "POM-C black",
+    "Acetal copolymer"
+   ],
+   "condition": "Extruded, black",
+   "machinability": "Excellent",
+   "stock": "In stock"
+  },
+  {
+   "slug": "ptfe-teflon-rods-tubes",
+   "silo": "engineering-plastics",
+   "sort": 6,
+   "name": "PTFE Teflon Rods & Tubes",
+   "grade": "PTFE",
+   "material": "ptfe",
+   "forms": [
+    "round",
+    "tube"
+   ],
+   "sizeRange": "Ø 6–200 mm · tubes to 300 OD",
+   "applications": "Seals, valve seats, chemical bushes",
+   "sku": "SST-EP-06",
+   "chemistry": [],
+   "mechanical": [
+    {
+     "k": "Density",
+     "v": "2.20 g/cm³"
+    },
+    {
+     "k": "Tensile",
+     "v": "25 MPa"
+    },
+    {
+     "k": "Max service",
+     "v": "260 °C"
+    },
+    {
+     "k": "Chemical",
+     "v": "Inert to nearly all"
+    }
+   ],
+   "equivalents": [
+    "PTFE virgin",
+    "Glass / carbon filled on request"
+   ],
+   "condition": "Moulded / skived",
+   "machinability": "Good",
+   "stock": "In stock"
+  },
+  {
+   "slug": "ptfe-teflon-sheets",
+   "silo": "engineering-plastics",
+   "sort": 7,
+   "name": "PTFE Teflon Sheets & Gaskets",
+   "grade": "PTFE",
+   "material": "ptfe",
+   "forms": [
+    "plate"
+   ],
+   "sizeRange": "0.5–50 mm thick",
+   "applications": "Gaskets, slide bearings, linings",
+   "sku": "SST-EP-07",
+   "chemistry": [],
+   "mechanical": [
+    {
+     "k": "Density",
+     "v": "2.20 g/cm³"
+    },
+    {
+     "k": "Tensile",
+     "v": "25 MPa"
+    },
+    {
+     "k": "Max service",
+     "v": "260 °C"
+    },
+    {
+     "k": "Chemical",
+     "v": "Inert to nearly all"
+    }
+   ],
+   "equivalents": [
+    "PTFE virgin",
+    "Glass / carbon filled on request"
+   ],
+   "condition": "Moulded / skived",
+   "machinability": "Good",
+   "stock": "In stock"
+  },
+  {
+   "slug": "polypropylene-sheets-rods",
+   "silo": "engineering-plastics",
+   "sort": 8,
+   "name": "Polypropylene (PP) Sheets & Rods",
+   "grade": "PP-H",
+   "material": "pp",
+   "forms": [
+    "round",
+    "plate"
+   ],
+   "sizeRange": "Sheets 2–50 mm · rods 10–200 mm",
+   "applications": "Chemical tanks, plating, food",
+   "sku": "SST-EP-08",
+   "chemistry": [],
+   "mechanical": [
+    {
+     "k": "Density",
+     "v": "0.90 g/cm³"
+    },
+    {
+     "k": "Tensile",
+     "v": "30–35 MPa"
+    },
+    {
+     "k": "Max service",
+     "v": "100 °C"
+    },
+    {
+     "k": "Chemical",
+     "v": "Acid and alkali resistant"
+    }
+   ],
+   "equivalents": [
+    "PP homopolymer",
+    "PP-H"
+   ],
+   "condition": "Extruded",
+   "machinability": "Good",
+   "stock": "Limited"
+  },
+  {
+   "slug": "uhmwpe-sheets-rods",
+   "silo": "engineering-plastics",
+   "sort": 9,
+   "name": "UHMWPE Wear-Resistant Sheets",
+   "grade": "PE1000",
+   "material": "uhmw",
+   "forms": [
+    "plate",
+    "round"
+   ],
+   "sizeRange": "Sheets 6–100 mm",
+   "applications": "Chute liners, star wheels, dock fenders",
+   "sku": "SST-EP-09",
+   "chemistry": [],
+   "mechanical": [
+    {
+     "k": "Density",
+     "v": "0.93 g/cm³"
+    },
+    {
+     "k": "Tensile",
+     "v": "40 MPa"
+    },
+    {
+     "k": "Max service",
+     "v": "80 °C"
+    },
+    {
+     "k": "Abrasion",
+     "v": "Best in class"
+    }
+   ],
+   "equivalents": [
+    "UHMWPE PE1000"
+   ],
+   "condition": "Compression moulded",
+   "machinability": "Good",
+   "stock": "Limited"
+  },
+  {
+   "slug": "bakelite-fabric-sheets",
+   "silo": "engineering-plastics",
+   "sort": 10,
+   "name": "Industrial Bakelite Fabric Sheets",
+   "grade": "Fabric",
+   "material": "bake",
+   "forms": [
+    "plate",
+    "round"
+   ],
+   "sizeRange": "1–100 mm thick",
+   "applications": "Gears, bushes, electrical insulation",
+   "sku": "SST-EP-10",
+   "chemistry": [],
+   "mechanical": [
+    {
+     "k": "Density",
+     "v": "1.36 g/cm³"
+    },
+    {
+     "k": "Flexural",
+     "v": "100 MPa"
+    },
+    {
+     "k": "Max service",
+     "v": "120 °C"
+    },
+    {
+     "k": "Insulation",
+     "v": "Good"
+    }
+   ],
+   "equivalents": [
+    "Cotton fabric phenolic",
+    "Hylam (Tufnol type)"
+   ],
+   "condition": "Laminated sheet / rod",
+   "machinability": "Good",
+   "stock": "In stock"
+  },
+  {
+   "slug": "bakelite-paper-sheets",
+   "silo": "engineering-plastics",
+   "sort": 11,
+   "name": "Industrial Bakelite Paper Sheets",
+   "grade": "Paper",
+   "material": "bake",
+   "forms": [
+    "plate"
+   ],
+   "sizeRange": "1–50 mm thick",
+   "applications": "Switchgear, panel insulation",
+   "sku": "SST-EP-11",
+   "chemistry": [],
+   "mechanical": [
+    {
+     "k": "Density",
+     "v": "1.35 g/cm³"
+    },
+    {
+     "k": "Flexural",
+     "v": "135 MPa"
+    },
+    {
+     "k": "Max service",
+     "v": "120 °C"
+    },
+    {
+     "k": "Insulation",
+     "v": "Excellent"
+    }
+   ],
+   "equivalents": [
+    "Paper phenolic",
+    "Electrical grade P1 / P2"
+   ],
+   "condition": "Laminated sheet",
+   "machinability": "Fair",
+   "stock": "In stock"
+  },
+  {
+   "slug": "acrylic-transparent-sheets",
+   "silo": "engineering-plastics",
+   "sort": 12,
+   "name": "Acrylic Clear Transparent Sheets",
+   "grade": "PMMA",
+   "material": "acr",
+   "forms": [
+    "plate"
+   ],
+   "sizeRange": "2–25 mm thick",
+   "applications": "Guards, displays, signage",
+   "sku": "SST-EP-12",
+   "chemistry": [],
+   "mechanical": [
+    {
+     "k": "Density",
+     "v": "1.19 g/cm³"
+    },
+    {
+     "k": "Tensile",
+     "v": "70 MPa"
+    },
+    {
+     "k": "Max service",
+     "v": "80 °C"
+    },
+    {
+     "k": "Light transmission",
+     "v": "92%"
+    }
+   ],
+   "equivalents": [
+    "PMMA cast",
+    "Acrylic clear"
+   ],
+   "condition": "Cast sheet, protective film",
+   "machinability": "Good",
+   "stock": "In stock"
+  },
+  {
+   "slug": "hss-tool-bits",
+   "silo": "cutting-workshop-tools",
+   "sort": 1,
+   "name": "HSS Tool Bits (Square & Round)",
+   "grade": "M2",
+   "material": null,
+   "forms": [],
+   "sizeRange": "¼″ to 1″ · 4″ / 6″ / 8″ long",
+   "applications": "Lathe turning, form and parting tools",
+   "sku": "SST-CWT-01",
+   "chemistry": [],
+   "mechanical": [
+    {
+     "k": "Material",
+     "v": "HSS M2"
+    },
+    {
+     "k": "Hardness",
+     "v": "64–66 HRC"
+    },
+    {
+     "k": "Shapes",
+     "v": "Square, round, rectangular"
+    },
+    {
+     "k": "Sizes",
+     "v": "¼″ to 1″"
+    }
+   ],
+   "equivalents": [
+    "AISI M2",
+    "DIN 1.3343"
+   ],
+   "condition": "Hardened, ground",
+   "machinability": "–",
+   "stock": "In stock"
+  },
+  {
+   "slug": "m42-cobalt-tool-bits",
+   "silo": "cutting-workshop-tools",
+   "sort": 2,
+   "name": "M42 8% Cobalt HSS Tool Bits",
+   "grade": "M42",
+   "material": null,
+   "forms": [],
+   "sizeRange": "¼″ to 1″",
+   "applications": "Stainless and high-tensile turning",
+   "sku": "SST-CWT-02",
+   "chemistry": [],
+   "mechanical": [
+    {
+     "k": "Material",
+     "v": "HSS M42, 8% cobalt"
+    },
+    {
+     "k": "Hardness",
+     "v": "67–69 HRC"
+    },
+    {
+     "k": "Use",
+     "v": "Stainless, hard alloys"
+    },
+    {
+     "k": "Sizes",
+     "v": "¼″ to 1″"
+    }
+   ],
+   "equivalents": [
+    "AISI M42",
+    "DIN 1.3247"
+   ],
+   "condition": "Hardened, ground",
+   "machinability": "–",
+   "stock": "In stock"
+  },
+  {
+   "slug": "bimetal-bandsaw-blades",
+   "silo": "cutting-workshop-tools",
+   "sort": 3,
+   "name": "Bi-Metal Bandsaw Blades for Metal Cutting",
+   "grade": "M42",
+   "material": null,
+   "forms": [],
+   "sizeRange": "27–54 mm wide · any length",
+   "applications": "Bandsaw cutting of steel and alloys",
+   "sku": "SST-CWT-03",
+   "chemistry": [],
+   "mechanical": [
+    {
+     "k": "Teeth",
+     "v": "M42 bi-metal"
+    },
+    {
+     "k": "Widths",
+     "v": "27, 34, 41, 54 mm"
+    },
+    {
+     "k": "Pitch",
+     "v": "2/3 to 8/12 TPI"
+    },
+    {
+     "k": "Welding",
+     "v": "To any length"
+    }
+   ],
+   "equivalents": [
+    "Bi-metal M42",
+    "Variable pitch"
+   ],
+   "condition": "Coil or welded loops",
+   "machinability": "–",
+   "stock": "In stock"
+  },
+  {
+   "slug": "carbide-turning-inserts",
+   "silo": "cutting-workshop-tools",
+   "sort": 4,
+   "name": "Carbide Inserter Turning Tools",
+   "grade": "ISO",
+   "material": null,
+   "forms": [],
+   "sizeRange": "CNMG, DNMG, TNMG, WNMG, VNMG",
+   "applications": "CNC turning of steel, SS and cast iron",
+   "sku": "SST-CWT-04",
+   "chemistry": [],
+   "mechanical": [
+    {
+     "k": "Shapes",
+     "v": "CNMG, DNMG, TNMG, WNMG, VNMG"
+    },
+    {
+     "k": "Grades",
+     "v": "P, M, K (steel, SS, CI)"
+    },
+    {
+     "k": "Coating",
+     "v": "CVD / PVD"
+    },
+    {
+     "k": "Holders",
+     "v": "Matching tool holders"
+    }
+   ],
+   "equivalents": [
+    "ISO 1832 designation"
+   ],
+   "condition": "Boxes of 10",
+   "machinability": "–",
+   "stock": "In stock"
+  },
+  {
+   "slug": "abrasive-cutoff-wheels",
+   "silo": "cutting-workshop-tools",
+   "sort": 5,
+   "name": "Industrial Abrasive Cut-Off Wheels",
+   "grade": "T41",
+   "material": null,
+   "forms": [],
+   "sizeRange": "100–355 mm",
+   "applications": "Chop saws, angle grinders",
+   "sku": "SST-CWT-05",
+   "chemistry": [],
+   "mechanical": [
+    {
+     "k": "Sizes",
+     "v": "100, 125, 180, 355 mm"
+    },
+    {
+     "k": "Thickness",
+     "v": "1.0–3.0 mm"
+    },
+    {
+     "k": "Bond",
+     "v": "Reinforced resin"
+    },
+    {
+     "k": "Use",
+     "v": "Steel, SS, inox"
+    }
+   ],
+   "equivalents": [
+    "EN 12413",
+    "Type 41 / 42"
+   ],
+   "condition": "Boxes of 25 / 50",
+   "machinability": "–",
+   "stock": "In stock"
+  },
+  {
+   "slug": "solid-carbide-end-mills",
+   "silo": "cutting-workshop-tools",
+   "sort": 6,
+   "name": "Solid Carbide End Mills",
+   "grade": "VMC",
+   "material": null,
+   "forms": [],
+   "sizeRange": "Ø 1–20 mm",
+   "applications": "VMC milling, slotting, profiling",
+   "sku": "SST-CWT-06",
+   "chemistry": [],
+   "mechanical": [
+    {
+     "k": "Diameter",
+     "v": "1–20 mm"
+    },
+    {
+     "k": "Flutes",
+     "v": "2, 3, 4"
+    },
+    {
+     "k": "Coating",
+     "v": "TiAlN / AlTiN"
+    },
+    {
+     "k": "Hardness rating",
+     "v": "Up to 55 HRC"
+    }
+   ],
+   "equivalents": [
+    "Solid carbide, micrograin"
+   ],
+   "condition": "Individually packed",
+   "machinability": "–",
+   "stock": "Limited"
+  },
+  {
+   "slug": "hss-taps-die-sets",
+   "silo": "cutting-workshop-tools",
+   "sort": 7,
+   "name": "HSS Taps & Die Sets",
+   "grade": "HSS",
+   "material": null,
+   "forms": [],
+   "sizeRange": "M3–M24, BSW, BSP",
+   "applications": "Threading in maintenance and production",
+   "sku": "SST-CWT-07",
+   "chemistry": [],
+   "mechanical": [
+    {
+     "k": "Threads",
+     "v": "M3–M24, BSW, BSP, UNC"
+    },
+    {
+     "k": "Material",
+     "v": "HSS / HSS-E"
+    },
+    {
+     "k": "Sets",
+     "v": "Taper, intermediate, plug"
+    },
+    {
+     "k": "Dies",
+     "v": "Split, adjustable"
+    }
+   ],
+   "equivalents": [
+    "DIN 352 / DIN 371"
+   ],
+   "condition": "Sets and singles",
+   "machinability": "–",
+   "stock": "In stock"
+  },
+  {
+   "slug": "lathe-chuck-accessories",
+   "silo": "cutting-workshop-tools",
+   "sort": 8,
+   "name": "Lathe Chuck Machine Accessories",
+   "grade": "Chuck",
+   "material": null,
+   "forms": [],
+   "sizeRange": "125–400 mm chucks",
+   "applications": "Lathe workholding and spares",
+   "sku": "SST-CWT-08",
+   "chemistry": [],
+   "mechanical": [
+    {
+     "k": "Chucks",
+     "v": "3- and 4-jaw, 125–400 mm"
+    },
+    {
+     "k": "Spares",
+     "v": "Jaws, keys, scroll"
+    },
+    {
+     "k": "Centres",
+     "v": "Live and dead, MT2–MT5"
+    },
+    {
+     "k": "Backplates",
+     "v": "On request"
+    }
+   ],
+   "equivalents": [
+    "DIN 6350 / ISO 3089"
+   ],
+   "condition": "New, boxed",
+   "machinability": "–",
+   "stock": "Limited"
+  },
+  {
+   "slug": "magnetic-v-blocks-clamps",
+   "silo": "cutting-workshop-tools",
+   "sort": 9,
+   "name": "Magnetic V-Blocks & Precision Clamps",
+   "grade": "V-block",
+   "material": null,
+   "forms": [],
+   "sizeRange": "Pairs and singles",
+   "applications": "Inspection, drilling and grinding setups",
+   "sku": "SST-CWT-09",
+   "chemistry": [],
+   "mechanical": [
+    {
+     "k": "V-blocks",
+     "v": "Magnetic, 90° V"
+    },
+    {
+     "k": "Holding",
+     "v": "Up to 100 kg pull"
+    },
+    {
+     "k": "Clamps",
+     "v": "Toolmaker, C, step"
+    },
+    {
+     "k": "Accuracy",
+     "v": "0.005 mm"
+    }
+   ],
+   "equivalents": [
+    "Precision workholding"
+   ],
+   "condition": "Pairs / singles",
+   "machinability": "–",
+   "stock": "In stock"
+  }
+ ],
+ "cities": [
+  {
+   "slug": "madurai",
+   "name": "Madurai",
+   "km": 0,
+   "lead": "Same day",
+   "zones": "Kappalur SIDCO, K. Pudur, Uranganpatti, Thoppur",
+   "inds": [
+    "Lathe and CNC job shops",
+    "Pumps and motors",
+    "Textile machinery",
+    "Fabrication"
+   ],
+   "pop": [
+    "en8-steel-round-bars",
+    "en24-chrome-moly-steel-bars",
+    "ms-plates-sheets",
+    "free-cutting-brass-rods"
+   ],
+   "intro": "Our godowns sit in Simmakkal, minutes from most Madurai workshops. Pick up over the counter, or we deliver cut pieces the same day."
+  },
+  {
+   "slug": "tirunelveli",
+   "name": "Tirunelveli",
+   "km": 155,
+   "lead": "1 day",
+   "zones": "Gangaikondan SIPCOT, Pettai, Palayamkottai",
+   "inds": [
+    "Wind turbine parts",
+    "Pumps and valves",
+    "Structural fabrication"
+   ],
+   "pop": [
+    "ms-plates-sheets",
+    "en19-alloy-steel-rounds",
+    "ss-304-round-bars",
+    "gunmetal-lg2-rods"
+   ],
+   "intro": "Daily trucks run from Madurai to Tirunelveli and the wind-energy belt beyond it, with crane-loaded plates and sections delivered next morning."
+  },
+  {
+   "slug": "virudhunagar",
+   "name": "Virudhunagar",
+   "km": 50,
+   "lead": "Same day",
+   "zones": "Virudhunagar SIDCO, Aruppukottai road",
+   "inds": [
+    "Oil mills",
+    "Ginning and spinning",
+    "Food processing machinery"
+   ],
+   "pop": [
+    "ss-304-sheets-plates",
+    "en8-steel-round-bars",
+    "nylon-6-rods",
+    "ms-flat-bars"
+   ],
+   "intro": "An hour down NH 44 from our yard: stainless sheets for oil and food plants and EN8 shafting for mill machinery, delivered the same day."
+  },
+  {
+   "slug": "sivakasi",
+   "name": "Sivakasi",
+   "km": 75,
+   "lead": "Same day",
+   "zones": "Sivakasi industrial estate, Thiruthangal",
+   "inds": [
+    "Printing presses",
+    "Match and safety-fireworks machinery",
+    "Paper converting"
+   ],
+   "pop": [
+    "en31-bearing-steel-rounds",
+    "hchcr-d2-tool-steel",
+    "phosphor-bronze-pb1-rods",
+    "delrin-acetal-white-rods"
+   ],
+   "intro": "Printing and converting machines need ground rollers, D2 cutting dies and bronze bushes. We stock all three and send them down the same day."
+  },
+  {
+   "slug": "kovilpatti",
+   "name": "Kovilpatti",
+   "km": 100,
+   "lead": "1 day",
+   "zones": "Kovilpatti SIDCO, Ettayapuram road",
+   "inds": [
+    "Match industry",
+    "Spinning mills",
+    "General engineering"
+   ],
+   "pop": [
+    "en8-steel-round-bars",
+    "ms-equal-angles",
+    "brass-round-bars",
+    "bakelite-fabric-sheets"
+   ],
+   "intro": "Steel, brass and Bakelite for the match and spinning units of Kovilpatti, consolidated on our Tuticorin-route truck."
+  },
+  {
+   "slug": "tuticorin",
+   "name": "Tuticorin",
+   "km": 150,
+   "lead": "1 day",
+   "zones": "SIPCOT Tuticorin, V.O.C. Port, Meelavittan",
+   "inds": [
+    "Port and marine works",
+    "Thermal and chemical plants",
+    "Salt and seafood processing"
+   ],
+   "pop": [
+    "ss-316-plates-sheets",
+    "aluminium-5083-plates",
+    "ms-beams-ismb",
+    "aluminium-bronze-ab2-rods"
+   ],
+   "intro": "Marine-grade 316, 5083 aluminium and heavy ISMB for the port and plant corridor, dispatched daily and crane-unloaded at site on request."
+  }
+ ],
+ "leadTimes": [
+  {
+   "city": "Madurai",
+   "lead": "Same day"
+  },
+  {
+   "city": "Virudhunagar",
+   "lead": "Same day"
+  },
+  {
+   "city": "Sivakasi",
+   "lead": "Same day"
+  },
+  {
+   "city": "Kovilpatti",
+   "lead": "1 day"
+  },
+  {
+   "city": "Tirunelveli",
+   "lead": "1 day"
+  },
+  {
+   "city": "Tuticorin",
+   "lead": "1 day"
+  },
+  {
+   "city": "Trichy",
+   "lead": "1 day"
+  },
+  {
+   "city": "Coimbatore",
+   "lead": "1–2 days"
+  },
+  {
+   "city": "Salem",
+   "lead": "1–2 days"
+  },
+  {
+   "city": "Chennai",
+   "lead": "2–3 days"
+  },
+  {
+   "city": "Hosur",
+   "lead": "2–3 days"
+  }
+ ],
+ "settings": {
+  "name": "Sun Steel Traders",
+  "place": "Madurai",
+  "phone1": "98421 50479",
+  "phone2": "98428 50479",
+  "landline": "0452 235 0479",
+  "whatsapp": "919842150479",
+  "email": "managersunsteeltraders@gmail.com",
+  "address": "57, Tamil Sangam Road, near Bell Hotel, Simmakkal, Madurai 625001, Tamil Nadu",
+  "hours": "Mon–Sat · 09:00–19:30",
+  "gstin": "33•••••••••••Z• (to confirm)",
+  "udyam": "UDYAM-TN-••-••••••• (to confirm)",
+  "iso": "ISO 9001:2015"
+ },
+ "sections": {
+  "beam": [
+   [
+    "ISMB 100",
+    11.5
+   ],
+   [
+    "ISMB 125",
+    13
+   ],
+   [
+    "ISMB 150",
+    14.9
+   ],
+   [
+    "ISMB 175",
+    19.3
+   ],
+   [
+    "ISMB 200",
+    25.4
+   ],
+   [
+    "ISMB 225",
+    31.2
+   ],
+   [
+    "ISMB 250",
+    37.3
+   ],
+   [
+    "ISMB 300",
+    44.2
+   ],
+   [
+    "ISMB 350",
+    52.4
+   ],
+   [
+    "ISMB 400",
+    61.6
+   ],
+   [
+    "ISMB 450",
+    72.4
+   ],
+   [
+    "ISMB 500",
+    86.9
+   ],
+   [
+    "ISMB 600",
+    122.6
+   ]
+  ],
+  "channel": [
+   [
+    "ISMC 75",
+    6.8
+   ],
+   [
+    "ISMC 100",
+    9.2
+   ],
+   [
+    "ISMC 125",
+    12.7
+   ],
+   [
+    "ISMC 150",
+    16.4
+   ],
+   [
+    "ISMC 175",
+    19.1
+   ],
+   [
+    "ISMC 200",
+    22.1
+   ],
+   [
+    "ISMC 225",
+    25.9
+   ],
+   [
+    "ISMC 250",
+    30.4
+   ],
+   [
+    "ISMC 300",
+    35.8
+   ],
+   [
+    "ISMC 400",
+    49.4
+   ]
+  ]
+ }
+}

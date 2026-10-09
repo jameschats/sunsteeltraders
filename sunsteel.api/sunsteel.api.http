@@ -1,0 +1,64 @@
+@api = http://localhost:5090/api
+
+### Health
+GET {{api}}/health
+
+### Public site settings + theme (used by the Angular app at start-up)
+GET {{api}}/site
+
+### Sign in (seeded Super Admin; change the password on first login)
+# @name login
+POST {{api}}/auth/login
+Content-Type: application/json
+
+{ "email": "admin@sunsteeltraders.com", "password": "<Admin:DefaultPassword>" }
+
+### Who am I
+GET {{api}}/auth/me
+Authorization: Bearer {{login.response.body.data.accessToken}}
+
+### Staff users
+GET {{api}}/admin/users
+Authorization: Bearer {{login.response.body.data.accessToken}}
+
+### Change theme
+PUT {{api}}/admin/theme
+Authorization: Bearer {{login.response.body.data.accessToken}}
+Content-Type: application/json
+
+{ "primary": "#1E2430", "accent": "#9C6B3C", "surface": "#FAF6EF" }
+
+### Catalogue index (silos, materials, IS 808 sections, lead times, cities)
+GET {{api}}/catalog
+
+### One silo
+GET {{api}}/catalog/silos/alloy-engineering-steels
+
+### One product
+GET {{api}}/catalog/products/alloy-engineering-steels/en24-chrome-moly-steel-bars
+
+### Search (grades, names, equivalents)
+GET {{api}}/catalog/search?q=4340
+
+### City landing page
+GET {{api}}/catalog/cities/tirunelveli
+
+### Submit an RFQ (server recomputes kg: EN24 Ø80 × 500 × 4 = 78.9 kg)
+POST {{api}}/leads
+Content-Type: application/json
+
+{
+  "type": "RFQ", "name": "R. Senthil", "phone": "98940 12345", "company": "Precision Lathe Works", "city": "Madurai",
+  "items": [ { "productSlug": "en24-chrome-moly-steel-bars", "form": "round", "dims": { "D": 80 }, "lengthMm": 500, "quantity": 4, "cutToSize": true } ]
+}
+
+### Leads inbox
+GET {{api}}/admin/leads?status=New
+Authorization: Bearer {{login.response.body.data.accessToken}}
+
+### Stock board toggle
+PUT {{api}}/admin/products/19/stock
+Authorization: Bearer {{login.response.body.data.accessToken}}
+Content-Type: application/json
+
+{ "stockStatus": "Limited" }

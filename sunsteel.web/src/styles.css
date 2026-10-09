@@ -1,0 +1,191 @@
+/* =====================================================================
+   Sun Steel Traders design system (v3 "Metal atelier") — Tailwind CSS v4.
+
+   Three colours drive everything: primary (ink navy), accent (bronze) and
+   surface (ivory). They are defaults here and overwritten at runtime by
+   SiteService from the admin Theme screen, so every utility such as
+   bg-primary / text-accent / border-line follows the admin's choice with
+   no rebuild. Derived shades use color-mix() so they recompute live.
+   ===================================================================== */
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #1E2430;
+  --color-accent: #9C6B3C;
+  --color-surface: #FAF6EF;
+  --color-sage: #5E6B5A;
+
+  --font-serif: "Cormorant Garamond", "Cormorant", "Iowan Old Style", Georgia, serif;
+  --font-sans: "Manrope", "Helvetica Neue", Arial, sans-serif;
+
+  --ease-lux: cubic-bezier(.22, .61, .36, 1);
+}
+
+@theme inline {
+  --color-deep: color-mix(in srgb, var(--color-primary) 82%, #000);
+  --color-ink: var(--color-primary);
+  --color-muted: color-mix(in srgb, var(--color-primary) 66%, var(--color-surface));
+  --color-faint: color-mix(in srgb, var(--color-primary) 42%, var(--color-surface));
+  --color-line: color-mix(in srgb, var(--color-primary) 13%, var(--color-surface));
+  --color-paper: color-mix(in srgb, var(--color-primary) 4%, var(--color-surface));
+  --color-tint: color-mix(in srgb, var(--color-accent) 7%, var(--color-surface));
+  --color-gold-ink: color-mix(in srgb, var(--color-accent) 70%, #1a1208);
+  --color-gold-soft: color-mix(in srgb, var(--color-accent) 14%, var(--color-surface));
+  --color-gold-light: color-mix(in srgb, var(--color-accent) 62%, #fff);
+  --color-on-primary: color-mix(in srgb, var(--color-surface) 94%, var(--color-accent));
+  --color-on-primary-muted: color-mix(in srgb, var(--color-surface) 60%, var(--color-primary));
+}
+
+/* ---------- base ---------- */
+@layer base {
+  :root {
+    --pad: clamp(18px, 4.6vw, 64px);
+    --sec: clamp(72px, 10vw, 140px);
+  }
+  html { scroll-behavior: smooth; scroll-padding-top: 96px; -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--color-surface);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: "tnum" 0;
+  }
+  h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 500; line-height: 1.02; letter-spacing: -.01em; text-wrap: balance; }
+  h1 em, h2 em, h3 em, .s em { font-style: italic; color: var(--color-accent); }
+  .on-dark h1 em, .on-dark h2 em, .on-dark h3 em, .on-dark .s em { color: var(--color-gold-light); }
+  button:not(:disabled), [role="button"]:not(:disabled), summary { cursor: pointer; }
+  :focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
+  ::selection { background: var(--color-accent); color: var(--color-surface); }
+  .num, table { font-variant-numeric: tabular-nums; }
+}
+
+/* ---------- public site components ---------- */
+@layer components {
+  .wrap { max-width: 1360px; margin: 0 auto; padding: 0 var(--pad); width: 100%; }
+  .sec { padding: var(--sec) 0; }
+  .label { display: block; font-size: 11px; letter-spacing: .22em; text-transform: uppercase; font-weight: 600; color: var(--color-faint); }
+  .label-accent { color: var(--color-accent); }
+  .on-dark .label { color: var(--color-on-primary-muted); }
+  .chapter { font-family: var(--font-serif); font-size: clamp(40px, 4vw, 56px); line-height: .9; color: var(--color-accent); }
+  .h-xxl { font-size: clamp(40px, 6vw, 84px); line-height: .98; }
+  .h-xl { font-size: clamp(32px, 4vw, 54px); }
+  .h-l { font-size: clamp(26px, 2.6vw, 34px); }
+  .lede { font-size: clamp(16px, 1.25vw, 18px); line-height: 1.7; color: var(--color-muted); max-width: 58ch; }
+  .rule { width: 56px; height: 1px; background: var(--color-accent); border: 0; margin: 24px 0; }
+
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px; height: 48px; padding: 0 26px;
+    border-radius: 999px; font-family: var(--font-sans); font-size: 11.5px; letter-spacing: .16em; text-transform: uppercase; font-weight: 600;
+    border: 1px solid var(--color-accent); background: var(--color-accent); color: #fff; white-space: nowrap;
+    transition: background .45s var(--ease-lux), color .45s var(--ease-lux), border-color .45s var(--ease-lux), transform .45s var(--ease-lux);
+  }
+  .btn:hover { background: var(--color-gold-ink); border-color: var(--color-gold-ink); }
+  .btn:disabled { opacity: .55; cursor: default; }
+  .btn-ghost { background: transparent; color: var(--color-ink); border-color: currentColor; }
+  .btn-ghost:hover { background: var(--color-primary); border-color: var(--color-primary); color: var(--color-surface); }
+  .on-dark .btn-ghost { color: var(--color-on-primary); border-color: color-mix(in srgb, var(--color-on-primary) 55%, transparent); }
+  .on-dark .btn-ghost:hover { background: var(--color-surface); color: var(--color-primary); border-color: var(--color-surface); }
+  .btn-sm { height: 38px; padding: 0 18px; font-size: 10.5px; }
+
+  .lnk {
+    display: inline-flex; align-items: center; gap: 8px; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; font-weight: 600; padding-bottom: 4px;
+    background: linear-gradient(currentColor, currentColor) 0 100% / 100% 1px no-repeat; transition: background-size .5s var(--ease-lux);
+  }
+  .lnk:hover { background-size: 0 1px; background-position: 100% 100%; }
+
+  .chip {
+    display: inline-flex; align-items: center; gap: 6px; height: 32px; padding: 0 14px; border-radius: 999px; font-size: 12px; font-weight: 500;
+    border: 1px solid var(--color-line); background: transparent; color: var(--color-ink); white-space: nowrap; transition: all .3s;
+  }
+  .chip:hover { border-color: var(--color-accent); }
+  .chip-on { background: var(--color-primary); border-color: var(--color-primary); color: var(--color-surface); }
+  .stock { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 600; letter-spacing: .04em; color: var(--color-sage); white-space: nowrap; }
+  .stock::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+  .stock-limited { color: #9A6B00; }
+  .stock-order { color: var(--color-faint); }
+
+  /* the hairline card: a rule on top, no box */
+  .card-rule { border-top: 1px solid var(--color-ink); padding-top: 14px; min-width: 0; }
+  .on-dark .card-rule { border-color: color-mix(in srgb, var(--color-on-primary) 40%, transparent); }
+
+  /* underline fields */
+  .fld { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+  .fld > span { font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--color-ink); font-weight: 600; }
+  .fld input, .fld select, .fld textarea {
+    border: 0; border-bottom: 1px solid color-mix(in srgb, var(--color-primary) 30%, var(--color-surface));
+    background: transparent; padding: 8px 0 10px; font-family: var(--font-sans); font-size: 16px; outline: none;
+    border-radius: 0; appearance: none; color: inherit; transition: border-color .3s; width: 100%; min-width: 0;
+  }
+  .fld textarea { resize: vertical; min-height: 84px; }
+  .fld input:focus, .fld select:focus, .fld textarea:focus { border-color: var(--color-accent); }
+  .fld .err { font-size: 12px; color: #A33A2B; min-height: 0; }
+  .on-dark .fld > span { color: var(--color-on-primary); }
+  .on-dark .fld input, .on-dark .fld select { border-color: color-mix(in srgb, var(--color-on-primary) 45%, transparent); }
+  .on-dark .fld select option { color: #111; }
+
+  /* data tables (sizes, chemistry) */
+  .dtable { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .dtable th { text-align: left; font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--color-faint); font-weight: 600; padding: 10px 12px 10px 0; border-bottom: 1px solid var(--color-ink); white-space: nowrap; }
+  .dtable td { padding: 12px 12px 12px 0; border-bottom: 1px solid var(--color-line); white-space: nowrap; }
+  .scroll-x { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+  /* Metal "photographs": brushed gradients standing in until the macro shoot (design doc §9). */
+  .metal { position: relative; overflow: hidden; background: linear-gradient(135deg, #D4D6D8, #8C9196 50%, #4E545A); }
+  .metal::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: repeating-linear-gradient(100deg, rgba(255,255,255,.075) 0 2px, transparent 2px 7px); }
+  .metal-steel { background: linear-gradient(135deg, #D4D6D8, #8C9196 50%, #4E545A); }
+  .metal-alloy { background: linear-gradient(135deg, #C7CACC, #7D8389 50%, #3F454B); }
+  .metal-ss { background: linear-gradient(135deg, #EEF0F2, #B4BAC0 45%, #6E757C); }
+  .metal-brass { background: linear-gradient(135deg, #E9CF8E, #B88C3E 55%, #6E5222); }
+  .metal-copper { background: linear-gradient(135deg, #E8B08C, #B5683F 55%, #6B3620); }
+  .metal-bronze { background: linear-gradient(135deg, #D9B58A, #9C6B3C 55%, #57391D); }
+  .metal-alu { background: linear-gradient(135deg, #F1F2F3, #C3C8CC 50%, #8D9499); }
+  .metal-ci { background: linear-gradient(135deg, #8D8F91, #55585B 50%, #2C2E30); }
+  .metal-plastic { background: linear-gradient(135deg, #F4F1EA, #DCD6C8 55%, #B3AB99); }
+  .metal-plastic::after { background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.35), transparent 55%); }
+  .metal-tools { background: linear-gradient(135deg, #3A4150, #1E2430); }
+  .metal-dark { background: linear-gradient(135deg, #3A4150, #1E2430); }
+
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity 1s var(--ease-lux), transform 1s var(--ease-lux); }
+  .reveal.in { opacity: 1; transform: none; }
+}
+
+/* ---------- admin components (calm, light, fast to work in) ---------- */
+@layer components {
+  .adm { background: #F4F5F7; color: #1D2430; font-size: 14.5px; line-height: 1.5; font-weight: 400; min-height: 100vh; }
+  .adm h1, .adm h2, .adm h3 { font-family: var(--font-sans); letter-spacing: 0; line-height: 1.3; }
+  .card { background: #fff; border: 1px solid #E3E6EB; border-radius: 10px; padding: 22px; }
+  .abtn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 38px; padding: 0 16px;
+    border-radius: 7px; border: 1px solid #D7DAE0; background: #fff; font-size: 13.5px; color: #1D2430;
+  }
+  .abtn:disabled { opacity: .55; cursor: default; }
+  .abtn-pri { background: var(--color-primary); color: #fff; border-color: var(--color-primary); }
+  .abtn-sm { height: 30px; padding: 0 10px; font-size: 12.5px; }
+  .abtn-danger { color: #B42318; }
+  .ainput {
+    width: 100%; height: 40px; border: 1px solid #D7DAE0; border-radius: 7px; padding: 0 12px; font-size: 14px;
+    background: #fff; color: #1D2430;
+  }
+  textarea.ainput { height: auto; min-height: 90px; padding: 10px 12px; }
+  .ainput:focus { outline: 2px solid color-mix(in srgb, var(--color-accent) 50%, transparent); border-color: var(--color-accent); }
+  .alabel { display: grid; gap: 6px; font-size: 12.5px; color: #4A5465; font-weight: 500; }
+  .ahint { font-weight: 400; color: #8A93A3; font-size: 12px; }
+  .tbl { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  .tbl th { text-align: left; font-weight: 500; color: #6B7485; font-size: 12px; padding: 10px 12px; border-bottom: 1px solid #E3E6EB; white-space: nowrap; }
+  .tbl td { padding: 12px; border-bottom: 1px solid #EEF0F3; vertical-align: middle; }
+  .tbl tr:last-child td { border-bottom: 0; }
+  .pill { display: inline-block; padding: 3px 10px; border-radius: 99px; font-size: 12px; font-weight: 500; background: #F2F4F7; color: #475467; }
+  .pill-ok { background: #ECFDF3; color: #067647; }
+  .pill-warn { background: #FEF6E7; color: #93370D; }
+  .alert { padding: 10px 12px; border-radius: 7px; font-size: 13px; background: #FEF3F2; color: #B42318; }
+  .alert-ok { background: #ECFDF3; color: #067647; }
+  .alert-warn { background: #FEF6E7; color: #93370D; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}

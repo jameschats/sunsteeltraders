@@ -1,0 +1,18 @@
+[Unit]
+Description=Sun Steel Traders Angular SSR
+After=network.target
+
+[Service]
+WorkingDirectory=/var/www/sunsteel/web
+ExecStart=/usr/bin/node /var/www/sunsteel/web/server/server.mjs
+Environment=NODE_ENV=production
+Environment=PORT=4130
+Environment=API_BASE_URL=__SCHEME__://__DOMAIN__/api
+Environment=SITE_URL=__SCHEME__://__DOMAIN__
+Environment=ALLOWED_HOSTS=www.__DOMAIN__
+Restart=always
+RestartSec=10
+User=www-data
+
+[Install]
+WantedBy=multi-user.target

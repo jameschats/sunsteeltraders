@@ -1,0 +1,95 @@
+<header class="mb-6 flex flex-wrap items-center justify-between gap-4">
+  <div>
+    <h1 class="text-[22px] font-medium">Staff users</h1>
+    <p class="mt-0.5 text-[13.5px] text-[#6B7485]">Who can sign in to this admin, and what each person can change.</p>
+  </div>
+  <button type="button" class="abtn abtn-pri" (click)="add()" [disabled]="!roles().length"><ss-icon name="plus" [size]="16" />Add staff user</button>
+</header>
+
+@if (notice()) { <p class="alert alert-ok mb-4" role="status">{{ notice() }}</p> }
+@if (error()) { <p class="alert mb-4" role="alert">{{ error() }}</p> }
+
+<div class="card overflow-x-auto !p-0">
+  @if (loading()) {
+    <p class="p-6 text-[#6B7485]">Loading staff…</p>
+  } @else {
+    <table class="tbl">
+      <thead><tr><th>Name</th><th>Role</th><th>Status</th><th>Last sign-in</th><th class="text-right">Actions</th></tr></thead>
+      <tbody>
+        @for (u of users(); track u.userId) {
+          <tr>
+            <td>
+              <div class="font-medium">{{ u.fullName || u.email }}</div>
+              <div class="text-[12.5px] text-[#6B7485]">{{ u.email }}{{ u.allowGoogleSignIn ? ' · Google allowed' : '' }}</div>
+            </td>
+            <td>{{ u.roleName || '—' }}</td>
+            <td>
+              @if (!u.isActive) { <span class="pill">Disabled</span> }
+              @else if (u.mustChangePassword) { <span class="pill pill-warn">Temporary password</span> }
+              @else { <span class="pill pill-ok">Active</span> }
+            </td>
+            <td class="whitespace-nowrap text-[#6B7485]">{{ u.lastLoginAt ? (u.lastLoginAt + 'Z' | date: 'd MMM y, h:mm a') : 'Never' }}</td>
+            <td class="whitespace-nowrap text-right">
+              <button type="button" class="abtn abtn-sm" (click)="edit(u)"><ss-icon name="edit" [size]="14" />Edit</button>
+              <button type="button" class="abtn abtn-sm ml-1.5" (click)="openReset(u)"><ss-icon name="key" [size]="14" />Reset password</button>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  }
+</div>
+
+<!-- add / edit drawer -->
+@if (draft(); as d) {
+  <div class="fixed inset-0 z-[90] bg-[#101828]/45" (click)="draft.set(null)" aria-hidden="true"></div>
+  <form class="fixed inset-y-0 right-0 z-[95] grid w-full max-w-[520px] content-start gap-4 overflow-y-auto bg-white p-7" (ngSubmit)="save()" role="dialog" aria-modal="true">
+    <div class="flex items-center justify-between">
+      <h2 class="text-[20px] font-medium">{{ isNew() ? 'Add staff user' : 'Edit ' + d.email }}</h2>
+      <button type="button" class="abtn abtn-sm" (click)="draft.set(null)" aria-label="Close"><ss-icon name="x" [size]="14" /></button>
+    </div>
+    @if (isNew()) {
+      <label class="alabel">Email<input class="ainput" type="email" name="email" [ngModel]="d.email" (ngModelChange)="patch({ email: $event })" required /></label>
+    }
+    <label class="alabel">Full name<input class="ainput" name="fullName" [ngModel]="d.fullName" (ngModelChange)="patch({ fullName: $event })" /></label>
+    <label class="alabel">Phone<input class="ainput" type="tel" name="phone" [ngModel]="d.phoneNumber" (ngModelChange)="patch({ phoneNumber: $event })" /></label>
+    <label class="alabel">Role
+      <select class="ainput" name="role" [ngModel]="d.roleId" (ngModelChange)="patch({ roleId: +$event })">
+        @for (r of roles(); track r.roleId) { <option [value]="r.roleId">{{ r.name }}</option> }
+      </select>
+      <span class="ahint">{{ roleDescription(d.roleId) }}</span>
+    </label>
+    @if (isNew()) {
+      <label class="alabel">Temporary password
+        <input class="ainput font-mono" name="tmp" [ngModel]="d.temporaryPassword" (ngModelChange)="patch({ temporaryPassword: $event })" />
+        <span class="ahint">They must replace it at first sign-in. Share it privately, never by email to a group.</span>
+      </label>
+    } @else {
+      <label class="flex items-center gap-2.5 text-sm"><input type="checkbox" name="active" [ngModel]="d.isActive" (ngModelChange)="patch({ isActive: $event })" [disabled]="d.userId === auth.currentUser()?.userId" />Account active</label>
+    }
+    <label class="flex items-center gap-2.5 text-sm"><input type="checkbox" name="google" [ngModel]="d.allowGoogleSignIn" (ngModelChange)="patch({ allowGoogleSignIn: $event })" />Allow “Continue with Google” for this email</label>
+    @if (formError()) { <p class="alert" role="alert">{{ formError() }}</p> }
+    <div class="flex justify-end gap-2 pt-2">
+      <button type="button" class="abtn" (click)="draft.set(null)">Cancel</button>
+      <button class="abtn abtn-pri" type="submit" [disabled]="saving()">{{ saving() ? 'Saving…' : isNew() ? 'Create user' : 'Save changes' }}</button>
+    </div>
+  </form>
+}
+
+<!-- reset password dialog -->
+@if (resetFor(); as u) {
+  <div class="fixed inset-0 z-[90] flex items-center justify-center bg-[#101828]/45 p-5" role="dialog" aria-modal="true">
+    <div class="card grid w-full max-w-[440px] gap-4">
+      <h2 class="text-[18px] font-medium">Reset password for {{ u.fullName || u.email }}</h2>
+      <label class="alabel">Temporary password
+        <input class="ainput font-mono" name="reset" [(ngModel)]="resetPassword" />
+        <span class="ahint">They'll be signed out everywhere and must choose a new password at next sign-in.</span>
+      </label>
+      @if (formError()) { <p class="alert" role="alert">{{ formError() }}</p> }
+      <div class="flex justify-end gap-2">
+        <button type="button" class="abtn" (click)="resetFor.set(null)">Cancel</button>
+        <button type="button" class="abtn abtn-pri" (click)="confirmReset()" [disabled]="saving()">Set temporary password</button>
+      </div>
+    </div>
+  </div>
+}

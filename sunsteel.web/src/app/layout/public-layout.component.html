@@ -1,0 +1,99 @@
+@let light = overHero() && !scrolled() && !menuOpen();
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[90] focus:bg-surface focus:px-4 focus:py-2">Skip to content</a>
+<header class="fixed inset-x-0 top-0 z-50 pt-[env(safe-area-inset-top)] transition-[background,box-shadow,color] duration-500 ease-lux"
+  [class]="light ? 'text-white' : 'bg-surface/95 text-ink shadow-[0_1px_0_var(--color-line)] backdrop-blur-md'">
+  <div class="wrap flex items-center justify-between gap-6 transition-[height] duration-500" [class]="scrolled() ? 'h-[70px]' : 'h-[84px]'">
+    <ss-brand />
+
+    <nav class="hidden gap-[clamp(18px,2.2vw,34px)] text-[11px] font-semibold uppercase tracking-[.14em] min-[1100px]:flex" aria-label="Main">
+      @for (item of nav; track item.link) {
+        <a [routerLink]="item.link" routerLinkActive="!border-accent" class="border-b border-transparent py-1.5 transition-colors duration-500 hover:border-accent">{{ item.label }}</a>
+      }
+    </nav>
+
+    <div class="flex items-center gap-4">
+      <a [href]="site.tel()" (click)="track('call')" class="hidden items-center gap-2 text-[13px] font-medium min-[1100px]:flex">
+        <ss-icon name="phone" [size]="16" />{{ site.get('Landline') || site.get('Phone1') }}
+      </a>
+      <button type="button" (click)="req.open.set(true)" class="relative p-2" [attr.aria-label]="'Your request, ' + req.count() + ' items'">
+        <ss-icon name="list" [size]="22" />
+        @if (req.count()) { <span class="absolute -right-0.5 -top-0.5 grid h-[18px] min-w-[18px] place-items-center rounded-full bg-accent px-1 text-[10px] font-semibold text-white">{{ req.count() }}</span> }
+      </button>
+      <a routerLink="/contact-us/" class="btn btn-sm !hidden sm:!inline-flex" [class]="light ? 'btn-ghost !border-white/70 !text-white' : ''">Concierge</a>
+      <button type="button" class="p-2 min-[1100px]:hidden" aria-label="Open menu" (click)="menuOpen.set(true)"><ss-icon name="menu" [size]="26" /></button>
+    </div>
+  </div>
+</header>
+
+<!-- mobile menu -->
+<div class="on-dark fixed inset-0 z-[60] flex flex-col bg-primary px-[var(--pad)] pb-[calc(env(safe-area-inset-bottom)+24px)] pt-[calc(env(safe-area-inset-top)+20px)] text-on-primary transition-opacity duration-500"
+     [class]="menuOpen() ? 'opacity-100' : 'pointer-events-none opacity-0'" role="dialog" aria-modal="true" aria-label="Menu" [attr.aria-hidden]="!menuOpen()">
+  <div class="flex items-center justify-between">
+    <ss-brand />
+    <button type="button" class="p-2" aria-label="Close menu" (click)="menuOpen.set(false)"><ss-icon name="x" [size]="28" /></button>
+  </div>
+  <nav class="my-auto flex flex-col gap-1">
+    <a routerLink="/" class="font-serif text-[40px] font-medium leading-[1.25]">Home</a>
+    @for (item of nav; track item.link) {
+      <a [routerLink]="item.link" class="font-serif text-[40px] font-medium leading-[1.25]">{{ item.label }}</a>
+    }
+  </nav>
+  <p class="text-on-primary-muted">{{ site.get('Phone1') }} · {{ site.get('Landline') }}<br />{{ site.get('OpeningHours') }}</p>
+</div>
+
+<main id="main">
+  <router-outlet />
+</main>
+
+<footer class="on-dark bg-primary pb-[calc(env(safe-area-inset-bottom)+40px)] pt-[clamp(64px,8vw,112px)] text-[14px] text-on-primary-muted">
+  <div class="wrap">
+    <div class="grid grid-cols-2 gap-10 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
+      <div class="col-span-2 md:col-span-1">
+        <div class="text-on-primary"><ss-brand /></div>
+        <p class="mt-6 max-w-[34ch]">{{ site.get('Address') }}</p>
+        <p class="mt-2">{{ site.get('OpeningHours') }}</p>
+        <a class="btn mt-6" [href]="site.whatsappUrl()" target="_blank" rel="noopener" (click)="track('wa')"><ss-icon name="wa" [size]="17" />WhatsApp the sales desk</a>
+      </div>
+      <div>
+        <h2 class="label !text-gold-light mb-5">The library</h2>
+        <ul class="grid gap-2.5">
+          @for (s of catalog.index().silos; track s.key) { <li><a [routerLink]="'/products/' + s.key + '/'" class="hover:text-on-primary">{{ s.shortName }}</a></li> }
+        </ul>
+      </div>
+      <div>
+        <h2 class="label !text-gold-light mb-5">We deliver to</h2>
+        <ul class="grid gap-2.5">
+          @for (c of catalog.index().cities; track c.slug) { <li><a [routerLink]="c.path" class="hover:text-on-primary">{{ c.name }}</a></li> }
+        </ul>
+      </div>
+      <div>
+        <h2 class="label !text-gold-light mb-5">Reach us</h2>
+        <ul class="grid gap-2.5">
+          <li><a [href]="site.tel('Phone1')" (click)="track('call')" class="hover:text-on-primary">{{ site.get('Phone1') }}</a></li>
+          <li><a [href]="site.tel('Phone2')" (click)="track('call')" class="hover:text-on-primary">{{ site.get('Phone2') }}</a></li>
+          <li>{{ site.get('Landline') }}</li>
+          <li><a [href]="'mailto:' + site.get('SalesEmail')" class="break-all hover:text-on-primary">{{ site.get('SalesEmail') }}</a></li>
+          <li><a routerLink="/metal-weight-calculator/" class="hover:text-on-primary">Weight calculator</a></li>
+          <li><a routerLink="/catalogue-download/" class="hover:text-on-primary">Download catalogue</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-16 flex flex-wrap justify-between gap-4 border-t border-white/12 pt-7 text-[12px]">
+      <span>© {{ year }} {{ site.businessName() }}, {{ site.get('LocationLine') }}@if (site.get('Gstin')) { · GSTIN {{ site.get('Gstin') }} }@if (site.get('IsoCertificate')) { · {{ site.get('IsoCertificate') }} }</span>
+      <span class="flex flex-wrap gap-6">
+        <a routerLink="/terms-conditions/" class="hover:text-on-primary">Terms &amp; conditions</a>
+        <a routerLink="/privacy-policy/" class="hover:text-on-primary">Privacy policy</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<ss-request-drawer />
+
+<!-- mobile action bar (thumb reach) -->
+<div class="fixed inset-x-0 bottom-0 z-40 grid grid-cols-3 gap-2 border-t border-line bg-surface/95 px-3 pb-[calc(env(safe-area-inset-bottom)+8px)] pt-2 backdrop-blur md:hidden">
+  <a [href]="site.tel()" (click)="track('call')" class="flex h-11 items-center justify-center gap-2 rounded-full border border-ink text-[10.5px] font-semibold uppercase tracking-[.12em]"><ss-icon name="phone" [size]="16" />Call</a>
+  <a [href]="site.whatsappUrl()" (click)="track('wa')" target="_blank" rel="noopener" class="flex h-11 items-center justify-center gap-2 rounded-full border border-ink text-[10.5px] font-semibold uppercase tracking-[.12em]"><ss-icon name="wa" [size]="16" />WhatsApp</a>
+  <a routerLink="/contact-us/" class="flex h-11 items-center justify-center rounded-full bg-accent text-[10.5px] font-semibold uppercase tracking-[.12em] text-white">Concierge</a>
+</div>
+<div class="h-[68px] md:hidden" aria-hidden="true"></div>

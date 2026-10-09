@@ -1,0 +1,80 @@
+<header class="mb-6 flex flex-wrap items-center justify-between gap-4">
+  <div>
+    <h1 class="text-[22px] font-medium">Theme</h1>
+    <p class="mt-0.5 text-[13.5px] text-[#6B7485]">Three colours drive the whole website.</p>
+  </div>
+  <div class="flex gap-2">
+    <button type="button" class="abtn" (click)="resetDefault()">Use default</button>
+    <button type="button" class="abtn" (click)="discard()" [disabled]="!dirty() || saving()">Discard</button>
+    <button type="button" class="abtn abtn-pri" (click)="save()" [disabled]="!dirty() || saving() || textContrast() < 4.5">
+      {{ saving() ? 'Saving…' : 'Save theme' }}
+    </button>
+  </div>
+</header>
+
+@if (message(); as m) {
+  <p class="alert mb-4" [class.alert-ok]="m.ok" role="status">{{ m.text }}</p>
+}
+
+<div class="grid gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)]">
+  <div class="card">
+    <b class="mb-3 block font-medium">Presets</b>
+    <div class="grid grid-cols-[repeat(auto-fill,minmax(160px,1fr))] gap-3">
+      @for (p of presets; track p.name) {
+        <button type="button" (click)="usePreset(p)" class="rounded-lg border border-[#E3E6EB] bg-white p-3 text-left text-[13px]"
+                [class.outline-2]="isPreset(p)" [class.outline-accent]="isPreset(p)" [class.outline]="isPreset(p)">
+          <span class="mb-2 flex h-[34px] overflow-hidden rounded">
+            <i class="flex-1" [style.background]="p.primary"></i><i class="flex-1" [style.background]="p.accent"></i><i class="flex-1" [style.background]="p.surface"></i>
+          </span>
+          {{ p.name }}
+        </button>
+      }
+    </div>
+
+    <b class="mb-3 mt-6 block font-medium">Custom colours</b>
+    <div class="grid gap-4">
+      @for (f of fields; track f.key) {
+        <label class="alabel">{{ f.label }}
+          <span class="grid grid-cols-[52px_1fr] items-center gap-3">
+            <input type="color" class="h-10 w-[52px] rounded-[7px] border border-[#D7DAE0] bg-white p-0.5"
+                   [value]="draft()[f.key]" (input)="set(f.key, $any($event.target).value)" [attr.aria-label]="f.label + ' colour picker'" />
+            <input class="ainput uppercase" maxlength="7" [value]="draft()[f.key]" (input)="set(f.key, $any($event.target).value)" />
+          </span>
+          <span class="ahint">{{ f.hint }}</span>
+        </label>
+      }
+    </div>
+
+    @if (textContrast() < 4.5) {
+      <p class="alert mt-4">Primary on Surface is {{ textContrast().toFixed(1) }}:1. Text needs at least 4.5:1 to be readable, so this can't be saved.</p>
+    } @else if (accentContrast() < 3) {
+      <p class="alert alert-warn mt-4">Accent on Primary is {{ accentContrast().toFixed(1) }}:1. Gold details may be hard to see; aim for 3:1 or more.</p>
+    } @else {
+      <p class="alert alert-ok mt-4">Contrast passes WCAG AA ({{ textContrast().toFixed(1) }}:1 text, {{ accentContrast().toFixed(1) }}:1 accent).</p>
+    }
+  </div>
+
+  <div class="card">
+    <b class="mb-3 block font-medium">Preview</b>
+    <div class="overflow-hidden rounded-lg border border-[#E3E6EB]" style="font-size:16px">
+      <div class="flex items-center justify-between bg-primary px-5 py-4 text-on-primary">
+        <ss-brand link="/admin/theme" />
+        <span class="inline-flex h-9 items-center rounded-full border border-accent px-4 text-[10.5px] uppercase tracking-[.2em]">Concierge</span>
+      </div>
+      <div class="bg-surface px-5 py-7 font-light text-ink">
+        <span class="kicker !text-lg">The material library</span>
+        <div class="font-serif text-[34px] font-light leading-tight">Metal, <em class="text-accent">considered.</em></div>
+        <hr class="rule !my-4" />
+        <p class="text-[14.5px] text-muted">Ninety-three grades in seven families, cut to size in Madurai.</p>
+        <div class="mt-4 flex flex-wrap gap-2.5">
+          <span class="btn !h-[42px] !text-[11px]">Request this grade</span>
+          <span class="btn btn-ghost !h-[42px] !text-[11px]">Weigh it</span>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 bg-primary p-5 text-on-primary">
+        <div class="border-r border-accent/30 pr-4"><b class="block font-serif text-[40px] font-light leading-none text-accent">93</b><span class="text-sm text-on-primary-muted">grades in stock</span></div>
+        <div class="pl-4"><b class="block font-serif text-[40px] font-light leading-none text-accent">3</b><span class="text-sm text-on-primary-muted">godowns in Simmakkal</span></div>
+      </div>
+    </div>
+  </div>
+</div>

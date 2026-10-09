@@ -1,0 +1,17 @@
+# .NET
+sunsteel.api/bin/
+sunsteel.api/obj/
+sunsteel.api/logs/
+sunsteel.api/uploads/
+sunsteel.api/lead-files/
+*.user
+.vs/
+# Angular
+sunsteel.web/node_modules/
+sunsteel.web/dist/
+sunsteel.web/.angular/
+# misc
+.DS_Store
+.env
+# secrets / private notes
+documents/
