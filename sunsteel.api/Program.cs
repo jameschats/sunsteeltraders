@@ -82,6 +82,8 @@ builder.Services.AddScoped<IStaffUserService, StaffUserService>();
 builder.Services.AddScoped<ISiteService, SiteService>();
 builder.Services.AddScoped<ICatalogService, CatalogService>();
 builder.Services.AddScoped<ILeadService, LeadService>();
+builder.Services.AddScoped<sunsteel.api.Features.Media.IMediaService, sunsteel.api.Features.Media.MediaService>();
+builder.Services.AddScoped<sunsteel.api.Features.Gallery.IGalleryService, sunsteel.api.Features.Gallery.GalleryService>();
 
 // --- Platform ------------------------------------------------------------
 builder.Services.Configure<ForwardedHeadersOptions>(o =>

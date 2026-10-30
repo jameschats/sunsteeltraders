@@ -14,7 +14,7 @@ interface NavItem { label: string; link: string }
 /**
  * v3 shell: ivory header (transparent over the home hero, solid on scroll), full-screen
  * mobile menu, navy footer with every silo and city page, the request drawer, and the
- * mobile Call / WhatsApp / Concierge bar. Pages with a full-bleed hero set `data: { heroHeader: true }`.
+ * mobile Call / WhatsApp / Contact bar. Pages with a full-bleed hero set `data: { heroHeader: true }`.
  */
 @Component({
   selector: 'ss-public-layout',
@@ -37,9 +37,9 @@ export class PublicLayoutComponent {
 
   protected readonly nav: NavItem[] = [
     { label: 'Material library', link: '/products/' },
-    { label: 'The scale', link: '/metal-weight-calculator/' },
+    { label: 'Weight calculator', link: '/metal-weight-calculator/' },
     { label: 'Catalogue', link: '/catalogue-download/' },
-    { label: 'Atelier', link: '/about-us/' },
+    { label: 'About us', link: '/about-us/' },
     { label: 'Visit', link: '/contact-us/' },
   ];
 

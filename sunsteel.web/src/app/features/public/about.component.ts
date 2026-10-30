@@ -15,7 +15,7 @@ import { RevealDirective } from '../../shared/reveal.directive';
   template: `
     <section class="wrap grid items-end gap-[clamp(32px,6vw,96px)] pb-[clamp(56px,7vw,96px)] pt-[clamp(120px,14vw,168px)] lg:grid-cols-2">
       <div>
-        <span class="label label-accent mb-4">The atelier</span>
+        <span class="label label-accent mb-4">About us</span>
         <h1 class="h-xxl">Three godowns in <em>Simmakkal.</em></h1>
         <p class="lede mt-6">Sun Steel Traders is a multi-metal stockist on Tamil Sangam Road in Madurai's old trading quarter. We keep the grades South India's machine shops, fabricators and maintenance teams use every day, and we cut them to size before they leave.</p>
       </div>

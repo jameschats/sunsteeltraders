@@ -79,6 +79,31 @@ export const routes: Routes = [
         loadComponent: () => import('./features/admin/stock/stock.component').then((m) => m.StockComponent),
       },
       {
+        path: 'products',
+        canActivate: [permissionGuard(Perm.CatalogManage)],
+        loadComponent: () => import('./features/admin/products/products-admin.component').then((m) => m.ProductsAdminComponent),
+      },
+      {
+        path: 'products/:id',
+        canActivate: [permissionGuard(Perm.CatalogManage)],
+        loadComponent: () => import('./features/admin/products/product-edit.component').then((m) => m.ProductEditComponent),
+      },
+      {
+        path: 'pages',
+        canActivate: [permissionGuard(Perm.CmsManage)],
+        loadComponent: () => import('./features/admin/content/content-admin.component').then((m) => m.ContentAdminComponent),
+      },
+      {
+        path: 'media',
+        canActivate: [permissionGuard(Perm.MediaManage)],
+        loadComponent: () => import('./features/admin/media/media.component').then((m) => m.MediaComponent),
+      },
+      {
+        path: 'gallery',
+        canActivate: [permissionGuard(Perm.MediaManage)],
+        loadComponent: () => import('./features/admin/gallery/gallery-admin.component').then((m) => m.GalleryAdminComponent),
+      },
+      {
         path: 'theme',
         canActivate: [permissionGuard(Perm.ThemeManage)],
         loadComponent: () => import('./features/admin/theme/theme.component').then((m) => m.ThemeComponent),

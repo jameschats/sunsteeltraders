@@ -23,6 +23,8 @@ const PATHS: Record<string, string> = {
   ext: 'M14 4h6v6M20 4l-9 9M18 14v6H4V6h6',
   out: 'M15 4h5v16h-5M10 8l-4 4 4 4M6 12h10',
   plus: 'M12 5v14M5 12h14',
+  up: 'M6 14.5l6-6 6 6',
+  down: 'M6 9.5l6 6 6-6',
   edit: 'M4 20h4L19 9l-4-4L4 16zM13.5 6.5l4 4',
   key: 'M14.5 9.5a4 4 0 1 1-1.2-2.8M13.3 6.7 20 13.5l-2 2-1.5-1.5-1.5 1.5-1.5-1.5M7.5 12a1 1 0 1 0 0-.01',
   menu: 'M4 7h16M4 12h16M4 17h16',

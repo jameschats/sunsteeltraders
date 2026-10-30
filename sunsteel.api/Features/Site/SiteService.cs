@@ -26,9 +26,11 @@ public sealed partial class SiteService : ISiteService
     {
         "BusinessName", "LocationLine", "Tagline", "Phone1", "Phone2", "Landline", "WhatsAppNumber", "WhatsAppMessage",
         "SalesEmail", "Address", "MapUrl", "Latitude", "Longitude", "OpeningHours",
-        "Gstin", "Udyam", "IsoCertificate", "FoundedYear", "LogoLightUrl", "LogoDarkUrl", "FaviconUrl",
+        "Gstin", "Udyam", "IsoCertificate", "FoundedYear", "LogoLightUrl", "LogoDarkUrl", "FaviconUrl", "FaviconBackground", "FontPairing", "FontSize",
         "FacebookUrl", "InstagramUrl", "YouTubeUrl", "LinkedInUrl", "CatalogueUrl",
     };
+
+    private static readonly HashSet<string> FontPairings = new() { "classic", "warm", "modern", "bold", "editorial", "clean" };
 
     private readonly SunSteelDbContext _db;
     private readonly IAuditService _audit;
@@ -54,6 +56,14 @@ public sealed partial class SiteService : ISiteService
     {
         var unknown = values.Keys.Where(k => !EditableKeys.Contains(k)).ToList();
         if (unknown.Count > 0) throw new AppException($"Unknown setting: {string.Join(", ", unknown)}.");
+
+        if (values.TryGetValue("FaviconBackground", out var fb) && !string.IsNullOrEmpty(fb) && !Hex().IsMatch(fb))
+            throw new AppException("Favicon background must be a hex colour like #1E2430.");
+
+        if (values.TryGetValue("FontPairing", out var fp) && !string.IsNullOrEmpty(fp) && !FontPairings.Contains(fp))
+            throw new AppException("Unknown font pairing.");
+        if (values.TryGetValue("FontSize", out var fs) && !string.IsNullOrEmpty(fs) && !(int.TryParse(fs, out var px) && px is >= 15 and <= 18))
+            throw new AppException("Text size must be between 15 and 18.");
 
         if (values.TryGetValue("WhatsAppNumber", out var wa) && !string.IsNullOrEmpty(wa) && !Digits().IsMatch(wa))
             throw new AppException("WhatsApp number must be digits only, with the country code (e.g. 919842150479).");

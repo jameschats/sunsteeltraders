@@ -42,7 +42,7 @@ interface AdminNav {
         <div class="mt-auto grid gap-0.5 border-t border-white/10 pt-4 text-sm">
           <span class="px-3 pb-2 text-xs text-on-primary-muted">Signed in as<br /><b class="font-medium text-on-primary">{{ auth.displayName() }}</b></span>
           <a routerLink="/admin/change-password" class="flex items-center gap-3 rounded-md px-3 py-2.5 text-on-primary-muted hover:bg-white/5 hover:text-on-primary"><ss-icon name="key" [size]="18" />Change password</a>
-          <a href="/" target="_blank" rel="noopener" class="flex items-center gap-3 rounded-md px-3 py-2.5 text-on-primary-muted hover:bg-white/5 hover:text-on-primary"><ss-icon name="ext" [size]="18" />View website</a>
+          <a href="/" class="flex items-center gap-3 rounded-md px-3 py-2.5 text-on-primary-muted hover:bg-white/5 hover:text-on-primary"><ss-icon name="ext" [size]="18" />View website</a>
           <button type="button" (click)="signOut()" class="flex items-center gap-3 rounded-md px-3 py-2.5 text-left text-on-primary-muted hover:bg-white/5 hover:text-on-primary"><ss-icon name="out" [size]="18" />Sign out</button>
         </div>
       </aside>
@@ -65,9 +65,10 @@ export class AdminLayoutComponent {
     { link: '/admin', label: 'Dashboard', icon: 'dash' },
     { link: '/admin/leads', label: 'Requests', icon: 'inbox', perm: Perm.LeadManage },
     { link: '/admin/stock', label: 'Stock board', icon: 'box', perm: Perm.StockManage },
-    { link: '/admin/products', label: 'Products', icon: 'list', perm: Perm.CatalogManage, stage: 4 },
-    { link: '/admin/media', label: 'Photographs', icon: 'image', perm: Perm.MediaManage, stage: 3 },
-    { link: '/admin/pages', label: 'Pages & content', icon: 'doc', perm: Perm.CmsManage, stage: 4 },
+    { link: '/admin/products', label: 'Products', icon: 'list', perm: Perm.CatalogManage },
+    { link: '/admin/media', label: 'Photographs', icon: 'image', perm: Perm.MediaManage },
+    { link: '/admin/gallery', label: 'Home gallery', icon: 'image', perm: Perm.MediaManage },
+    { link: '/admin/pages', label: 'Pages & content', icon: 'doc', perm: Perm.CmsManage },
     { link: '/admin/theme', label: 'Theme', icon: 'palette', perm: Perm.ThemeManage },
     { link: '/admin/settings', label: 'Site settings', icon: 'cog', perm: Perm.SettingsManage },
     { link: '/admin/users', label: 'Staff users', icon: 'users', perm: Perm.UserManage },

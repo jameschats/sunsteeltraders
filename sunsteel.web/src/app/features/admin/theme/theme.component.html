@@ -78,3 +78,27 @@
     </div>
   </div>
 </div>
+
+<div class="card mt-5">
+  <div class="mb-1 flex flex-wrap items-center justify-between gap-3">
+    <b class="font-medium">Fonts &amp; text</b>
+    <button type="button" class="abtn abtn-pri" (click)="saveFonts()" [disabled]="!fontDirty() || saving()">{{ saving() ? 'Saving…' : 'Save fonts' }}</button>
+  </div>
+  <p class="mb-4 text-[13px] text-[#6B7485]">Pick a heading + body font style. The preview above updates as you go; Save publishes it.</p>
+  <div class="grid grid-cols-[repeat(auto-fill,minmax(220px,1fr))] gap-3">
+    @for (p of pairings; track p.id) {
+      <button type="button" (click)="setPairing(p.id)" class="rounded-lg border border-[#E3E6EB] bg-white p-4 text-left"
+              [class.outline]="pairing() === p.id" [class.outline-2]="pairing() === p.id" [class.outline-accent]="pairing() === p.id">
+        <span class="block text-[24px] leading-tight text-[#1E2430]" [style.font-family]="p.heading + ', serif'">Rest, well considered</span>
+        <span class="mt-1 block text-[13px] text-[#4a5262]" [style.font-family]="p.body + ', sans-serif'">Cut to size in Madurai, from stock.</span>
+        <span class="mt-2 block text-[11.5px] text-[#6B7485]"><b class="font-medium">{{ p.name }}</b> · {{ p.heading }} + {{ p.body }}</span>
+      </button>
+    }
+  </div>
+  <label class="alabel mt-5 max-w-[320px]">Text size
+    <select class="ainput" [value]="size()" (change)="setSize($any($event.target).value)">
+      @for (s of sizes; track s.value) { <option [value]="s.value" [selected]="s.value === size()">{{ s.label }}</option> }
+    </select>
+    <span class="ahint">Scales the whole website's text and spacing.</span>
+  </label>
+</div>

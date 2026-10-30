@@ -3,6 +3,7 @@ import { Injectable, inject, signal } from '@angular/core';
 import { Observable, catchError, map, of, shareReplay, tap } from 'rxjs';
 import { API_BASE_URL } from '../api.config';
 import { ApiResponse } from '../models/api.model';
+import { GalleryPublic } from '../models/media.model';
 import { CatalogIndex, City, PageInfo, Policy, Product, ProductCard, SearchHit, Silo } from '../models/catalog.model';
 
 const EMPTY_INDEX: CatalogIndex = { silos: [], materials: [], sections: [], leadTimes: [], cities: [] };
@@ -51,6 +52,10 @@ export class CatalogService {
 
   city(slug: string): Observable<City> {
     return this.http.get<ApiResponse<City>>(`${this.base}/catalog/cities/${encodeURIComponent(slug)}`).pipe(map((r) => r.data!));
+  }
+
+  gallery(): Observable<GalleryPublic | null> {
+    return this.http.get<ApiResponse<GalleryPublic>>(`${this.base}/gallery`).pipe(map((r) => r.data ?? null), catchError(() => of(null)));
   }
 
   page(slug: string): Observable<PageInfo | null> {

@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, DestroyRef, computed, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { apiError } from '../../../core/models/api.model';
-import { DEFAULT_THEME, THEME_PRESETS, Theme, contrast, isHex } from '../../../core/models/site.model';
+import { DEFAULT_THEME, FONT_PAIRINGS, FONT_SIZES, THEME_PRESETS, Theme, contrast, isHex } from '../../../core/models/site.model';
 import { AdminApiService } from '../../../core/services/admin-api.service';
 import { SiteService } from '../../../core/services/site.service';
 import { BrandComponent } from '../../../shared/brand.component';
@@ -24,6 +24,12 @@ export class ThemeComponent {
   private readonly site = inject(SiteService);
 
   protected readonly presets = THEME_PRESETS;
+  protected readonly pairings = FONT_PAIRINGS;
+  protected readonly sizes = FONT_SIZES;
+  private readonly publishedFont = signal({ pairing: this.site.get('FontPairing'), size: this.site.get('FontSize') });
+  protected readonly pairing = signal(this.site.get('FontPairing'));
+  protected readonly size = signal(this.site.get('FontSize'));
+  protected readonly fontDirty = computed(() => this.pairing() !== this.publishedFont().pairing || this.size() !== this.publishedFont().size);
   protected readonly fields: { key: Key; label: string; hint: string }[] = [
     { key: 'primary', label: 'Primary', hint: 'Header over images, dark sections, text' },
     { key: 'accent', label: 'Accent', hint: 'Fine lines, highlights and call-to-action details' },
@@ -44,7 +50,10 @@ export class ThemeComponent {
 
   constructor() {
     // Unsaved changes must not leak onto the public site in this tab.
-    inject(DestroyRef).onDestroy(() => this.site.applyTheme(this.published()));
+    inject(DestroyRef).onDestroy(() => {
+      this.site.applyTheme(this.published());
+      this.site.applyTypography();
+    });
   }
 
   protected set(key: Key, value: string): void {
@@ -63,6 +72,32 @@ export class ThemeComponent {
   protected isPreset(p: Theme): boolean {
     const d = this.draft();
     return p.primary === d.primary && p.accent === d.accent && p.surface === d.surface;
+  }
+
+  protected setPairing(id: string): void {
+    this.pairing.set(id);
+    this.site.applyTypography(id, this.size());
+  }
+
+  protected setSize(v: string): void {
+    this.size.set(v);
+    this.site.applyTypography(this.pairing(), v);
+  }
+
+  protected saveFonts(): void {
+    this.saving.set(true);
+    this.api.saveSettings({ FontPairing: this.pairing(), FontSize: this.size() }).subscribe({
+      next: (s) => {
+        this.site.patchSettings(s);
+        this.publishedFont.set({ pairing: this.pairing(), size: this.size() });
+        this.saving.set(false);
+        this.message.set({ ok: true, text: 'Saved. The website now uses these fonts.' });
+      },
+      error: (e) => {
+        this.saving.set(false);
+        this.message.set({ ok: false, text: apiError(e) });
+      },
+    });
   }
 
   protected resetDefault(): void {

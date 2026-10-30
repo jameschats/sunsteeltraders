@@ -9,11 +9,33 @@ export interface SiteData {
   theme: Theme;
 }
 
+export interface FontPairing { id: string; name: string; heading: string; body: string }
+
+/** Self-hosted (bundled) fonts; the first pairing is the original design. */
+export const FONT_PAIRINGS: FontPairing[] = [
+  { id: 'classic', name: 'Classic Luxe', heading: 'Cormorant Garamond', body: 'Manrope' },
+  { id: 'warm', name: 'Warm Hospitality', heading: 'Lora', body: 'Nunito Sans' },
+  { id: 'modern', name: 'Modern Elegance', heading: 'Marcellus', body: 'Manrope' },
+  { id: 'bold', name: 'Bold Statement', heading: 'DM Serif Display', body: 'DM Sans' },
+  { id: 'editorial', name: 'Refined Editorial', heading: 'EB Garamond', body: 'Inter' },
+  { id: 'clean', name: 'Clean Contemporary', heading: 'Montserrat', body: 'Open Sans' },
+];
+
+export const FONT_SIZES = [
+  { value: '15', label: 'Small (15px)' },
+  { value: '16', label: 'Default (16px)' },
+  { value: '17', label: 'Large (17px)' },
+  { value: '18', label: 'Extra large (18px)' },
+];
+
 export const DEFAULT_THEME: Theme = { primary: '#1E2430', accent: '#9C6B3C', surface: '#FAF6EF' };
 
 /** Used until /api/site answers, and if it never does, so the site still renders. */
 export const DEFAULT_SETTINGS: Record<string, string> = {
   BusinessName: 'Sun Steel Traders',
+  FontPairing: 'classic',
+  FontSize: '16',
+  FaviconBackground: '#FFFFFF',
   LocationLine: 'Madurai',
   Tagline: 'Multi-metal stockist',
   Phone1: '+91 98421 50479',

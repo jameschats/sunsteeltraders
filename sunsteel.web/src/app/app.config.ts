@@ -2,7 +2,7 @@ import { DATE_PIPE_DEFAULT_OPTIONS } from '@angular/common';
 import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
 import { ApplicationConfig, inject, provideAppInitializer, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
-import { UrlSerializer, provideRouter, withInMemoryScrolling } from '@angular/router';
+import { UrlSerializer, provideRouter, withInMemoryScrolling, withViewTransitions } from '@angular/router';
 import { firstValueFrom } from 'rxjs';
 
 import { routes } from './app.routes';
@@ -13,7 +13,7 @@ import { SiteService } from './core/services/site.service';
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
-    provideRouter(routes, withInMemoryScrolling({ scrollPositionRestoration: 'top', anchorScrolling: 'enabled' })),
+    provideRouter(routes, withInMemoryScrolling({ scrollPositionRestoration: 'top', anchorScrolling: 'enabled' }), withViewTransitions()),
     // Spec URLs all end in "/": the serializer writes them that way everywhere.
     { provide: UrlSerializer, useClass: TrailingSlashUrlSerializer },
     provideHttpClient(withFetch(), withInterceptors([authInterceptor])),

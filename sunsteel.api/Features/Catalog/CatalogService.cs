@@ -5,6 +5,7 @@ using sunsteel.api.Common.Models;
 using sunsteel.api.Data;
 using sunsteel.api.Data.Entities;
 using sunsteel.api.Features.Audit;
+using sunsteel.api.Features.Media;
 
 namespace sunsteel.api.Features.Catalog;
 
@@ -39,6 +40,26 @@ public sealed class CatalogService : ICatalogService
     private readonly SunSteelDbContext _db;
     private readonly IAuditService _audit;
 
+    private Dictionary<long, string>? _hero;
+
+    /// <summary>Photo URL (about 960 px wide) for every product / category that has one; loaded once per request.</summary>
+    private async Task EnsureHeroAsync(CancellationToken ct)
+    {
+        if (_hero is not null) return;
+        var ids = await _db.Products.AsNoTracking().Where(p => p.HeroMediaId != null).Select(p => p.HeroMediaId!.Value)
+            .Concat(_db.Silos.AsNoTracking().Where(x => x.HeroMediaId != null).Select(x => x.HeroMediaId!.Value)).Distinct().ToListAsync(ct);
+        var rows = ids.Count == 0 ? [] : await _db.MediaAssets.AsNoTracking().Where(m => ids.Contains(m.MediaId) && m.Kind == "image").ToListAsync(ct);
+        _hero = rows.ToDictionary(m => m.MediaId, m =>
+        {
+            var v = MediaService.ParseVariants(m.VariantsJson);
+            var widths = v.Keys.OrderBy(k => k).ToList();
+            var pick = widths.FirstOrDefault(w => w >= 960);
+            return pick != 0 ? v[pick] : widths.Count > 0 ? v[widths[^1]] : m.OriginalUrl;
+        });
+    }
+
+    private string? HeroOf(long? id) => id is { } i && _hero is not null && _hero.TryGetValue(i, out var u) ? u : null;
+
     public CatalogService(SunSteelDbContext db, IAuditService audit)
     {
         _db = db;
@@ -47,6 +68,7 @@ public sealed class CatalogService : ICatalogService
 
     public async Task<CatalogIndexDto> GetIndexAsync(CancellationToken ct = default)
     {
+        await EnsureHeroAsync(ct);
         var silos = await SiloSummariesAsync(ct);
         var materials = await _db.Materials.AsNoTracking().OrderBy(m => m.DisplayOrder)
             .Select(m => new MaterialDto(m.MaterialKey, m.Name, m.Density)).ToListAsync(ct);
@@ -61,6 +83,7 @@ public sealed class CatalogService : ICatalogService
 
     public async Task<SiloDto> GetSiloAsync(string key, CancellationToken ct = default)
     {
+        await EnsureHeroAsync(ct);
         var silo = await _db.Silos.AsNoTracking().FirstOrDefaultAsync(s => s.SiloKey == key, ct)
             ?? throw new AppException("Category not found.", StatusCodes.Status404NotFound);
         var products = await _db.Products.AsNoTracking().Where(p => p.SiloId == silo.SiloId && p.IsPublished)
@@ -77,6 +100,7 @@ public sealed class CatalogService : ICatalogService
     /// <summary>Every published product as a card, in silo order, for the material library.</summary>
     public async Task<IReadOnlyList<ProductCardDto>> ListProductsAsync(CancellationToken ct = default)
     {
+        await EnsureHeroAsync(ct);
         var rows = await _db.Products.AsNoTracking().Include(p => p.Silo).Where(p => p.IsPublished)
             .OrderBy(p => p.Silo.DisplayOrder).ThenBy(p => p.DisplayOrder).ToListAsync(ct);
         return rows.Select(p => ToCard(p, p.Silo.SiloKey)).ToList();
@@ -115,6 +139,7 @@ public sealed class CatalogService : ICatalogService
 
     public async Task<CityDto> GetCityAsync(string slug, CancellationToken ct = default)
     {
+        await EnsureHeroAsync(ct);
         var c = await _db.Cities.AsNoTracking().FirstOrDefaultAsync(x => x.Slug == slug.ToLower() && x.IsPublished, ct)
             ?? throw new AppException("City not found.", StatusCodes.Status404NotFound);
         var popularSlugs = Parse<List<string>>(c.PopularSlugsJson) ?? [];
@@ -162,7 +187,9 @@ public sealed class CatalogService : ICatalogService
     {
         var p = await _db.Products.AsNoTracking().Include(x => x.Silo).Include(x => x.Material).FirstOrDefaultAsync(x => x.ProductId == id, ct)
             ?? throw new AppException("Product not found.", StatusCodes.Status404NotFound);
-        return await ToProductAsync(p, ct);
+        // The editor shows only what staff typed: the generated summary / SEO text stays automatic until overridden.
+        var dto = await ToProductAsync(p, ct);
+        return dto with { Summary = p.Summary ?? "", MetaTitle = p.MetaTitle ?? "", MetaDescription = p.MetaDescription ?? "" };
     }
 
     public async Task<ProductDto> UpdateAsync(long actorId, long id, UpdateProductRequest r, CancellationToken ct = default)
@@ -186,6 +213,9 @@ public sealed class CatalogService : ICatalogService
         p.MetaTitle = Clean(r.MetaTitle);
         p.MetaDescription = Clean(r.MetaDescription);
         p.IsPublished = r.IsPublished;
+        if (r.HeroMediaId is { } hm && !await _db.MediaAssets.AnyAsync(m => m.MediaId == hm && m.Kind == "image", ct))
+            throw new AppException("The chosen photo no longer exists.");
+        p.HeroMediaId = r.HeroMediaId;
         _audit.Record(actorId, "Update", "Product", p.Slug, p.Name);
         await _db.SaveChangesAsync(ct);
         return await AdminGetAsync(id, ct);
@@ -223,6 +253,7 @@ public sealed class CatalogService : ICatalogService
 
     private async Task<ProductDto> ToProductAsync(Product p, CancellationToken ct)
     {
+        await EnsureHeroAsync(ct);
         var key = p.Silo.SiloKey;
         var eq = Parse<List<string>>(p.EquivalentsJson) ?? [];
         var related = await _db.Products.AsNoTracking()
@@ -236,10 +267,10 @@ public sealed class CatalogService : ICatalogService
             SplitForms(p.Forms), p.SizeRange, p.Applications, p.Summary ?? DefaultSummary(p, key),
             p.Condition, p.Machinability,
             Parse<List<ChemistryRow>>(p.ChemistryJson) ?? [], Parse<List<PropertyRow>>(p.MechanicalJson) ?? [], eq,
-            p.StockStatus, p.PriceNote, null,
+            p.StockStatus, p.PriceNote, HeroOf(p.HeroMediaId),
             p.MetaTitle ?? $"{p.Name} Stockist & Supplier in Madurai | {Brand}",
             p.MetaDescription ?? $"Buy cut-to-size {p.Name}{(firstEq is null ? "" : $" ({firstEq})")} from {Brand} Madurai. MTC provided, overhead crane loading, fast dispatch across Tamil Nadu.",
-            faqs, related.Select(x => ToCard(x, key)).ToList());
+            faqs, related.Select(x => ToCard(x, key)).ToList(), p.HeroMediaId, p.IsPublished);
     }
 
     private async Task<List<FaqDto>> FaqsAsync(string scope, string key, CancellationToken ct) =>
@@ -282,10 +313,10 @@ public sealed class CatalogService : ICatalogService
         _ => $"{p.Name} in ready stock at our Simmakkal godowns, {(p.Condition ?? "as rolled").ToLowerInvariant()}, {p.SizeRange}. Band-saw cut to your sizes with mill test certificates on request.",
     };
 
-    private static SiloSummaryDto ToSummary(Silo s, int count) => new(s.SiloKey, s.Name, s.ShortName, s.Glyph, s.Intro, s.TopGrades, count, null);
+    private SiloSummaryDto ToSummary(Silo s, int count) => new(s.SiloKey, s.Name, s.ShortName, s.Glyph, s.Intro, s.TopGrades, count, HeroOf(s.HeroMediaId));
 
-    private static ProductCardDto ToCard(Product p, string siloKey) =>
-        new(p.Slug, siloKey, p.Name, p.Grade, p.MaterialKey, SplitForms(p.Forms), p.SizeRange, p.StockStatus, Parse<List<string>>(p.EquivalentsJson) ?? [], null);
+    private ProductCardDto ToCard(Product p, string siloKey) =>
+        new(p.Slug, siloKey, p.Name, p.Grade, p.MaterialKey, SplitForms(p.Forms), p.SizeRange, p.StockStatus, Parse<List<string>>(p.EquivalentsJson) ?? [], HeroOf(p.HeroMediaId));
 
     private static List<string> SplitForms(string forms) => forms.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries).ToList();
 

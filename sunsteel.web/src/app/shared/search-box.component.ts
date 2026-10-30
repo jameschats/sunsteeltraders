@@ -30,7 +30,7 @@ import { IconComponent } from './icon.component';
               </a>
             </li>
           } @empty {
-            <li class="px-4 py-4 text-[14px] text-muted">No grade found for "{{ q() }}". Ask the concierge: we may stock it under another name.</li>
+            <li class="px-4 py-4 text-[14px] text-muted">No grade found for "{{ q() }}". Contact us: we may stock it under another name.</li>
           }
         </ul>
       }

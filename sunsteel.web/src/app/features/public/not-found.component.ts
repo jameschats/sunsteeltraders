@@ -15,11 +15,11 @@ import { SearchBoxComponent } from '../../shared/search-box.component';
     <section class="wrap pb-[var(--sec)] pt-[clamp(140px,16vw,200px)]">
       <span class="label label-accent mb-4">Page not found</span>
       <h1 class="h-xxl max-w-[15ch]">This piece isn't in <em>our racks.</em></h1>
-      <p class="lede mt-6">The page may have moved. Search for the grade you need, or ask the concierge: we may stock it under another name.</p>
+      <p class="lede mt-6">The page may have moved. Search for the grade you need, or contact us: we may stock it under another name.</p>
       <div class="mt-8 max-w-[520px]"><ss-search-box /></div>
       <div class="mt-9 flex flex-wrap gap-3.5">
         <a routerLink="/products/" class="btn">Explore the library</a>
-        <a routerLink="/contact-us/" class="btn btn-ghost">Speak to the concierge</a>
+        <a routerLink="/contact-us/" class="btn btn-ghost">Contact us</a>
       </div>
     </section>`,
 })

@@ -20,7 +20,7 @@ const FAQS = [
   imports: [RouterLink, PageHeaderComponent, ScaleComponent, FaqListComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    <ss-page-header label="The scale" title="How much will it <em>weigh?</em>"
+    <ss-page-header label="Weight calculator" title="How much will it <em>weigh?</em>"
       lede="Rounds, squares, hex, flats, plates, tubes, hollow sections, angles, beams and channels, in any of our 27 materials. Add the result to your request and the concierge quotes it."
       [crumbs]="[['/', 'Home'], ['', 'Metal weight calculator']]" />
 

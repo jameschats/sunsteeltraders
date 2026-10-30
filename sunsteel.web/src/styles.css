@@ -50,6 +50,7 @@
     font-family: var(--font-sans);
     font-weight: 400;
     font-size: 16px;
+    zoom: var(--text-zoom, 1);
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
     font-feature-settings: "tnum" 0;
@@ -185,6 +186,10 @@
   .alert-ok { background: #ECFDF3; color: #067647; }
   .alert-warn { background: #FEF6E7; color: #93370D; }
 }
+
+/* Route changes: a short cross-fade; the header keeps its own transition name so it never blinks. */
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: .28s; animation-timing-function: cubic-bezier(.22, .61, .36, 1); }
+::view-transition-group(site-header) { animation-duration: .3s; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }

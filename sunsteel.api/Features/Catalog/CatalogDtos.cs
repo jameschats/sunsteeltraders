@@ -19,7 +19,7 @@ public sealed record ProductDto(
     string? SizeRange, string? Applications, string Summary, string? Condition, string? Machinability,
     IReadOnlyList<ChemistryRow> Chemistry, IReadOnlyList<PropertyRow> Mechanical, IReadOnlyList<string> Equivalents,
     string StockStatus, string? PriceNote, string? HeroUrl, string MetaTitle, string MetaDescription,
-    IReadOnlyList<FaqDto> Faqs, IReadOnlyList<ProductCardDto> Related)
+    IReadOnlyList<FaqDto> Faqs, IReadOnlyList<ProductCardDto> Related, long? HeroMediaId = null, bool IsPublished = true)
 {
     public string Path => $"/products/{SiloKey}/{Slug}/";
 }
@@ -58,7 +58,7 @@ public sealed record AdminProductRowDto(long ProductId, string Slug, string Sku,
 public sealed record UpdateProductRequest(
     string Name, string? SizeRange, string? Applications, string? Summary, string? Condition, string? Machinability,
     IReadOnlyList<ChemistryRow>? Chemistry, IReadOnlyList<PropertyRow>? Mechanical, IReadOnlyList<string>? Equivalents,
-    string StockStatus, string? PriceNote, string? MetaTitle, string? MetaDescription, bool IsPublished);
+    string StockStatus, string? PriceNote, string? MetaTitle, string? MetaDescription, bool IsPublished, long? HeroMediaId = null);
 
 public sealed record UpdateStockRequest(string StockStatus);
 public sealed record UpdateDensityRequest(decimal Density);

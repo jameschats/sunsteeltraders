@@ -40,7 +40,7 @@ import { NotFoundComponent } from './not-found.component';
           <div class="grid grid-cols-2 gap-5">
             @for (p of c.popular; track p.slug) {
               <a [routerLink]="p.path" class="group min-w-0">
-                <ss-metal [kind]="metal(p)" [caption]="p.grade" class="aspect-[4/3]" />
+                <ss-metal [kind]="metal(p)" [src]="p.heroUrl" [caption]="p.grade" class="aspect-[4/3]" />
                 <b class="mt-3 block font-serif text-[18px] font-medium leading-snug">{{ p.name }}</b>
               </a>
             }

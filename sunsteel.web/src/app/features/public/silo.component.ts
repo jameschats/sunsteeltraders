@@ -33,7 +33,7 @@ import { NotFoundComponent } from './not-found.component';
         <div class="grid grid-cols-2 gap-x-5 gap-y-10 md:grid-cols-3 lg:grid-cols-4">
           @for (p of visible(); track p.slug) {
             <a [routerLink]="p.path" class="group min-w-0">
-              <ss-metal [kind]="metal(p.materialKey, p.siloKey)" [caption]="p.grade" class="aspect-[4/3] transition-transform duration-700 ease-lux group-hover:scale-[1.015]" />
+              <ss-metal [kind]="metal(p.materialKey, p.siloKey)" [src]="p.heroUrl" [caption]="p.grade" class="aspect-[4/3] transition-transform duration-700 ease-lux group-hover:scale-[1.015]" />
               <div class="mt-3 flex items-start justify-between gap-3">
                 <b class="font-serif text-[19px] font-medium leading-snug">{{ p.name }}</b>
               </div>
@@ -47,7 +47,7 @@ import { NotFoundComponent } from './not-found.component';
           <div>
             <span class="label label-accent mb-4">Questions</span>
             <h2 class="h-l">About our <em>{{ d.silo.shortName.toLowerCase() }}.</em></h2>
-            <a routerLink="/contact-us/" class="lnk mt-6">Ask the concierge <ss-icon name="arrow" [size]="14" /></a>
+            <a routerLink="/contact-us/" class="lnk mt-6">Contact us <ss-icon name="arrow" [size]="14" /></a>
           </div>
           <ss-faq-list [faqs]="d.faqs" />
         </div>

@@ -35,7 +35,7 @@ import { IconComponent } from '../shared/icon.component';
         } @empty {
           <div class="py-16 text-center">
             <p class="font-serif text-[24px]">Nothing here yet.</p>
-            <p class="mt-2 text-[14px] text-muted">Weigh a piece on any product page, or simply tell the concierge what you need.</p>
+            <p class="mt-2 text-[14px] text-muted">Weigh a piece on any product page, or simply tell us what you need.</p>
           </div>
         }
       </div>
@@ -43,7 +43,7 @@ import { IconComponent } from '../shared/icon.component';
         @if (req.count()) {
           <div class="flex items-baseline justify-between"><span class="label">Estimated total</span><b class="font-serif text-[30px] font-medium tabular-nums">{{ kg(req.totalKg()) }} <small class="text-[14px] text-muted">kg</small></b></div>
         }
-        <a routerLink="/contact-us/" class="btn w-full" (click)="req.open.set(false)">{{ req.count() ? 'Send to the concierge' : 'Speak to the concierge' }} <ss-icon name="arrow" [size]="16" /></a>
+        <a routerLink="/contact-us/" class="btn w-full" (click)="req.open.set(false)">{{ req.count() ? 'Send to us' : 'Contact us' }} <ss-icon name="arrow" [size]="16" /></a>
       </div>
     </aside>`,
 })

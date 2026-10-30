@@ -25,7 +25,7 @@ type Reply = 'WhatsApp' | 'Phone' | 'Email';
   template: `
     <section class="wrap grid gap-[clamp(40px,6vw,96px)] pb-[var(--sec)] pt-[clamp(120px,14vw,168px)] lg:grid-cols-[minmax(0,.9fr)_minmax(0,1.1fr)]">
       <div>
-        <span class="label label-accent mb-4">Concierge</span>
+        <span class="label label-accent mb-4">Contact</span>
         <h1 class="h-xxl">Tell us what you're <em>making.</em></h1>
         <p class="lede mt-6">Send a cut list, a drawing or simply a question. Our sales desk replies on WhatsApp or by phone within working hours, usually with a price the same day.</p>
 

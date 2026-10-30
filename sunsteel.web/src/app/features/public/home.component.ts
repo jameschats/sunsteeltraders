@@ -1,10 +1,13 @@
 import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { GalleryPublic } from '../../core/models/media.model';
 import { PageInfo, SILO_METAL } from '../../core/models/catalog.model';
 import { CatalogService } from '../../core/services/catalog.service';
 import { SeoService } from '../../core/services/seo.service';
 import { SiteService } from '../../core/services/site.service';
 import { compact, faqLd, organizationLd } from '../../core/services/structured-data';
+import { HeroArtComponent } from '../../shared/hero-art.component';
+import { GalleryStripComponent } from '../../shared/gallery-strip.component';
 import { FaqListComponent } from '../../shared/faq-list.component';
 import { IconComponent } from '../../shared/icon.component';
 import { MetalComponent } from '../../shared/metal.component';
@@ -14,19 +17,20 @@ import { SearchBoxComponent } from '../../shared/search-box.component';
 /** v3 sheet 01: full-bleed macro hero, the library rail, proof band, the house, the scale, cities. */
 @Component({
   selector: 'ss-home',
-  imports: [RouterLink, MetalComponent, SearchBoxComponent, FaqListComponent, IconComponent, RevealDirective],
+  imports: [RouterLink, HeroArtComponent, GalleryStripComponent, MetalComponent, SearchBoxComponent, FaqListComponent, IconComponent, RevealDirective],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <!-- hero -->
     <section class="relative flex min-h-[min(100svh,900px)] items-end overflow-hidden text-white">
       <ss-metal kind="metal-alloy" class="!absolute inset-0" />
       <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(20,24,32,.25)_0%,rgba(20,24,32,.15)_40%,rgba(20,24,32,.78)_100%)]"></div>
+      <div class="pointer-events-none absolute inset-0 hidden min-[1200px]:block" aria-hidden="true"><div class="wrap relative h-full"><div class="absolute right-[var(--pad)] top-1/2 w-[clamp(320px,36vw,580px)] -translate-y-[46%]"><ss-hero-art /></div></div></div>
       <div class="wrap relative pb-[clamp(48px,7vw,96px)] pt-40">
         <span class="label !text-white/80 mb-5">{{ site.get('Tagline') }} · {{ site.get('LocationLine') }}</span>
         <h1 class="h-xxl max-w-[13ch] !text-[clamp(46px,7.4vw,108px)]">Ninety-three grades. <em class="!text-[#E2C49B]">One house.</em></h1>
         <p class="mt-6 max-w-[52ch] text-[clamp(15px,1.3vw,18px)] text-white/85">Mild, alloy and stainless steel, brass, copper, cast iron and engineering plastics. Cut to your size in our Simmakkal godowns and dispatched the same day.</p>
         <div class="mt-8 flex flex-wrap gap-3">
-          <a routerLink="/contact-us/" class="btn">Speak to the concierge</a>
+          <a routerLink="/contact-us/" class="btn">Contact us</a>
           <a routerLink="/products/" class="btn btn-ghost !border-white/70 !text-white hover:!bg-white hover:!text-ink">Explore the library</a>
         </div>
         <div class="mt-10 max-w-[560px]"><ss-search-box [dark]="true" /></div>
@@ -42,10 +46,10 @@ import { SearchBoxComponent } from '../../shared/search-box.component';
           <p class="lede mt-5">Every grade a machine shop, fabricator or maintenance team in South India asks for, with chemistry, equivalents and live stock on its own page.</p>
           <a routerLink="/products/" class="lnk mt-7">View all {{ total() }} materials <ss-icon name="arrow" [size]="14" /></a>
         </div>
-        <div class="-mx-[var(--pad)] flex snap-x snap-mandatory gap-4 overflow-x-auto px-[var(--pad)] pb-2 [scrollbar-width:none] lg:mx-0 lg:px-0">
+        <div class="-mx-[var(--pad)] flex scroll-pl-[var(--pad)] snap-x snap-mandatory gap-4 overflow-x-auto px-[var(--pad)] pb-2 [scrollbar-width:none] lg:-mr-[var(--pad)] lg:ml-0 lg:pl-0 lg:pr-[var(--pad)] lg:[mask-image:linear-gradient(90deg,#000_90%,transparent)]">
           @for (s of catalog.index().silos; track s.key) {
             <a [routerLink]="'/products/' + s.key + '/'" class="group w-[210px] flex-none snap-start">
-              <ss-metal [kind]="metal(s.key)" class="aspect-[4/5] transition-transform duration-700 ease-lux group-hover:scale-[1.02]" />
+              <ss-metal [kind]="metal(s.key)" [src]="s.heroUrl" class="aspect-[4/5] transition-transform duration-700 ease-lux group-hover:scale-[1.02]" />
               <b class="mt-3 block font-serif text-[21px] font-medium leading-tight">{{ s.shortName }}</b>
               <span class="label mt-1">{{ s.productCount }} grades</span>
             </a>
@@ -76,7 +80,7 @@ import { SearchBoxComponent } from '../../shared/search-box.component';
               <div class="card-rule"><span class="font-serif text-[30px] leading-none text-accent">{{ s.n }}</span><b class="mt-2 block font-serif text-[20px] font-medium">{{ s.t }}</b><p class="mt-1 text-[14px] text-muted">{{ s.d }}</p></div>
             }
           </div>
-          <a routerLink="/about-us/" class="lnk mt-8">Our atelier <ss-icon name="arrow" [size]="14" /></a>
+          <a routerLink="/about-us/" class="lnk mt-8">About us <ss-icon name="arrow" [size]="14" /></a>
         </div>
       </div>
     </section>
@@ -85,10 +89,10 @@ import { SearchBoxComponent } from '../../shared/search-box.component';
     <section class="border-y border-line bg-paper py-[clamp(40px,5vw,72px)]" ssReveal>
       <div class="wrap flex flex-wrap items-center justify-between gap-6">
         <div>
-          <span class="label label-accent mb-3">03 · The scale</span>
+          <span class="label label-accent mb-3">03 · Weight calculator</span>
           <h2 class="h-l max-w-[24ch]">Weigh a piece in seconds, <em>then ask us.</em></h2>
         </div>
-        <a routerLink="/metal-weight-calculator/" class="btn btn-ghost"><ss-icon name="scale" [size]="16" />Open the scale</a>
+        <a routerLink="/metal-weight-calculator/" class="btn btn-ghost"><ss-icon name="scale" [size]="16" />Open the weight calculator</a>
       </div>
     </section>
 
@@ -106,13 +110,25 @@ import { SearchBoxComponent } from '../../shared/search-box.component';
             <tbody>
               @for (l of catalog.index().leadTimes; track l.city) {
                 <tr><td class="font-serif text-[19px]">{{ l.city }}</td><td>{{ l.leadTime }}</td>
-                  <td class="text-right">@if (cityPath(l.city); as p) { <a [routerLink]="p" class="lnk">Suppliers in {{ l.city }}</a> }</td></tr>
+                  <td class="text-right">@if (cityPath(l.city); as p) { <a [routerLink]="p" class="lnk"><span class="hidden sm:inline">Suppliers in {{ l.city }}</span><span class="sm:hidden">View</span></a> }</td></tr>
               }
             </tbody>
           </table>
         </div>
       </div>
     </section>
+
+    @if (gallery(); as g) {
+      @if (g.settings.show && g.items.length) {
+        <section class="sec pb-0" ssReveal>
+          <div class="wrap">
+            @if (g.settings.kicker) { <span class="label label-accent mb-4">{{ g.settings.kicker }}</span> }
+            @if (g.settings.heading) { <h2 class="h-xl max-w-[22ch]">{{ g.settings.heading }}</h2> }
+          </div>
+          <div class="mt-10"><ss-gallery-strip [items]="g.items" [speed]="g.settings.speed" /></div>
+        </section>
+      }
+    }
 
     @if (page()?.faqs?.length) {
       <section class="sec pt-0" ssReveal>
@@ -127,7 +143,7 @@ import { SearchBoxComponent } from '../../shared/search-box.component';
       <div class="wrap flex flex-wrap items-end justify-between gap-8">
         <h2 class="h-xl max-w-[18ch]">Tell us what you're <em>making.</em></h2>
         <div class="flex flex-wrap gap-3">
-          <a routerLink="/contact-us/" class="btn">Speak to the concierge</a>
+          <a routerLink="/contact-us/" class="btn">Contact us</a>
           <a [href]="site.whatsappUrl()" target="_blank" rel="noopener" class="btn btn-ghost"><ss-icon name="wa" [size]="16" />WhatsApp</a>
         </div>
       </div>
@@ -137,6 +153,7 @@ export class HomeComponent {
   protected readonly site = inject(SiteService);
   protected readonly catalog = inject(CatalogService);
   protected readonly page = signal<PageInfo | null>(null);
+  protected readonly gallery = signal<GalleryPublic | null>(null);
   protected readonly total = computed(() => this.catalog.index().silos.reduce((s, x) => s + x.productCount, 0) || 93);
 
   protected readonly numbers = [
@@ -155,6 +172,7 @@ export class HomeComponent {
 
   constructor() {
     this.catalog.loadIndex().subscribe();
+    this.catalog.gallery().subscribe((g) => this.gallery.set(g));
     const seo = inject(SeoService);
     seo.set({
       title: 'Steel, Stainless, Brass & Copper Stockist in Madurai | Sun Steel Traders',

@@ -73,6 +73,13 @@ export class SettingsComponent {
       ],
     },
     {
+      title: 'Favicon (browser tab icon)',
+      fields: [
+        { key: 'FaviconBackground', label: 'Background colour', hint: 'Hex, e.g. #FFFFFF (white) or #1E2430 (dark navy). The sun logo is drawn on it.' },
+        { key: 'FaviconUrl', label: 'Custom favicon image URL (optional)', type: 'url', hint: 'PNG/SVG/ICO link. Leave empty to use the logo on the background colour.' },
+      ],
+    },
+    {
       title: 'Contact',
       fields: [
         { key: 'Phone1', label: 'Primary phone', type: 'tel' },
