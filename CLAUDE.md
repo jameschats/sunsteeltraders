@@ -10,9 +10,9 @@ sketches v1–v4 (v3 "Metal atelier" chosen). Codebase forked from Queens Inn; s
 ## Stack
 | Layer | Tech |
 |---|---|
-| API | ASP.NET Core .NET 9 — `sunsteel.api` (vertical slices under `Features/`) |
+| API | ASP.NET Core .NET 10 — `sunsteel.api` (vertical slices under `Features/`) |
 | Web | Angular 21 (standalone, zoneless, SSR) + Tailwind CSS 4 — `sunsteel.web` |
-| DB | MySQL 8 `sunsteel`, EF Core 9 + Pomelo, **hand-written entities**, SQL migrations are the source of truth |
+| DB | MySQL 8 `sunsteel`, EF Core 9 + Pomelo (no EF 10 Pomelo release yet), **hand-written entities**, SQL migrations are the source of truth |
 | Auth | BCrypt + JWT (15 min) + rotating refresh tokens (14 days); Google sign-in for existing staff only |
 
 ## Commands

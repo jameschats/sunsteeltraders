@@ -6,6 +6,11 @@ using sunsteel.api.Data;
 using sunsteel.api.Data.Entities;
 using sunsteel.api.Features.Audit;
 using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.Formats;
+using SixLabors.ImageSharp.Formats.Bmp;
+using SixLabors.ImageSharp.Formats.Gif;
+using SixLabors.ImageSharp.Formats.Jpeg;
+using SixLabors.ImageSharp.Formats.Png;
 using SixLabors.ImageSharp.Formats.Webp;
 using SixLabors.ImageSharp.Processing;
 
@@ -34,6 +39,15 @@ public sealed class MediaService : IMediaService
     private static readonly int[] TargetWidths = [480, 960, 1600, 2400];
     private readonly int _webpQuality;
     private const long MaxPixels = 100_000_000;       // blocks decompression bombs
+
+    // Only the formats the admin asks for. TIFF (and anything else ImageSharp knows) is never
+    // parsed: ImageSharp 3.1.x has unpatched TIFF decoder bugs and 3.2+ needs a paid licence.
+    private static readonly DecoderOptions Decoder = new()
+    {
+        Configuration = new SixLabors.ImageSharp.Configuration(
+            new JpegConfigurationModule(), new PngConfigurationModule(), new WebpConfigurationModule(),
+            new GifConfigurationModule(), new BmpConfigurationModule()),
+    };
 
     private readonly SunSteelDbContext _db;
     private readonly IAuditService _audit;
@@ -72,16 +86,18 @@ public sealed class MediaService : IMediaService
 
         buffer.Position = 0;
         ImageInfo info;
-        try { info = await Image.IdentifyAsync(buffer, ct); }
+        try { info = await Image.IdentifyAsync(Decoder, buffer, ct); }
         catch (Exception e) when (e is UnknownImageFormatException or InvalidImageContentException or NotSupportedException)
         { throw new AppException("That file is not a supported image. Use JPG, PNG, WebP, GIF or BMP."); }
         if ((long)info.Width * info.Height > MaxPixels) throw new AppException("Image dimensions are too large.");
 
         buffer.Position = 0;
-        using var image = await Image.LoadAsync(buffer, ct);
+        using var image = await Image.LoadAsync(Decoder, buffer, ct);
         image.Mutate(x => x.AutoOrient());
         image.Metadata.ExifProfile = null;
         image.Metadata.XmpProfile = null;
+        // Dropped unread: ImageSharp only parses ICC tag data (where the CLUT bug is) on access.
+        image.Metadata.IccProfile = null;
 
         var now = DateTime.UtcNow;
         var folder = Path.Combine(now.ToString("yyyy"), now.ToString("MM"));
