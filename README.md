@@ -5,7 +5,7 @@ Design: **v3 "Metal atelier"** (ink navy, bronze, ivory; Cormorant Garamond + Ma
 
 | Folder | What |
 | --- | --- |
-| `sunsteel.api` | ASP.NET Core .NET 9 API (vertical slices under `Features/`) |
+| `sunsteel.api` | ASP.NET Core .NET 10 API (vertical slices under `Features/`) |
 | `sunsteel.web` | Angular 21 SSR + Tailwind CSS 4 (public site + admin) |
 | `database/migrations` | MySQL 8 schema, forward-only SQL (source of truth) |
 | `database/seed` | `catalog.json` (7 silos, 93 products, densities, IS 808, cities) → generates migration 010 |
